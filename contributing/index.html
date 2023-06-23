@@ -1,0 +1,1205 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://agencyenterprise.github.io/neurotechdevkit/contributing/">
+      
+      
+        <link rel="prev" href="../generated/gallery/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.9">
+    
+    
+      
+        <title>Contributing - Neurotech Development Kit</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../css/mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../sg_gallery-dataframe.css">
+    
+      <link rel="stylesheet" href="../sg_gallery-rendered-html.css">
+    
+      <link rel="stylesheet" href="../sg_gallery-binder.css">
+    
+      <link rel="stylesheet" href="../sg_gallery.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#contributing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Neurotech Development Kit" class="md-header__button md-logo" aria-label="Neurotech Development Kit" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Neurotech Development Kit
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Contributing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/agencyenterprise/neurotechdevkit" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Neurotech Development Kit" class="md-nav__button md-logo" aria-label="Neurotech Development Kit" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Neurotech Development Kit
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/agencyenterprise/neurotechdevkit" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Usage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Usage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/loading_scenarios/" class="md-nav__link">
+        Scenarios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/defining_sources/" class="md-nav__link">
+        Sources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/running_simulation/" class="md-nav__link">
+        Simulation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/gpu/" class="md-nav__link">
+        GPU support
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/make/" class="md-nav__link">
+        Make
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/scenarios/" class="md-nav__link">
+        Scenarios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/utils/" class="md-nav__link">
+        Utils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/sources/" class="md-nav__link">
+        Sources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/results/" class="md-nav__link">
+        Results
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../generated/gallery/">Examples</a>
+          
+            <label for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generated/gallery/plot_pulsed_simulation.md" class="md-nav__link">
+        Plot pulsed simulation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generated/gallery/plot_store_results.md" class="md-nav__link">
+        Save and load results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generated/gallery/plot_scenarios.md" class="md-nav__link">
+        Plot scenarios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generated/gallery/plot_adding_custom_source.md" class="md-nav__link">
+        Custom source
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generated/gallery/plot_metrics.md" class="md-nav__link">
+        Reading simulation metrics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generated/gallery/plot_3d.md" class="md-nav__link">
+        Visualizing 3D results with Napari
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generated/gallery/plot_multiple_sources.md" class="md-nav__link">
+        Adding multiple sources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generated/gallery/plot_phased_array_source.md" class="md-nav__link">
+        Phased array source
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generated/gallery/plot_full_scenario.md" class="md-nav__link">
+        Implementing a full scenario
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Contributing
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reporting-issues" class="md-nav__link">
+    Reporting issues
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing-code" class="md-nav__link">
+    Contributing code
+  </a>
+  
+    <nav class="md-nav" aria-label="Contributing code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standards" class="md-nav__link">
+    Standards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparing-your-environment" class="md-nav__link">
+    Preparing your environment
+  </a>
+  
+    <nav class="md-nav" aria-label="Preparing your environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-on-docker" class="md-nav__link">
+    Running on docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-locally" class="md-nav__link">
+    Running locally
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-environment" class="md-nav__link">
+    Using the environment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-requirements-and-conventions" class="md-nav__link">
+    Code requirements and conventions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process" class="md-nav__link">
+    Process
+  </a>
+  
+    <nav class="md-nav" aria-label="Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versioning" class="md-nav__link">
+    Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic-release" class="md-nav__link">
+    Automatic release
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gallery-of-examples" class="md-nav__link">
+    Gallery of examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-ndk-documentation-on-ci" class="md-nav__link">
+    Checking NDK documentation on CI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reporting-issues" class="md-nav__link">
+    Reporting issues
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing-code" class="md-nav__link">
+    Contributing code
+  </a>
+  
+    <nav class="md-nav" aria-label="Contributing code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standards" class="md-nav__link">
+    Standards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparing-your-environment" class="md-nav__link">
+    Preparing your environment
+  </a>
+  
+    <nav class="md-nav" aria-label="Preparing your environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-on-docker" class="md-nav__link">
+    Running on docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-locally" class="md-nav__link">
+    Running locally
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-environment" class="md-nav__link">
+    Using the environment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-requirements-and-conventions" class="md-nav__link">
+    Code requirements and conventions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process" class="md-nav__link">
+    Process
+  </a>
+  
+    <nav class="md-nav" aria-label="Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versioning" class="md-nav__link">
+    Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic-release" class="md-nav__link">
+    Automatic release
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gallery-of-examples" class="md-nav__link">
+    Gallery of examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-ndk-documentation-on-ci" class="md-nav__link">
+    Checking NDK documentation on CI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="contributing">Contributing</h1>
+<p>You can contribute to NDK by creating GitHub issues or by submitting pull requests.</p>
+<h2 id="reporting-issues">Reporting issues</h2>
+<p>Feel free to open an issue if you would like to discuss a new feature request or report a bug. When creating a bug report, please include as much information as possible to help us reproduce the bug as well as what the actual and expected behavior is.</p>
+<h2 id="contributing-code">Contributing code</h2>
+<h3 id="standards">Standards</h3>
+<p>To ensure efficient collaborative development, a variety of standards are utilized in this project.</p>
+<ul>
+<li><a href="https://github.com/psf/black">Black</a> code formatter is used.</li>
+<li><a href="https://flake8.pycqa.org">Flake8</a> is used for linting.</li>
+<li><a href="https://pycqa.github.io/isort/">isort</a> is used for sorting the imports.</li>
+<li><a href="https://github.com/microsoft/pyright">pyright</a> is used for static type checking.</li>
+<li><a href="https://docs.python.org/3/library/typing.html">Type hinting</a> is used.<ul>
+<li>And checked using <a href="http://mypy-lang.org">mypy</a>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="preparing-your-environment">Preparing your environment</h3>
+<p>Start by cloning the repository:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone https://github.com/agencyenterprise/neurotechdevkit.git
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cd neurotechdevkit
+</code></pre></div>
+<h4 id="running-on-docker">Running on docker</h4>
+<p>If you don't want to install NDK's dependencies on your machine, you can run it in a container:</p>
+<ul>
+<li>
+<p>Install <a href="https://docs.docker.com/engine/install/#desktop">Docker</a>.</p>
+</li>
+<li>
+<p>Run the container, which will start a jupyter notebook server:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git clone https://github.com/agencyenterprise/neurotechdevkit.git
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>cd neurotechdevkit
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>docker compose up
+</code></pre></div></p>
+</li>
+<li>
+<p>Connect to the jupyter notebook directly in your browser or with your IDE.</p>
+</li>
+</ul>
+<h4 id="running-locally">Running locally</h4>
+<p>This project requires Python <code>&gt;=3.9</code> and <code>&lt;3.11</code> to be installed. You can find the Python version you have installed by running <code>python --version</code> in a terminal. If you don't have Python installed or are running an unsupported version, you can download a supported version from <a href="https://www.python.org/downloads/">python.org</a>.</p>
+<p>We use <a href="https://python-poetry.org/">poetry</a> to manage dependencies and virtual environments. Follow the instructions from <a href="https://python-poetry.org/docs/#installation">poetry's documentation</a> to install it if you don't have it on your system.</p>
+<p>Install the dependencies by running the following command in a shell within the project directory:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>poetry install
+</code></pre></div>
+<p>This will resolve and install the dependencies from <code>poetry.lock</code> and will install the <code>neurotechdevkit</code> package in editable mode.</p>
+<p>Install stride with</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>poetry<span class="w"> </span>run<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/trustimaging/stride
+</code></pre></div>
+<p><code>devito</code>, a dependency of <code>neurotechdevkit</code>, requires <code>libomp</code>. On MacOS it can be installed with:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>brew install libomp
+</code></pre></div>
+<p>the output of the command above will look like this:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>For compilers to find libomp you may need to set:
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>export LDFLAGS=&quot;-L/usr/local/opt/libomp/lib&quot;
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>export CPPFLAGS=&quot;-I/usr/local/opt/libomp/include&quot;
+</code></pre></div>
+<p><code>devito</code> requires the directory with <code>libomp</code> headers to be accessible during the runtime compilation, you can make it accessible by exporting a new environment variable <code>CPATH</code> with the path for libomp headers, like so:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>export CPATH=&quot;/usr/local/opt/libomp/include&quot;
+</code></pre></div>
+<p>You will also have to set an environment variable that defines what compiler <code>devito</code> will use, like so:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>export DEVITO_ARCH=gcc
+</code></pre></div>
+<p>the supported values for <code>DEVITO_ARCH</code> are: <code>'custom', 'gnu', 'gcc', 'clang', 'aomp', 'pgcc', 'pgi', 'nvc', 'nvc++', 'nvidia', 'cuda', 'osx', 'intel', 'icpc', 'icc', 'intel-knl', 'knl', 'dpcpp', 'gcc-4.9', 'gcc-5', 'gcc-6', 'gcc-7', 'gcc-8', 'gcc-9', 'gcc-10', 'gcc-11'</code></p>
+<h3 id="using-the-environment">Using the environment</h3>
+<p>If you are not already using a virtual environment, <code>poetry</code> will <a href="https://python-poetry.org/docs/basic-usage/#using-your-virtual-environment">create one for you by default</a>. You will need to use this virtual env when using or working on the package.</p>
+<p>Activate the environment directly via:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>poetry shell
+</code></pre></div>
+<p>If you are already using your own virtual environment, you should not need to change anything.</p>
+<h2 id="code-requirements-and-conventions">Code requirements and conventions</h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following commands require <code>GNU make</code> to be installed, on Windows you can install it with <a href="https://chocolatey.org/install">Chocolatey</a>:</p>
+<p><code>choco install make</code></p>
+</div>
+<p>Before opening a pull request, please make sure that all of the following requirements are met:</p>
+<ol>
+<li>all unit and integration tests are passing:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>make test
+</code></pre></div></li>
+<li>the code is linted and formatted:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>make lint
+</code></pre></div></li>
+<li>type hinting is used on all function and method parameters and return values, excluding tests</li>
+<li>docstring usage conforms to the following:<ol>
+<li>all docstrings should follow <a href="https://peps.python.org/pep-0257/">PEP257 Docstring Conventions</a></li>
+<li>all public API classes, functions, methods, and properties have docstrings and follow the <a href="https://github.com/google/styleguide/blob/gh-pages/pyguide.md#38-comments-and-docstrings">Google Python Style Guide</a></li>
+<li>docstrings on private objects are not required, but are encouraged where they would significantly aid understanding</li>
+</ol>
+</li>
+<li>testing is done using the pytest library, and test coverage should not unnecessarily decrease.</li>
+</ol>
+<h2 id="process">Process</h2>
+<h3 id="versioning">Versioning</h3>
+<p>NDK uses <a href="https://en.wikipedia.org/wiki/Software_versioning#Semantic_versioning">semantic versioning</a> to identify its releases.</p>
+<p>We use the <a href="https://github.com/rymndhng/release-on-push-action/tree/master/">release on push</a> github action to generate the new version for each release. This github action generates the version based on a pull request label assigned before merge. The supported labels are:</p>
+<ul>
+<li><code>release-patch</code></li>
+<li><code>release-minor</code></li>
+<li><code>release-major</code></li>
+<li><code>norelease</code></li>
+</ul>
+<h3 id="automatic-release">Automatic release</h3>
+<p>Merged pull requests with one of the labels <code>release-patch</code>, <code>release-minor</code> or <code>release-major</code> will trigger a release job on CI.</p>
+<p>The release job will:</p>
+<ol>
+<li>generate a new package version using semantic versioning provided by <a href="https://github.com/rymndhng/release-on-push-action/tree/master/">release on push</a></li>
+<li>update the <code>pyproject.toml</code> version using <code>poetry</code></li>
+<li>commit the updated <code>pyproject.toml</code> file using the <a href="https://github.com/stefanzweifel/git-auto-commit-action/tree/v4/">git-auto-commit action</a></li>
+<li>push the package to pypi using <a href="JRubics/poetry-publish@v1.16">poetry publish</a></li>
+<li>build a new docker image and tag it with the previously generated semantic version</li>
+</ol>
+<p>Pull requests merged with the tag <code>norelease</code> will not trigger any of the actions listed above.</p>
+<h3 id="gallery-of-examples">Gallery of examples</h3>
+<p>The examples you can find in the official <a href="https://agencyenterprise.github.io/neurotechdevkit/generated/gallery/">documentation</a> are <a href="https://github.com/agencyenterprise/neurotechdevkit/tree/main/docs/examples">python scripts</a> executed in CI.</p>
+<p>Running these scripts is a resource intensive and time consuming task, for this reason we are using CircleCI instead of Github Actions (as we can choose a more powerful machine to execute the job) and we are also using a cache that prevents processing all gallery files on each execution.</p>
+<p>The cache source for the gallery is the <code>gh-pages</code> branch from our repository. This branch is updated every time a new push to the <code>main</code> branch occurs, and the output of the execution of gallery scripts are part of it. Our CI checks out the <code>gh-pages</code> branch and moves the generated gallery output to the directory that will be read by mkdocs, you can check how it is done <a href="https://github.com/agencyenterprise/neurotechdevkit/blob/main/.github/workflows/docs.yml#L57:L66">here</a>.</p>
+<p>With the forementioned cache implemented only newly added gallery scripts are executed on a Pull Request. So there's a risk of having changes to code breaking gallery scripts that were not touched in the Pull Request, these broken scripts would pass unnoticed because of the cache. We try to mitigate this issue by triggering a full execution of all gallery scripts <strong>without cache</strong> on a weekly basis, this is achieved using a <a href="https://github.com/agencyenterprise/neurotechdevkit/blob/main/.github/workflows/trigger_gallery_build.yml">Github Action with a schedule</a> that starts a CicleCI workflow.</p>
+<h3 id="checking-ndk-documentation-on-ci">Checking NDK documentation on CI</h3>
+<p>All pull requests trigger a CI job that builds the documentation and makes the built files available.</p>
+<p>To check the generated documentation in a pull request:</p>
+<ol>
+<li>Scroll to the bottom of the page and click on the <code>Show all checks</code> link.</li>
+<li>Click on the details link of the <code>Check the rendered docs here!</code> job.
+      <figure markdown>
+            <img alt="circle-ci-rendered-docs" src="../images/circle-ci-rendered-docs.png" width="800" />
+      </figure></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>Examples</code> section is not properly rendered when the documentation is built
+  on CI. The links of the thumbnails in <code>gallery/index.html</code> point to broken paths,
+  in order to check one of the examples you will have to click on the left panel,
+  as shown in the image below:
+  <figure markdown>
+        <img alt="gallery-link" src="../images/gallery-link.png" width="500" />
+  </figure>
+  Within each example, the outputs of cells are also not properly displayed.</p>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "navigation.indexes"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fac441b0.min.js"></script>
+      
+    
+  </body>
+</html>
