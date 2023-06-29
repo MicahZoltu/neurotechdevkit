@@ -1047,9 +1047,7 @@
 </li>
 <li>
 <p>Run the container, which will start a jupyter notebook server:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git clone https://github.com/agencyenterprise/neurotechdevkit.git
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>cd neurotechdevkit
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>docker compose up
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker compose up
 </code></pre></div></p>
 </li>
 <li>
@@ -1063,28 +1061,14 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>poetry install
 </code></pre></div>
 <p>This will resolve and install the dependencies from <code>poetry.lock</code> and will install the <code>neurotechdevkit</code> package in editable mode.</p>
-<p>Install stride with</p>
+<p>Install stride with:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>poetry<span class="w"> </span>run<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/trustimaging/stride
 </code></pre></div>
-<p><code>devito</code>, a dependency of <code>neurotechdevkit</code>, requires <code>libomp</code>. On MacOS it can be installed with:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>brew install libomp
-</code></pre></div>
-<p>the output of the command above will look like this:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>For compilers to find libomp you may need to set:
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>export LDFLAGS=&quot;-L/usr/local/opt/libomp/lib&quot;
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>export CPPFLAGS=&quot;-I/usr/local/opt/libomp/include&quot;
-</code></pre></div>
-<p><code>devito</code> requires the directory with <code>libomp</code> headers to be accessible during the runtime compilation, you can make it accessible by exporting a new environment variable <code>CPATH</code> with the path for libomp headers, like so:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>export CPATH=&quot;/usr/local/opt/libomp/include&quot;
-</code></pre></div>
-<p>You will also have to set an environment variable that defines what compiler <code>devito</code> will use, like so:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>export DEVITO_ARCH=gcc
-</code></pre></div>
-<p>the supported values for <code>DEVITO_ARCH</code> are: <code>'custom', 'gnu', 'gcc', 'clang', 'aomp', 'pgcc', 'pgi', 'nvc', 'nvc++', 'nvidia', 'cuda', 'osx', 'intel', 'icpc', 'icc', 'intel-knl', 'knl', 'dpcpp', 'gcc-4.9', 'gcc-5', 'gcc-6', 'gcc-7', 'gcc-8', 'gcc-9', 'gcc-10', 'gcc-11'</code></p>
+<p>Follow the steps described in <a href="../installation/#setting-up-a-compiler">Setting up a compiler</a>.</p>
 <h3 id="using-the-environment">Using the environment</h3>
 <p>If you are not already using a virtual environment, <code>poetry</code> will <a href="https://python-poetry.org/docs/basic-usage/#using-your-virtual-environment">create one for you by default</a>. You will need to use this virtual env when using or working on the package.</p>
 <p>Activate the environment directly via:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>poetry shell
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>poetry shell
 </code></pre></div>
 <p>If you are already using your own virtual environment, you should not need to change anything.</p>
 <h2 id="code-requirements-and-conventions">Code requirements and conventions</h2>
@@ -1096,10 +1080,10 @@
 <p>Before opening a pull request, please make sure that all of the following requirements are met:</p>
 <ol>
 <li>all unit and integration tests are passing:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>make test
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>make test
 </code></pre></div></li>
 <li>the code is linted and formatted:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>make lint
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>make lint
 </code></pre></div></li>
 <li>type hinting is used on all function and method parameters and return values, excluding tests</li>
 <li>docstring usage conforms to the following:<ol>

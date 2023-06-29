@@ -901,37 +901,32 @@ The compiler used by Devito has to be selected, and paths for the linker might a
 <p>Install libomp</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>brew install libomp
 </code></pre></div>
-<p>the output of the command above will look like this:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>For compilers to find libomp you may need to set:
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>export LDFLAGS=&quot;-L/usr/local/opt/libomp/lib&quot;
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>export CPPFLAGS=&quot;-I/usr/local/opt/libomp/include&quot;
-</code></pre></div>
 </li>
 <li>
 <p>Run the following command to export a new environment variable <code>CPATH</code> with the path for <code>libomp</code> headers:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>echo &#39;export CPATH=&quot;/usr/local/opt/libomp/include&quot;&#39; &gt;&gt; ~/.zshrc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>echo &#39;export CPATH=&quot;&#39;$(brew --prefix)&#39;/opt/libomp/include&quot;&#39; &gt;&gt; ~/.zshrc
 </code></pre></div>
 </li>
 <li>
 <p>Install <code>llvm</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>brew install llvm
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>brew install llvm
 </code></pre></div>
 </li>
 <li>
 <p>Run the following commands to export the <code>llvm</code> environment variables:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>echo &#39;export PATH=&quot;/usr/local/opt/llvm/bin:$PATH&quot;&#39; &gt;&gt; ~/.zshrc
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>echo &#39;export LDFLAGS=&quot;-L/usr/local/opt/llvm/lib&quot;&#39; &gt;&gt; ~/.zshrc
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>echo &#39;export CPPFLAGS=&quot;-I/usr/local/opt/llvm/include&quot;&#39; &gt;&gt; ~/.zshrc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>echo &#39;export PATH=&quot;&#39;$(brew --prefix)&#39;/opt/llvm/bin:$PATH&quot;&#39; &gt;&gt; ~/.zshrc
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>echo &#39;export LDFLAGS=&quot;-L&#39;$(brew --prefix)&#39;/opt/llvm/lib&quot;&#39; &gt;&gt; ~/.zshrc
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>echo &#39;export CPPFLAGS=&quot;-I&#39;$(brew --prefix)&#39;/opt/llvm/include&quot;&#39; &gt;&gt; ~/.zshrc
 </code></pre></div>
 </li>
 <li>
 <p>The following command will export the <code>DEVITO_ARCH</code> environment variable:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>echo &#39;export DEVITO_ARCH=&quot;clang&quot;&#39; &gt;&gt; ~/.zshrc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>echo &#39;export DEVITO_ARCH=&quot;clang&quot;&#39; &gt;&gt; ~/.zshrc
 </code></pre></div>
 </li>
 <li>
 <p>Load the modified zsh configuration file:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>source ~/.zshrc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>source ~/.zshrc
 </code></pre></div>
 </li>
 </ol>
@@ -941,17 +936,17 @@ The compiler used by Devito has to be selected, and paths for the linker might a
 <ol>
 <li>
 <p>Install gcc-11</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>brew install gcc@11
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>brew install gcc@11
 </code></pre></div>
 </li>
 <li>
 <p>Run the command that exports the <code>DEVITO_ARCH</code> environment variable:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>echo &#39;export DEVITO_ARCH=&quot;gcc-11&quot;&#39; &gt;&gt; ~/.zshrc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>echo &#39;export DEVITO_ARCH=&quot;gcc-11&quot;&#39; &gt;&gt; ~/.zshrc
 </code></pre></div>
 </li>
 <li>
 <p>Load the modified zsh configuration file:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>source ~/.zshrc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>source ~/.zshrc
 </code></pre></div>
 </li>
 </ol>
@@ -961,7 +956,7 @@ The compiler used by Devito has to be selected, and paths for the linker might a
 <ol>
 <li>
 <p>Export the <code>DEVITO_ARCH</code> environment variable, or add it to your shell profile:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>export DEVITO_ARCH=&quot;gcc&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>export DEVITO_ARCH=&quot;gcc&quot;
 </code></pre></div>
 <p>The supported values for <code>DEVITO_ARCH</code> are: <code>'custom', 'gnu', 'gcc', 'clang', 'aomp', 'pgcc', 'pgi', 'nvc', 'nvc++', 'nvidia', 'cuda', 'osx', 'intel', 'icpc', 'icc', 'intel-knl', 'knl', 'dpcpp', 'gcc-4.9', 'gcc-5', 'gcc-6', 'gcc-7', 'gcc-8', 'gcc-9', 'gcc-10', 'gcc-11'</code>.</p>
 </li>
