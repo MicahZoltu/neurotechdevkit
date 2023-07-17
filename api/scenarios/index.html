@@ -544,15 +544,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#neurotechdevkit.scenarios._base.Scenario.materials" class="md-nav__link">
-    materials
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#neurotechdevkit.scenarios._base.Scenario.ordered_layers" class="md-nav__link">
-    ordered_layers
+  <a href="#neurotechdevkit.scenarios._base.Scenario.material_colors" class="md-nav__link">
+    material_colors
   </a>
   
 </li>
@@ -672,6 +665,13 @@
           <li class="md-nav__item">
   <a href="#neurotechdevkit.scenarios._base.Scenario.get_layer_mask" class="md-nav__link">
     get_layer_mask()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neurotechdevkit.scenarios._base.Scenario.get_materials" class="md-nav__link">
+    get_materials()
   </a>
   
 </li>
@@ -1001,6 +1001,8 @@
         
           
         
+          
+        
       
       
         
@@ -1043,8 +1045,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../generated/gallery/plot_store_results/" class="md-nav__link">
-        Save and load results
+      <a href="../../generated/gallery/plot_scenarios/" class="md-nav__link">
+        Plot scenarios
       </a>
     </li>
   
@@ -1057,8 +1059,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../generated/gallery/plot_scenarios/" class="md-nav__link">
-        Plot scenarios
+      <a href="../../generated/gallery/plot_store_results/" class="md-nav__link">
+        Save and load results
       </a>
     </li>
   
@@ -1087,6 +1089,20 @@
     <li class="md-nav__item">
       <a href="../../generated/gallery/plot_metrics/" class="md-nav__link">
         Reading simulation metrics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../generated/gallery/plot_customized_center_frequency/" class="md-nav__link">
+        Custom center frequency
       </a>
     </li>
   
@@ -1247,15 +1263,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#neurotechdevkit.scenarios._base.Scenario.materials" class="md-nav__link">
-    materials
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#neurotechdevkit.scenarios._base.Scenario.ordered_layers" class="md-nav__link">
-    ordered_layers
+  <a href="#neurotechdevkit.scenarios._base.Scenario.material_colors" class="md-nav__link">
+    material_colors
   </a>
   
 </li>
@@ -1375,6 +1384,13 @@
           <li class="md-nav__item">
   <a href="#neurotechdevkit.scenarios._base.Scenario.get_layer_mask" class="md-nav__link">
     get_layer_mask()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neurotechdevkit.scenarios._base.Scenario.get_materials" class="md-nav__link">
+    get_materials()
   </a>
   
 </li>
@@ -1700,8 +1716,8 @@ results are accurate.</li>
 <code class="highlight language-python"><span class="n">current_target_id</span><span class="p">:</span> <span class="nb">str</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-writable"><code>writable</code></small>
       <small class="doc doc-label doc-label-property"><code>property</code></small>
+      <small class="doc doc-label doc-label-writable"><code>writable</code></small>
   </span>
 
 </h3>
@@ -1804,8 +1820,8 @@ results are accurate.</li>
 
 
 
-<h3 id="neurotechdevkit.scenarios._base.Scenario.materials" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">materials</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Struct</span><span class="p">]</span></code>
+<h3 id="neurotechdevkit.scenarios._base.Scenario.material_colors" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">material_colors</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-property"><code>property</code></small>
@@ -1816,35 +1832,25 @@ results are accurate.</li>
 
   <div class="doc doc-contents ">
   
-      <p>A map between material name and material properties.</p>
-<ul>
-<li>vp: the speed of sound (in m/s).</li>
-<li>rho: the mass density (in kg/m³).</li>
-<li>alpha: the absorption (in dB/cm).</li>
-<li>render_color: the color used when rendering this material in the
-scenario layout plot.</li>
-</ul>
-  </div>
+      <p>A map between material name and material render color.</p>
 
-</div>
-
-<div class="doc doc-object doc-attribute">
-
-
-
-<h3 id="neurotechdevkit.scenarios._base.Scenario.ordered_layers" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">ordered_layers</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span></code>
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-property"><code>property</code></small>
-  </span>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>A list of material names in order of their layer id.</p>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>dict[str, str]</code>
+          </td>
+          <td><p>dict[str, str]: keys are material names and values are the hex color</p></td>
+        </tr>
+    </tbody>
+  </table>
   </div>
 
 </div>
@@ -2365,6 +2371,31 @@ layer.</p></td>
 
 
 
+<h3 id="neurotechdevkit.scenarios._base.Scenario.get_materials" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_materials</span><span class="p">(</span><span class="n">center_frequency</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return a map between material name and material properties.</p>
+<ul>
+<li>vp: the speed of sound (in m/s).</li>
+<li>rho: the mass density (in kg/m³).</li>
+<li>alpha: the absorption (in dB/cm).</li>
+<li>render_color: the color used when rendering this material in the
+scenario layout plot.</li>
+</ul>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
 <h3 id="neurotechdevkit.scenarios._base.Scenario.get_target_mask" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">get_target_mask</span><span class="p">()</span></code>
   
@@ -2434,11 +2465,6 @@ layer.</p></td>
       <p>Execute a pulsed simulation in 2D.</p>
 <p>In this simulation, the sources will emit a pulse containing a few cycles of
 oscillation and then let the pulse propagate out to all edges of the scenario.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The only supported frequency currently supported is 500kHz. Any other
-value will raise a NotImplementedError.</p>
-</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>A poor choice of arguments to this function can lead to a failed
@@ -2463,8 +2489,7 @@ values other than the default if you chose to do so.</p>
                 <code>float</code>
           </td>
           <td><p>the center frequency (in hertz) to use for the
-continuous-wave source output. No other value besides
-500kHz (the default) is currently supported.</p></td>
+continuous-wave source output.</p></td>
           <td>
                 <code>500000.0</code>
           </td>
@@ -2519,24 +2544,6 @@ leverage Devito automatic tuning.</p></td>
     </tbody>
   </table>
 
-  <p><strong>Raises:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code>NotImplementedError</code>
-          </td>
-          <td><p>if a <code>center_frequency</code> other than 500kHz is provided.</p></td>
-        </tr>
-    </tbody>
-  </table>
-
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -2576,11 +2583,6 @@ leverage Devito automatic tuning.</p></td>
 waveform until steady-state has been reached. The steady-state wave amplitude is
 found by taking the Fourier transform of the last <code>n_cycles_steady_state</code> cycles
 of data and taking the amplitude of the component at the <code>center_frequency</code>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The only supported frequency currently supported is 500kHz. Any other
-value will raise a NotImplementedError.</p>
-</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>A poor choice of arguments to this function can lead to a failed
@@ -2605,8 +2607,7 @@ values other than the default if you chose to do so.</p>
                 <code>float</code>
           </td>
           <td><p>the center frequency (in hertz) to use for the
-continuous-wave source output. No other value besides 500kHz (the
-default) is currently supported.</p></td>
+continuous-wave source output.</p></td>
           <td>
                 <code>500000.0</code>
           </td>
@@ -2669,24 +2670,6 @@ leverage Devito automatic tuning.</p></td>
           <td>
                 <code>None</code>
           </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Raises:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code>NotImplementedError</code>
-          </td>
-          <td><p>if a <code>center_frequency</code> other than 500kHz is provided.</p></td>
         </tr>
     </tbody>
   </table>
@@ -3158,11 +3141,6 @@ from different angles, zoom in our out, and turn layers on or off.</p>
       <p>Execute a pulsed simulation in 3D.</p>
 <p>In this simulation, the sources will emit a pulse containing a few cycles of
 oscillation and then let the pulse propagate out to all edges of the scenario.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The only supported frequency currently supported is 500kHz. Any
-other value will raise a NotImplementedError.</p>
-</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>A poor choice of arguments to this function can lead to a failed
@@ -3187,8 +3165,7 @@ values other than the default if you chose to do so.</p>
                 <code>float</code>
           </td>
           <td><p>the center frequency (in hertz) to use for the
-continuous-wave source output. No other value besides
-500kHz (the default) is currently supported.</p></td>
+continuous-wave source output.</p></td>
           <td>
                 <code>500000.0</code>
           </td>
@@ -3263,24 +3240,6 @@ which the slice of the 3D field should be made. Only valid if
           <td>
                 <code>None</code>
           </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Raises:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code>NotImplementedError</code>
-          </td>
-          <td><p>if a <code>center_frequency</code> other than 500kHz is provided.</p></td>
         </tr>
     </tbody>
   </table>
@@ -3385,7 +3344,7 @@ which the slice of the 3D field should be made. Only valid if
 
   <div class="doc doc-contents first">
       <p class="doc doc-class-bases">
-        Bases: <code><span title="neurotechdevkit.scenarios._scenario_1._Scenario1Mixin">_Scenario1Mixin</span></code>, <code><a class="autorefs autorefs-internal" title="neurotechdevkit.scenarios._base.Scenario2D" href="#neurotechdevkit.scenarios.Scenario2D">Scenario2D</a></code></p>
+        Bases: <code><span title="neurotechdevkit.scenarios._scenario_1.Scenario1">Scenario1</span></code>, <code><a class="autorefs autorefs-internal" title="neurotechdevkit.scenarios._base.Scenario2D" href="#neurotechdevkit.scenarios.Scenario2D">Scenario2D</a></code></p>
 
   
       <p>A 2D implementation of scenario 1.</p>
@@ -3452,7 +3411,7 @@ https://asa.scitation.org/doi/pdf/10.1121/10.0013426</p>
 
   <div class="doc doc-contents first">
       <p class="doc doc-class-bases">
-        Bases: <code><span title="neurotechdevkit.scenarios._scenario_1._Scenario1Mixin">_Scenario1Mixin</span></code>, <code><a class="autorefs autorefs-internal" title="neurotechdevkit.scenarios._base.Scenario3D" href="#neurotechdevkit.scenarios.Scenario3D">Scenario3D</a></code></p>
+        Bases: <code><span title="neurotechdevkit.scenarios._scenario_1.Scenario1">Scenario1</span></code>, <code><a class="autorefs autorefs-internal" title="neurotechdevkit.scenarios._base.Scenario3D" href="#neurotechdevkit.scenarios.Scenario3D">Scenario3D</a></code></p>
 
   
       <p>A 3D implementation of scenario 1.</p>
@@ -3519,7 +3478,7 @@ https://asa.scitation.org/doi/pdf/10.1121/10.0013426</p>
 
   <div class="doc doc-contents first">
       <p class="doc doc-class-bases">
-        Bases: <code><span title="neurotechdevkit.scenarios._scenario_2._Scenario2Mixin">_Scenario2Mixin</span></code>, <code><a class="autorefs autorefs-internal" title="neurotechdevkit.scenarios._base.Scenario2D" href="#neurotechdevkit.scenarios.Scenario2D">Scenario2D</a></code></p>
+        Bases: <code><span title="neurotechdevkit.scenarios._scenario_2.Scenario2">Scenario2</span></code>, <code><a class="autorefs autorefs-internal" title="neurotechdevkit.scenarios._base.Scenario2D" href="#neurotechdevkit.scenarios.Scenario2D">Scenario2D</a></code></p>
 
   
       <p>A 2D implementation of scenario 2.</p>
@@ -3586,7 +3545,7 @@ https://asa.scitation.org/doi/pdf/10.1121/10.0013426</p>
 
   <div class="doc doc-contents first">
       <p class="doc doc-class-bases">
-        Bases: <code><span title="neurotechdevkit.scenarios._scenario_2._Scenario2Mixin">_Scenario2Mixin</span></code>, <code><a class="autorefs autorefs-internal" title="neurotechdevkit.scenarios._base.Scenario3D" href="#neurotechdevkit.scenarios.Scenario3D">Scenario3D</a></code></p>
+        Bases: <code><span title="neurotechdevkit.scenarios._scenario_2.Scenario2">Scenario2</span></code>, <code><a class="autorefs autorefs-internal" title="neurotechdevkit.scenarios._base.Scenario3D" href="#neurotechdevkit.scenarios.Scenario3D">Scenario3D</a></code></p>
 
   
       <p>A 3D implementation of scenario 2.</p>

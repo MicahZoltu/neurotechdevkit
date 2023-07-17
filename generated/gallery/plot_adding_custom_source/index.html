@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://agencyenterprise.github.io/neurotechdevkit/generated/gallery/plot_adding_custom_source/">
       
       
-        <link rel="prev" href="../plot_scenarios/">
+        <link rel="prev" href="../plot_store_results/">
       
       
         <link rel="next" href="../plot_metrics/">
@@ -555,6 +555,8 @@
         
           
         
+          
+        
       
       
         
@@ -597,8 +599,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../plot_store_results/" class="md-nav__link">
-        Save and load results
+      <a href="../plot_scenarios/" class="md-nav__link">
+        Plot scenarios
       </a>
     </li>
   
@@ -611,8 +613,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../plot_scenarios/" class="md-nav__link">
-        Plot scenarios
+      <a href="../plot_store_results/" class="md-nav__link">
+        Save and load results
       </a>
     </li>
   
@@ -651,6 +653,20 @@
     <li class="md-nav__item">
       <a href="../plot_metrics/" class="md-nav__link">
         Reading simulation metrics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plot_customized_center_frequency/" class="md-nav__link">
+        Custom center frequency
       </a>
     </li>
   
@@ -786,10 +802,11 @@ to download the full example code</p>
 <h1 id="custom-source">Custom source</h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>NDK and its examples are under constant development, more information and content will be added to this example soon!</p>
+<p>NDK and its examples are under constant development, more information
+and content will be added to this example soon!</p>
 </div>
 <p>This example demonstrates how to add a source to the simulation.</p>
-<!-- GENERATED FROM PYTHON SOURCE LINES 13-28 -->
+<!-- GENERATED FROM PYTHON SOURCE LINES 14-29 -->
 
 <p>A Source receives the following parameters:</p>
 <ul>
@@ -806,23 +823,25 @@ to download the full example code</p>
 <li>delay <code>(float, optional)</code>: the delay (in seconds) that the source will wait before
   emitting. Defaults to 0.0.</li>
 </ul>
-<!-- GENERATED FROM PYTHON SOURCE LINES 28-45 -->
+<!-- GENERATED FROM PYTHON SOURCE LINES 29-48 -->
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span> <span class="nn">neurotechdevkit</span> <span class="k">as</span> <span class="nn">ndk</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">source</span> <span class="o">=</span> <span class="n">ndk</span><span class="o">.</span><span class="n">sources</span><span class="o">.</span><span class="n">FocusedSource2D</span><span class="p">(</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">position</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]),</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">direction</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]),</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">aperture</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">focal_length</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">num_points</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">)</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">scenario</span> <span class="o">=</span> <span class="n">ndk</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;scenario-0-v0&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">scenario</span><span class="o">.</span><span class="n">add_source</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">result</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">simulate_steady_state</span><span class="p">()</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="n">result</span><span class="o">.</span><span class="n">render_steady_state_amplitudes</span><span class="p">()</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span> <span class="nn">neurotechdevkit</span> <span class="k">as</span> <span class="nn">ndk</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">source</span> <span class="o">=</span> <span class="n">ndk</span><span class="o">.</span><span class="n">sources</span><span class="o">.</span><span class="n">FocusedSource2D</span><span class="p">(</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">position</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]),</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">direction</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]),</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">aperture</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">focal_length</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="n">num_points</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">)</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">scenario</span> <span class="o">=</span> <span class="n">ndk</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;scenario-0-v0&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">scenario</span><span class="o">.</span><span class="n">add_source</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="n">result</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">simulate_steady_state</span><span class="p">()</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">ndk</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">SteadyStateResult2D</span><span class="p">)</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="n">result</span><span class="o">.</span><span class="n">render_steady_state_amplitudes</span><span class="p">()</span>
 </code></pre></div>
 <p><img alt="Steady-State Wave Amplitude" class="mkd-glr-single-img" src="../images/mkd_glr_plot_adding_custom_source_001.png" srcset="../images/mkd_glr_plot_adding_custom_source_001.png" /></p>
 <p class="mkd-glr-script-out">Out:</p>
@@ -833,7 +852,7 @@ to download the full example code</p>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>/home/circleci/.cache/pypoetry/virtualenvs/neurotechdevkit-3aSsmiER-py3.10/lib/python3.10/site-packages/devito/finite_differences/differentiable.py:224:<span class="w"> </span>DeprecationWarning:<span class="w"> </span>NotImplemented<span class="w"> </span>should<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>boolean<span class="w"> </span>context
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span>super<span class="o">(</span>Differentiable,<span class="w"> </span>self<span class="o">)</span>.__eq__<span class="o">(</span>other<span class="o">)</span><span class="w"> </span>and<span class="se">\</span>
 </code></pre></div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  12.889 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  11.256 seconds)</p>
 <div id="download_links"></div>
 
 <p><a class="md-button center" href="../plot_adding_custom_source.py"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg></span> Download Python source code: plot_adding_custom_source.py</a></p>
