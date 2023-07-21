@@ -1,5 +1,6 @@
 """Materials for the neurotechdevkit scenarios."""
 from dataclasses import dataclass
+from typing import Optional
 
 from mosaic.types import Struct
 
@@ -17,9 +18,13 @@ class _BaseMaterial:
 
 @dataclass
 class Material(_BaseMaterial):
-    """A NDK Material with an attenuation coefficient."""
+    """A NDK Material with an attenuation coefficient
+    and optional standard deviations."""
 
     alpha: float
+    vp_std: Optional[float] = None
+    rho_std: Optional[float] = None
+    alpha_std: Optional[float] = None
 
     def to_struct(self) -> Struct:
         """Return a Struct representation of the material.
@@ -29,8 +34,14 @@ class Material(_BaseMaterial):
         """
         struct = Struct()
         struct.vp = self.vp
+        if self.vp_std is not None:
+            struct.vp_std = self.vp_std
         struct.rho = self.rho
+        if self.rho_std is not None:
+            struct.rho_std = self.rho_std
         struct.alpha = self.alpha
+        if self.alpha_std is not None:
+            struct.alpha_std = self.alpha_std
         struct.render_color = self.render_color
         return struct
 
