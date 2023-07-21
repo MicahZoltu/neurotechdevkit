@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Iterable, Mapping
+from typing import Iterable, Mapping, Optional
 
 import numpy as np
 import numpy.typing as npt
@@ -63,6 +63,7 @@ def add_material_fields_to_problem(
     materials: Mapping[str, Struct],
     layer_ids: Mapping[str, int],
     masks: Mapping[str, npt.NDArray[np.bool_]],
+    rng: Optional[np.random.Generator] = None,
 ) -> stride.Problem:
     """Add material fields as media to the problem.
 
@@ -89,11 +90,21 @@ def add_material_fields_to_problem(
     alpha = stride.ScalarField(name="alpha", grid=grid)  # [dB/cm]
     layer = stride.ScalarField(name="layer", grid=grid)  # integers
 
+    rng = np.random.default_rng(rng)
     for name, material in materials.items():
         material_mask = masks[name]
         vp.data[material_mask] = material.vp
+        if "vp_std" in material:
+            vp_noise = rng.normal(scale=material.vp_std, size=material_mask.shape)
+            vp.data[material_mask] += vp_noise[material_mask]
         rho.data[material_mask] = material.rho
+        if "rho_std" in material:
+            rho_noise = rng.normal(scale=material.rho_std, size=material_mask.shape)
+            rho.data[material_mask] += rho_noise[material_mask]
         alpha.data[material_mask] = material.alpha
+        if "alpha_std" in material:
+            alpha_noise = rng.normal(scale=material.alpha_std, size=material_mask.shape)
+            alpha.data[material_mask] += alpha_noise[material_mask]
         layer.data[material_mask] = layer_ids[name]
 
     vp.pad()
