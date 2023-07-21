@@ -1716,8 +1716,8 @@ results are accurate.</li>
 <code class="highlight language-python"><span class="n">current_target_id</span><span class="p">:</span> <span class="nb">str</span></code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-writable"><code>writable</code></small>
       <small class="doc doc-label doc-label-property"><code>property</code></small>
+      <small class="doc doc-label doc-label-writable"><code>writable</code></small>
   </span>
 
 </h3>
@@ -2759,7 +2759,7 @@ leverage Devito automatic tuning.</p></td>
 
 
 <h3 id="neurotechdevkit.scenarios._base.Scenario2D.render_layout" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">render_layout</span><span class="p">(</span><span class="n">show_sources</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_target</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_material_outlines</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">render_layout</span><span class="p">(</span><span class="n">show_sources</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_target</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_material_outlines</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">center_frequency</span><span class="o">=</span><span class="mf">500000.0</span><span class="p">)</span></code>
 
 </h3>
 
@@ -2809,6 +2809,17 @@ leverage Devito automatic tuning.</p></td>
 the transition between different materials.</p></td>
           <td>
                 <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>center_frequency</code></td>
+          <td>
+                <code>float</code>
+          </td>
+          <td><p>the center frequency (in hertz) to use for the
+continuous-wave source output.</p></td>
+          <td>
+                <code>500000.0</code>
           </td>
         </tr>
     </tbody>
@@ -3011,7 +3022,7 @@ in 2D.</p>
 
 
 <h3 id="neurotechdevkit.scenarios._base.Scenario3D.render_layout" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">render_layout</span><span class="p">(</span><span class="n">slice_axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">slice_position</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_sources</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_target</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_material_outlines</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">render_layout</span><span class="p">(</span><span class="n">slice_axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">slice_position</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_sources</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_target</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_material_outlines</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">center_frequency</span><span class="o">=</span><span class="mf">500000.0</span><span class="p">)</span></code>
 
 </h3>
 
@@ -3087,6 +3098,17 @@ which the slice should be made. If None, then the value returned by
 the transition between different materials.</p></td>
           <td>
                 <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>center_frequency</code></td>
+          <td>
+                <code>float</code>
+          </td>
+          <td><p>the center frequency (in hertz) to use for the
+continuous-wave source output.</p></td>
+          <td>
+                <code>500000.0</code>
           </td>
         </tr>
     </tbody>
