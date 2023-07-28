@@ -767,6 +767,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#neurotechdevkit.sources.PointSource" class="md-nav__link">
+    PointSource
+  </a>
+  
+    <nav class="md-nav" aria-label="PointSource">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neurotechdevkit.sources.PointSource.calculate_waveform_scale" class="md-nav__link">
+    calculate_waveform_scale()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neurotechdevkit.sources.PointSource2D" class="md-nav__link">
+    PointSource2D
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neurotechdevkit.sources.PointSource3D" class="md-nav__link">
+    PointSource3D
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#neurotechdevkit.sources.Source" class="md-nav__link">
     Source
   </a>
@@ -897,6 +931,8 @@
         
           
             
+          
+        
           
         
           
@@ -1061,6 +1097,20 @@
     <li class="md-nav__item">
       <a href="../../generated/gallery/plot_phased_array_source/" class="md-nav__link">
         Phased array source
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../generated/gallery/plot_time_reverse/" class="md-nav__link">
+        Time-reverse simulation for phased array
       </a>
     </li>
   
@@ -1370,6 +1420,40 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neurotechdevkit.sources.PointSource" class="md-nav__link">
+    PointSource
+  </a>
+  
+    <nav class="md-nav" aria-label="PointSource">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neurotechdevkit.sources.PointSource.calculate_waveform_scale" class="md-nav__link">
+    calculate_waveform_scale()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neurotechdevkit.sources.PointSource2D" class="md-nav__link">
+    PointSource2D
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neurotechdevkit.sources.PointSource3D" class="md-nav__link">
+    PointSource3D
+  </a>
   
 </li>
       
@@ -2877,6 +2961,190 @@ both directions.</p></td>
 
 
 
+<h2 id="neurotechdevkit.sources.PointSource" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">PointSource</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">num_dim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.Source" href="#neurotechdevkit.sources.Source">Source</a></code></p>
+
+  
+      <p>Theoretical point source.</p>
+<p>Automatically sets <code>aperture</code>, <code>focal_length</code>, and <code>direction</code>, and <code>num_points</code>.</p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="neurotechdevkit.sources.PointSource.calculate_waveform_scale" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">calculate_waveform_scale</span><span class="p">(</span><span class="n">dx</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Calculate the scale factor to apply to waveforms from point source.</p>
+<p>The scale is equal to the ratio between the density of source points
+and the density of grid points (2D: 1 / dx; 3D: 1 / dx<strong>2).
+Because the aperture is technically zero, we approximate the source
+density as the smallest grid (2D: 1 / dx; 3D: 1 / dx</strong>2).</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>dx</code></td>
+          <td>
+                <code>float</code>
+          </td>
+          <td><p>the separation between gridpoints (in meters). Assumed to be the same in
+both directions.
+Unused.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>float</code>
+          </td>
+          <td><p>The scale factor to apply to the waveform.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="neurotechdevkit.sources.PointSource2D" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">PointSource2D</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.PointSource" href="#neurotechdevkit.sources.PointSource">PointSource</a></code></p>
+
+  
+      <p>A point source in 2D.</p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="neurotechdevkit.sources.PointSource3D" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">PointSource3D</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.PointSource" href="#neurotechdevkit.sources.PointSource">PointSource</a></code></p>
+
+  
+      <p>A point source in 3D.</p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
 <h2 id="neurotechdevkit.sources.Source" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">Source</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span> <span class="n">aperture</span><span class="p">,</span> <span class="n">focal_length</span><span class="p">,</span> <span class="n">num_points</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span></code>
 
@@ -3249,10 +3517,10 @@ all directions.</p></td>
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.Source" href="#neurotechdevkit.sources.Source">Source</a></code></p>
+        Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.Source" href="#neurotechdevkit.sources.Source">Source</a></code>, <code>abc.<span title="abc.ABC">ABC</span></code></p>
 
   
-      <p>A base class for unfocused sources.</p>
+      <p>An abstract base class for unfocused sources.</p>
 <p>Automatically sets <code>focal_length</code> to <code>np.inf</code></p>
 
 
@@ -3328,6 +3596,12 @@ all directions.</p></td>
     
     
       <script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
