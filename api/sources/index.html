@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://agencyenterprise.github.io/neurotechdevkit/api/sources/">
       
       
-        <link rel="prev" href="../utils/">
+        <link rel="prev" href="../materials/">
       
       
         <link rel="next" href="../results/">
@@ -426,6 +426,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -439,20 +441,6 @@
           API
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../make/" class="md-nav__link">
-        Make
-      </a>
-    </li>
-  
-
-            
           
             
               
@@ -474,8 +462,36 @@
   
   
     <li class="md-nav__item">
-      <a href="../utils/" class="md-nav__link">
-        Utils
+      <a href="../grid/" class="md-nav__link">
+        Grid
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../problem/" class="md-nav__link">
+        Problem
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../materials/" class="md-nav__link">
+        Materials
       </a>
     </li>
   
@@ -955,6 +971,8 @@
         
           
         
+          
+        
       
       
         
@@ -997,8 +1015,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../generated/gallery/plot_scenarios/" class="md-nav__link">
-        Plot scenarios
+      <a href="../../generated/gallery/plot_adding_custom_source/" class="md-nav__link">
+        Custom source
       </a>
     </li>
   
@@ -1025,8 +1043,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../generated/gallery/plot_adding_custom_source/" class="md-nav__link">
-        Custom source
+      <a href="../../generated/gallery/plot_scenarios/" class="md-nav__link">
+        Plot scenarios
       </a>
     </li>
   
@@ -1067,6 +1085,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../generated/gallery/plot_multiple_sources/" class="md-nav__link">
+        Adding multiple sources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../generated/gallery/plot_3d/" class="md-nav__link">
         Visualizing 3D results with Napari
       </a>
@@ -1081,8 +1113,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../generated/gallery/plot_multiple_sources/" class="md-nav__link">
-        Adding multiple sources
+      <a href="../../generated/gallery/plot_scenario2_predefined_target/" class="md-nav__link">
+        Scenario 2 predefined target
       </a>
     </li>
   
@@ -1109,8 +1141,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../generated/gallery/plot_time_reverse/" class="md-nav__link">
-        Time-reverse simulation for phased array
+      <a href="../../generated/gallery/plot_full_scenario/" class="md-nav__link">
+        Implementing a full scenario
       </a>
     </li>
   
@@ -1123,8 +1155,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../generated/gallery/plot_full_scenario/" class="md-nav__link">
-        Implementing a full scenario
+      <a href="../../generated/gallery/plot_time_reverse/" class="md-nav__link">
+        Time-reverse simulation for phased array
       </a>
     </li>
   
@@ -1824,9 +1856,9 @@ all 3 directions.</p></td>
         <tr>
           <td><code>position</code></td>
           <td>
-                <code><span title="numpy.typing">npt</span>.<span title="numpy.typing.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
+                <code>list[float]</code>
           </td>
-          <td><p>a numpy float array indicating
+          <td><p>a float array indicating
 the coordinates (in meters) of the point at the center of the
 source, which is the point that bisects the line segment source.</p></td>
           <td>
@@ -1836,9 +1868,9 @@ source, which is the point that bisects the line segment source.</p></td>
         <tr>
           <td><code>direction</code></td>
           <td>
-                <code><span title="numpy.typing">npt</span>.<span title="numpy.typing.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
+                <code>list[float]</code>
           </td>
-          <td><p>a numpy float array representing
+          <td><p>a float array representing
 a vector located at position that is perpendicular to the plane
 of the source. Only the orientation of <code>direction</code> affects the
 source, the length of the vector has no affect. See the
@@ -2454,9 +2486,9 @@ for detailed explanation.</p>
         <tr>
           <td><code>position</code></td>
           <td>
-                <code><span title="numpy.typing">npt</span>.<span title="numpy.typing.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
+                <code>list[float]</code>
           </td>
-          <td><p>a numpy float array in 3D indicating the
+          <td><p>a float array in 3D indicating the
 coordinates (in meters) of the point at the center of the source, which is
 the point that bisects both the height and the aperture of the source.</p></td>
           <td>
@@ -2466,9 +2498,9 @@ the point that bisects both the height and the aperture of the source.</p></td>
         <tr>
           <td><code>direction</code></td>
           <td>
-                <code><span title="numpy.typing">npt</span>.<span title="numpy.typing.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
+                <code>list[float]</code>
           </td>
-          <td><p>a numpy float array in 3D representing a
+          <td><p>a float array in 3D representing a
 vector located at position that is perpendicular to the plane of the source.
 Only the orientation of <code>direction</code> affects the source, the length of
 the vector has no affect. See the <code>unit_direction</code> property.</p></td>
@@ -3175,10 +3207,10 @@ appropriate source geometry.</p>
         <tr>
           <td><code>position</code></td>
           <td>
-                <code><span title="numpy.typing">npt</span>.<span title="numpy.typing.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
+                <code><span title="numpy.typing">npt</span>.<span title="numpy.typing.ArrayLike">ArrayLike</span></code>
           </td>
-          <td><p>a numpy float array indicating the
-coordinates (in meters) of the point at the center of the source.</p></td>
+          <td><p>a float array indicating the coordinates (in meters) of the
+point at the center of the source.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -3186,12 +3218,12 @@ coordinates (in meters) of the point at the center of the source.</p></td>
         <tr>
           <td><code>direction</code></td>
           <td>
-                <code><span title="numpy.typing">npt</span>.<span title="numpy.typing.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
+                <code>list[float]</code>
           </td>
-          <td><p>a numpy float array representing a vector
-located at position and pointing towards the focal point. Only the
-orientation of <code>direction</code> affects the source, the length of the vector has
-no affect. See the <code>unit_direction</code> property.</p></td>
+          <td><p>a float array representing a vector located at position and pointing
+towards the focal point. Only the orientation of <code>direction</code> affects the
+source, the length of the vector has no affect. See the <code>unit_direction</code>
+property.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -3211,8 +3243,7 @@ no affect. See the <code>unit_direction</code> property.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the distance (in meters) from <code>position</code> to the focal
-point.</p></td>
+          <td><p>the distance (in meters) from <code>position</code> to the focal point.</p></td>
           <td>
               <em>required</em>
           </td>
