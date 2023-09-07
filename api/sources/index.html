@@ -17,7 +17,7 @@
         <link rel="next" href="../results/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.9">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
@@ -25,10 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -973,6 +973,10 @@
         
           
         
+          
+        
+          
+        
       
       
         
@@ -1157,6 +1161,34 @@
     <li class="md-nav__item">
       <a href="../../generated/gallery/plot_time_reverse/" class="md-nav__link">
         Time-reverse simulation for phased array
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../generated/gallery/plot_ultrasound_imaging_multiplane/" class="md-nav__link">
+        Ultrasound imaging simulation with multi-plane waves
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../generated/gallery/plot_ultrasound_imaging_scanline/" class="md-nav__link">
+        Ultrasound imaging simulation
       </a>
     </li>
   
@@ -1615,15 +1647,15 @@
 
 
 <h2 id="neurotechdevkit.sources.FocusedSource2D" class="doc doc-heading">
-        <code>FocusedSource2D</code>
+          <code>FocusedSource2D</code>
 
 
 </h2>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.Source" href="#neurotechdevkit.sources.Source">Source</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.Source" href="#neurotechdevkit.sources.Source">Source</a></code></p>
 
   
       <p>A focused source in 2D.</p>
@@ -1633,10 +1665,10 @@ taking an arc of a circle and distributing point sources evenly along that arc.<
 geometrical calculations.</p>
 
 
-
   
 
   <div class="doc doc-children">
+
 
 
 
@@ -1662,6 +1694,8 @@ geometrical calculations.</p>
 <p>The scale is equal to the ratio between the density of grid points along a line
 and the density of source points along the arc.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -1678,14 +1712,20 @@ and the density of source points along the arc.</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the separation between gridpoints (in meters). Assumed to be the same in
-both directions.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the separation between gridpoints (in meters). Assumed to be the same in
+both directions.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -1700,7 +1740,11 @@ both directions.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>The scale factor to apply to the waveform.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The scale factor to apply to the waveform.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -1722,15 +1766,15 @@ both directions.</p></td>
 
 
 <h2 id="neurotechdevkit.sources.FocusedSource3D" class="doc doc-heading">
-        <code>FocusedSource3D</code>
+          <code>FocusedSource3D</code>
 
 
 </h2>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.Source" href="#neurotechdevkit.sources.Source">Source</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.Source" href="#neurotechdevkit.sources.Source">Source</a></code></p>
 
   
       <p>A focused source in 3D.</p>
@@ -1741,10 +1785,10 @@ surface. Points are distributed according to Fibonacci spirals.</p>
 geometrical calculations.</p>
 
 
-
   
 
   <div class="doc doc-children">
+
 
 
 
@@ -1770,6 +1814,8 @@ geometrical calculations.</p>
 <p>The scale is equal to the ratio between the density of grid points in a plane
 and the density of source points along the bowl surface.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -1786,14 +1832,20 @@ and the density of source points along the bowl surface.</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the separation between gridpoints (in meters). Assumed to be the same in
-all 3 directions.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the separation between gridpoints (in meters). Assumed to be the same in
+all 3 directions.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -1808,7 +1860,11 @@ all 3 directions.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>The scale factor to apply to the waveform.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The scale factor to apply to the waveform.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -1836,11 +1892,13 @@ all 3 directions.</p></td>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.Source" href="#neurotechdevkit.sources.Source">Source</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.Source" href="#neurotechdevkit.sources.Source">Source</a></code></p>
 
   
       <p>A base class for phased array sources.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1858,9 +1916,13 @@ all 3 directions.</p></td>
           <td>
                 <code>list[float]</code>
           </td>
-          <td><p>a float array indicating
+          <td>
+            <div class="doc-md-description">
+              <p>a float array indicating
 the coordinates (in meters) of the point at the center of the
-source, which is the point that bisects the line segment source.</p></td>
+source, which is the point that bisects the line segment source.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1870,11 +1932,15 @@ source, which is the point that bisects the line segment source.</p></td>
           <td>
                 <code>list[float]</code>
           </td>
-          <td><p>a float array representing
+          <td>
+            <div class="doc-md-description">
+              <p>a float array representing
 a vector located at position that is perpendicular to the plane
 of the source. Only the orientation of <code>direction</code> affects the
 source, the length of the vector has no affect. See the
-<code>unit_direction</code> property.</p></td>
+<code>unit_direction</code> property.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1884,8 +1950,12 @@ source, the length of the vector has no affect. See the
           <td>
                 <code>int</code>
           </td>
-          <td><p>the number of point sources to use when simulating
-the source.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the number of point sources to use when simulating
+the source.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1895,7 +1965,11 @@ the source.</p></td>
           <td>
                 <code>int</code>
           </td>
-          <td><p>the number of elements of the phased array.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the number of elements of the phased array.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1905,8 +1979,12 @@ the source.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the distance (in meters) between the centers of neighboring
-elements in the phased array.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the distance (in meters) between the centers of neighboring
+elements in the phased array.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1916,7 +1994,11 @@ elements in the phased array.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the width (in meters) of each individual element of the array.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the width (in meters) of each individual element of the array.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1926,10 +2008,14 @@ elements in the phased array.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the desired tilt angle (in degrees) of the wavefront. The angle is
+          <td>
+            <div class="doc-md-description">
+              <p>the desired tilt angle (in degrees) of the wavefront. The angle is
 measured between the direction the wavefront travels and the normal to the
 surface of the transducer, with positive angles resulting in a
-counter-clockwise tilt away from the normal.</p></td>
+counter-clockwise tilt away from the normal.</p>
+            </div>
+          </td>
           <td>
                 <code>0.0</code>
           </td>
@@ -1939,10 +2025,14 @@ counter-clockwise tilt away from the normal.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the distance (in meters) from <code>position</code> to the focal
-point.</p></td>
           <td>
-                <code>np.inf</code>
+            <div class="doc-md-description">
+              <p>the distance (in meters) from <code>position</code> to the focal
+point.</p>
+            </div>
+          </td>
+          <td>
+                <code><span title="numpy">np</span>.<span title="numpy.inf">inf</span></code>
           </td>
         </tr>
         <tr>
@@ -1950,8 +2040,12 @@ point.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the delay (in seconds) that the source will wait
-before emitting.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the delay (in seconds) that the source will wait
+before emitting.</p>
+            </div>
+          </td>
           <td>
                 <code>0.0</code>
           </td>
@@ -1959,20 +2053,23 @@ before emitting.</p></td>
         <tr>
           <td><code>element_delays</code></td>
           <td>
-                <code><span title="numpy.typing">npt</span>.<span title="numpy.typing.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>] | None</code>
+                <code><span title="numpy">npt</span>.<span title="numpy.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>] | None</code>
           </td>
-          <td><p>an 1D array with the delays (in seconds) for each element of the
+          <td>
+            <div class="doc-md-description">
+              <p>an 1D array with the delays (in seconds) for each element of the
 phased array. Delays from <code>element_delays</code> take precedence; No other
 argument affected the delays (<code>tilt_angle</code>, <code>focal_length</code> or <code>delay</code>)
 would be considered. ValueError will be raised if provided values for either
-<code>tilt_angle</code>, <code>focal_length</code> or <code>delay</code> are non-default.</p></td>
+<code>tilt_angle</code>, <code>focal_length</code> or <code>delay</code> are non-default.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
         </tr>
     </tbody>
   </table>
-
 
 
   
@@ -2199,6 +2296,7 @@ element will have the same delay.</p>
 
 
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -2216,6 +2314,7 @@ element will have the same delay.</p>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -2238,6 +2337,8 @@ element will have the same delay.</p>
 <code>tilt_angle</code> respect to the normal. Positive angles lead to counter-clockwise
 rotations.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -2254,8 +2355,12 @@ rotations.</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>angle (in degrees) between the vector normal to the source
-        and the wavefront.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>angle (in degrees) between the vector normal to the source
+        and the wavefront.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2265,7 +2370,11 @@ rotations.</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the pitch (in meters) of the source.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the pitch (in meters) of the source.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2275,14 +2384,20 @@ rotations.</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the speed of sound (in meters/second) of the material where
-   the source is placed.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the speed of sound (in meters/second) of the material where
+   the source is placed.</p>
+            </div>
+          </td>
           <td>
                 <code>1500</code>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -2297,7 +2412,11 @@ rotations.</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>The delay (in seconds) between two consecutive elements.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The delay (in seconds) between two consecutive elements.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2319,15 +2438,15 @@ rotations.</p>
 
 
 <h2 id="neurotechdevkit.sources.PhasedArraySource2D" class="doc doc-heading">
-        <code>PhasedArraySource2D</code>
+          <code>PhasedArraySource2D</code>
 
 
 </h2>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.PhasedArraySource" href="#neurotechdevkit.sources.PhasedArraySource">PhasedArraySource</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.PhasedArraySource" href="#neurotechdevkit.sources.PhasedArraySource">PhasedArraySource</a></code></p>
 
   
       <p>A phased array source in 2D.</p>
@@ -2339,7 +2458,6 @@ Distributed evenly in <code>num_elements</code>.</p>
 remainder number of points from the even division will be discarded.</p>
 <p>See <a href="https://en.wikipedia.org/wiki/Phased_array_ultrasonics">Phased array ultras...</a>
 for detailed explanation.</p>
-
 
 
   
@@ -2376,6 +2494,7 @@ for detailed explanation.</p>
 
 
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -2391,6 +2510,8 @@ for detailed explanation.</p>
       <p>Calculate the scale factor to apply to waveforms from this source.</p>
 <p>The scale is equal to the ratio between the density of grid points along a line
 and the density of source points along the line segment source.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2408,14 +2529,20 @@ and the density of source points along the line segment source.</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the separation between gridpoints (in meters). Assumed to be the same in
-both directions.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the separation between gridpoints (in meters). Assumed to be the same in
+both directions.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -2430,7 +2557,11 @@ both directions.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>The scale factor to apply to the waveform.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The scale factor to apply to the waveform.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2458,8 +2589,8 @@ both directions.</p></td>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.PhasedArraySource" href="#neurotechdevkit.sources.PhasedArraySource">PhasedArraySource</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.PhasedArraySource" href="#neurotechdevkit.sources.PhasedArraySource">PhasedArraySource</a></code></p>
 
   
       <p>A linear phased array source in 3D.</p>
@@ -2471,6 +2602,8 @@ sources distributed evenly in <code>num_elements</code>.</p>
 remainder number of points from the even division will be discarded.</p>
 <p>See <a href="https://en.wikipedia.org/wiki/Phased_array_ultrasonics">Phased array ultras...</a>
 for detailed explanation.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2488,9 +2621,13 @@ for detailed explanation.</p>
           <td>
                 <code>list[float]</code>
           </td>
-          <td><p>a float array in 3D indicating the
+          <td>
+            <div class="doc-md-description">
+              <p>a float array in 3D indicating the
 coordinates (in meters) of the point at the center of the source, which is
-the point that bisects both the height and the aperture of the source.</p></td>
+the point that bisects both the height and the aperture of the source.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2500,10 +2637,14 @@ the point that bisects both the height and the aperture of the source.</p></td>
           <td>
                 <code>list[float]</code>
           </td>
-          <td><p>a float array in 3D representing a
+          <td>
+            <div class="doc-md-description">
+              <p>a float array in 3D representing a
 vector located at position that is perpendicular to the plane of the source.
 Only the orientation of <code>direction</code> affects the source, the length of
-the vector has no affect. See the <code>unit_direction</code> property.</p></td>
+the vector has no affect. See the <code>unit_direction</code> property.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2511,13 +2652,17 @@ the vector has no affect. See the <code>unit_direction</code> property.</p></td>
         <tr>
           <td><code>center_line</code></td>
           <td>
-                <code><span title="numpy.typing">npt</span>.<span title="numpy.typing.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
+                <code><span title="numpy">npt</span>.<span title="numpy.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
           </td>
-          <td><p>A 3D vector which is parallel to the line through the centers of
+          <td>
+            <div class="doc-md-description">
+              <p>A 3D vector which is parallel to the line through the centers of
 the elements in the linear array. This vector must be perpendicular to
 <code>direction</code>. If the vector is not perpendicular, only the perpendicular
 component will be considered. Only the orientation affects the source, the
-length of the vector has no effect. See <code>unit_center_line</code> property.</p></td>
+length of the vector has no effect. See <code>unit_center_line</code> property.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2527,10 +2672,14 @@ length of the vector has no effect. See <code>unit_center_line</code> property.<
           <td>
                 <code>int</code>
           </td>
-          <td><p>the number of point sources to use when simulating the source.
+          <td>
+            <div class="doc-md-description">
+              <p>the number of point sources to use when simulating the source.
 If the number of points is not divisible evenly by the number of elements,
 the number of points would be truncated to a multiple of the maximum even
-divisor.</p></td>
+divisor.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2540,7 +2689,11 @@ divisor.</p></td>
           <td>
                 <code>int</code>
           </td>
-          <td><p>the number of elements of the phased array.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the number of elements of the phased array.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2550,8 +2703,12 @@ divisor.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the distance (in meters) between the centers of neighboring elements in
-the phased array.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the distance (in meters) between the centers of neighboring elements in
+the phased array.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2561,9 +2718,13 @@ the phased array.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the height (in meters) of the elements of the array. <code>height</code> is
+          <td>
+            <div class="doc-md-description">
+              <p>the height (in meters) of the elements of the array. <code>height</code> is
 measured along the direction in the plane of the element that is
-perpendicular to <code>center_line</code>.</p></td>
+perpendicular to <code>center_line</code>.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2573,7 +2734,11 @@ perpendicular to <code>center_line</code>.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the width (in meters) of each individual element of the array.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the width (in meters) of each individual element of the array.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2583,10 +2748,14 @@ perpendicular to <code>center_line</code>.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the desired tilt angle (in degrees) of the wavefront. The angle is
+          <td>
+            <div class="doc-md-description">
+              <p>the desired tilt angle (in degrees) of the wavefront. The angle is
 measured between the direction the wavefront travels and the normal to the
 surface of the transducer, with positive angles resulting in a
-counter-clockwise tilt away from the normal.</p></td>
+counter-clockwise tilt away from the normal.</p>
+            </div>
+          </td>
           <td>
                 <code>0.0</code>
           </td>
@@ -2596,10 +2765,14 @@ counter-clockwise tilt away from the normal.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the distance (in meters) from <code>position</code> to the focal
-point.</p></td>
           <td>
-                <code>np.inf</code>
+            <div class="doc-md-description">
+              <p>the distance (in meters) from <code>position</code> to the focal
+point.</p>
+            </div>
+          </td>
+          <td>
+                <code><span title="numpy">np</span>.<span title="numpy.inf">inf</span></code>
           </td>
         </tr>
         <tr>
@@ -2607,8 +2780,12 @@ point.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the delay (in seconds) that the source will wait before
-emitting.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the delay (in seconds) that the source will wait before
+emitting.</p>
+            </div>
+          </td>
           <td>
                 <code>0.0</code>
           </td>
@@ -2616,20 +2793,23 @@ emitting.</p></td>
         <tr>
           <td><code>element_delays</code></td>
           <td>
-                <code><span title="numpy.typing">npt</span>.<span title="numpy.typing.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>] | None</code>
+                <code><span title="numpy">npt</span>.<span title="numpy.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>] | None</code>
           </td>
-          <td><p>an 1D array with the delays (in seconds) for each element of the
+          <td>
+            <div class="doc-md-description">
+              <p>an 1D array with the delays (in seconds) for each element of the
 phased array. Delays from <code>element_delays</code> take precedence; No other
 argument affected the delays (<code>tilt_angle</code>, <code>focal_length</code> or <code>delay</code>)
 would be considered. ValueError will be raised if provided values for either
-<code>tilt_angle</code>, <code>focal_length</code> or <code>delay</code> are non-default.</p></td>
+<code>tilt_angle</code>, <code>focal_length</code> or <code>delay</code> are non-default.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
         </tr>
     </tbody>
   </table>
-
 
 
   
@@ -2708,6 +2888,7 @@ would be considered. ValueError will be raised if provided values for either
 
 
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -2723,6 +2904,8 @@ would be considered. ValueError will be raised if provided values for either
       <p>Calculate the scale factor to apply to waveforms from this source.</p>
 <p>The scale is equal to the ratio between the density of grid points along a
 plane and the density of source points along the planar source.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2740,14 +2923,20 @@ plane and the density of source points along the planar source.</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the separation between gridpoints (in meters). Assumed to be the same in
-both directions.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the separation between gridpoints (in meters). Assumed to be the same in
+both directions.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -2762,7 +2951,11 @@ both directions.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>The scale factor to apply to the waveform.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The scale factor to apply to the waveform.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2784,15 +2977,15 @@ both directions.</p></td>
 
 
 <h2 id="neurotechdevkit.sources.PlanarSource2D" class="doc doc-heading">
-        <code>PlanarSource2D</code>
+          <code>PlanarSource2D</code>
 
 
 </h2>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.UnfocusedSource" href="#neurotechdevkit.sources.UnfocusedSource">UnfocusedSource</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.UnfocusedSource" href="#neurotechdevkit.sources.UnfocusedSource">UnfocusedSource</a></code></p>
 
   
       <p>A planar source in 2D.</p>
@@ -2800,10 +2993,10 @@ both directions.</p></td>
 of <code>num_points</code> point sources evenly distributed along the line segment.</p>
 
 
-
   
 
   <div class="doc doc-children">
+
 
 
 
@@ -2829,6 +3022,8 @@ of <code>num_points</code> point sources evenly distributed along the line segme
 <p>The scale is equal to the ratio between the density of grid points along a line
 and the density of source points along the line segment source.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -2845,14 +3040,20 @@ and the density of source points along the line segment source.</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the separation between gridpoints (in meters). Assumed to be the same in
-both directions.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the separation between gridpoints (in meters). Assumed to be the same in
+both directions.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -2867,7 +3068,11 @@ both directions.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>The scale factor to apply to the waveform.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The scale factor to apply to the waveform.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2889,15 +3094,15 @@ both directions.</p></td>
 
 
 <h2 id="neurotechdevkit.sources.PlanarSource3D" class="doc doc-heading">
-        <code>PlanarSource3D</code>
+          <code>PlanarSource3D</code>
 
 
 </h2>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.UnfocusedSource" href="#neurotechdevkit.sources.UnfocusedSource">UnfocusedSource</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.UnfocusedSource" href="#neurotechdevkit.sources.UnfocusedSource">UnfocusedSource</a></code></p>
 
   
       <p>A planar source in 3D.</p>
@@ -2905,10 +3110,10 @@ both directions.</p></td>
 disk and distributing <code>num_points</code> point sources according to Fibonacci spirals.</p>
 
 
-
   
 
   <div class="doc doc-children">
+
 
 
 
@@ -2934,6 +3139,8 @@ disk and distributing <code>num_points</code> point sources according to Fibonac
 <p>The scale is equal to the ratio between the density of grid points along a
 plane and the density of source points along the disk source.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -2950,14 +3157,20 @@ plane and the density of source points along the disk source.</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the separation between gridpoints (in meters). Assumed to be the same in
-both directions.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the separation between gridpoints (in meters). Assumed to be the same in
+both directions.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -2972,7 +3185,11 @@ both directions.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>The scale factor to apply to the waveform.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The scale factor to apply to the waveform.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -3000,18 +3217,18 @@ both directions.</p></td>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.Source" href="#neurotechdevkit.sources.Source">Source</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.Source" href="#neurotechdevkit.sources.Source">Source</a></code></p>
 
   
       <p>Theoretical point source.</p>
 <p>Automatically sets <code>aperture</code>, <code>focal_length</code>, and <code>direction</code>, and <code>num_points</code>.</p>
 
 
-
   
 
   <div class="doc doc-children">
+
 
 
 
@@ -3039,6 +3256,8 @@ and the density of grid points (2D: 1 / dx; 3D: 1 / dx<strong>2).
 Because the aperture is technically zero, we approximate the source
 density as the smallest grid (2D: 1 / dx; 3D: 1 / dx</strong>2).</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -3055,15 +3274,21 @@ density as the smallest grid (2D: 1 / dx; 3D: 1 / dx</strong>2).</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the separation between gridpoints (in meters). Assumed to be the same in
+          <td>
+            <div class="doc-md-description">
+              <p>the separation between gridpoints (in meters). Assumed to be the same in
 both directions.
-Unused.</p></td>
+Unused.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -3078,7 +3303,11 @@ Unused.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>The scale factor to apply to the waveform.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The scale factor to apply to the waveform.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -3106,12 +3335,11 @@ Unused.</p></td>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.PointSource" href="#neurotechdevkit.sources.PointSource">PointSource</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.PointSource" href="#neurotechdevkit.sources.PointSource">PointSource</a></code></p>
 
   
       <p>A point source in 2D.</p>
-
 
 
   
@@ -3145,12 +3373,11 @@ Unused.</p></td>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.PointSource" href="#neurotechdevkit.sources.PointSource">PointSource</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.PointSource" href="#neurotechdevkit.sources.PointSource">PointSource</a></code></p>
 
   
       <p>A point source in 3D.</p>
-
 
 
   
@@ -3184,14 +3411,16 @@ Unused.</p></td>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code>abc.<span title="abc.ABC">ABC</span></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code>abc.<span title="abc.ABC">ABC</span></code></p>
 
   
       <p>An abstract class that represents a generic Source object.</p>
 <p>Sources can be 2D or 3D, which affects the shape of arrays representing coordinates
 or vectors. Sources are composed of point sources evenly distributed over the
 appropriate source geometry.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3207,10 +3436,14 @@ appropriate source geometry.</p>
         <tr>
           <td><code>position</code></td>
           <td>
-                <code><span title="numpy.typing">npt</span>.<span title="numpy.typing.ArrayLike">ArrayLike</span></code>
+                <code><span title="numpy">npt</span>.<span title="numpy.ArrayLike">ArrayLike</span></code>
           </td>
-          <td><p>a float array indicating the coordinates (in meters) of the
-point at the center of the source.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>a float array indicating the coordinates (in meters) of the
+point at the center of the source.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3220,10 +3453,14 @@ point at the center of the source.</p></td>
           <td>
                 <code>list[float]</code>
           </td>
-          <td><p>a float array representing a vector located at position and pointing
+          <td>
+            <div class="doc-md-description">
+              <p>a float array representing a vector located at position and pointing
 towards the focal point. Only the orientation of <code>direction</code> affects the
 source, the length of the vector has no affect. See the <code>unit_direction</code>
-property.</p></td>
+property.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3233,7 +3470,11 @@ property.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the width (in meters) of the source.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the width (in meters) of the source.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3243,7 +3484,11 @@ property.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the distance (in meters) from <code>position</code> to the focal point.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the distance (in meters) from <code>position</code> to the focal point.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3253,7 +3498,11 @@ property.</p></td>
           <td>
                 <code>int</code>
           </td>
-          <td><p>the number of point sources to use when simulating the source.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the number of point sources to use when simulating the source.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3263,15 +3512,18 @@ property.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the delay (in seconds) that the source will wait before
-emitting. Defaults to 0.0.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the delay (in seconds) that the source will wait before
+emitting. Defaults to 0.0.</p>
+            </div>
+          </td>
           <td>
                 <code>0.0</code>
           </td>
         </tr>
     </tbody>
   </table>
-
 
 
   
@@ -3461,6 +3713,7 @@ unit length. It points in the same direction as the <code>direction</code> param
 
 
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -3481,6 +3734,8 @@ unit length. It points in the same direction as the <code>direction</code> param
 <p>The scale depends on the relative density of source points vs grid points.</p>
 <p>This method must be implemented by all concrete Source classes.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -3497,14 +3752,20 @@ unit length. It points in the same direction as the <code>direction</code> param
           <td>
                 <code>float</code>
           </td>
-          <td><p>the separation (in meters) between gridpoints. Assumed to be the same in
-all directions.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the separation (in meters) between gridpoints. Assumed to be the same in
+all directions.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -3519,7 +3780,11 @@ all directions.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>The scale factor to apply to the waveform.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The scale factor to apply to the waveform.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -3547,13 +3812,12 @@ all directions.</p></td>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.Source" href="#neurotechdevkit.sources.Source">Source</a></code>, <code>abc.<span title="abc.ABC">ABC</span></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.sources.Source" href="#neurotechdevkit.sources.Source">Source</a></code>, <code>abc.<span title="abc.ABC">ABC</span></code></p>
 
   
       <p>An abstract base class for unfocused sources.</p>
 <p>Automatically sets <code>focal_length</code> to <code>np.inf</code></p>
-
 
 
   
@@ -3623,16 +3887,22 @@ all directions.</p></td>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        
+          <script src="../../javascripts/mathjax.js"></script>
+        
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
       
     
   </body>

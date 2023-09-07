@@ -17,7 +17,7 @@
         <link rel="next" href="../sources/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.9">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
@@ -25,10 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -665,6 +665,10 @@
         
           
         
+          
+        
+          
+        
       
       
         
@@ -855,6 +859,34 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../generated/gallery/plot_ultrasound_imaging_multiplane/" class="md-nav__link">
+        Ultrasound imaging simulation with multi-plane waves
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../generated/gallery/plot_ultrasound_imaging_scanline/" class="md-nav__link">
+        Ultrasound imaging simulation
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -999,7 +1031,7 @@
 
 
 <h2 id="neurotechdevkit.materials.AttenuationConstant" class="doc doc-heading">
-        <code>AttenuationConstant</code>
+          <code>AttenuationConstant</code>
 
   
   <span class="doc doc-labels">
@@ -1015,10 +1047,10 @@
       <p>The parameters of the attenuation constant.</p>
 
 
-
   
 
   <div class="doc doc-children">
+
 
 
 
@@ -1042,11 +1074,13 @@
   
       <p>Calculate the absorption coefficient for a given center frequency.</p>
 
-<details class="the-absorption-coefficient-is-calculated-using-the-following-formula">
+<details class="the-absorption-coefficient-is-calculated-using-the-following-formula" open>
   <summary>The absorption coefficient is calculated using the following formula</summary>
   <p>α(f) = α0 * f^b</p>
 </details>      <p>We convert the absorption coefficient from Np/m/Hz to dB/m/Hz
 multiplying it by 8.6860000037.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1064,13 +1098,19 @@ multiplying it by 8.6860000037.</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>in Hz</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>in Hz</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -1085,7 +1125,11 @@ multiplying it by 8.6860000037.</p>
 <td><code>float</code></td>          <td>
                 <code>float</code>
           </td>
-          <td><p>attenuation in dB/cm/MHz</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>attenuation in dB/cm/MHz</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -1107,7 +1151,7 @@ multiplying it by 8.6860000037.</p>
 
 
 <h2 id="neurotechdevkit.materials.Material" class="doc doc-heading">
-        <code>Material</code>
+          <code>Material</code>
 
   
   <span class="doc doc-labels">
@@ -1118,17 +1162,17 @@ multiplying it by 8.6860000037.</p>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><span title="neurotechdevkit.materials._BaseMaterial">_BaseMaterial</span></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="neurotechdevkit.materials._BaseMaterial">_BaseMaterial</span></code></p>
 
   
       <p>An NDK Material with an attenuation coefficient.</p>
 
 
-
   
 
   <div class="doc doc-children">
+
 
 
 
@@ -1152,6 +1196,8 @@ multiplying it by 8.6860000037.</p>
   
       <p>Return a Struct representation of the material.</p>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -1165,7 +1211,11 @@ multiplying it by 8.6860000037.</p>
 <td><code>Struct</code></td>          <td>
                 <code><span title="mosaic.types.Struct">Struct</span></code>
           </td>
-          <td><p>a Struct representation of the material.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>a Struct representation of the material.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -1181,6 +1231,7 @@ multiplying it by 8.6860000037.</p>
   </div>
 
 </div>
+
 
 
 <div class="doc doc-object doc-function">
@@ -1197,6 +1248,8 @@ multiplying it by 8.6860000037.</p>
   
       <p>Get a material with properties used in the neurotechdevkit scenarios.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -1213,7 +1266,11 @@ multiplying it by 8.6860000037.</p>
           <td>
                 <code>str</code>
           </td>
-          <td><p>the name of the material. E.g. "water"</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the name of the material. E.g. "water"</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1223,14 +1280,20 @@ multiplying it by 8.6860000037.</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>The center frequency of the
-transducer. Defaults to 5.0e5.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The center frequency of the
+transducer. Defaults to 5.0e5.</p>
+            </div>
+          </td>
           <td>
                 <code>500000.0</code>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Raises:</strong></p>
   <table>
@@ -1245,10 +1308,16 @@ transducer. Defaults to 5.0e5.</p></td>
           <td>
                 <code>ValueError</code>
           </td>
-          <td><p>raised if the material is not supported.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>raised if the material is not supported.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -1263,7 +1332,11 @@ transducer. Defaults to 5.0e5.</p></td>
 <td><code>Material</code></td>          <td>
                 <code><a class="autorefs autorefs-internal" title="neurotechdevkit.materials.Material" href="#neurotechdevkit.materials.Material">Material</a></code>
           </td>
-          <td><p>a material with properties used in the neurotechdevkit.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>a material with properties used in the neurotechdevkit.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -1271,6 +1344,7 @@ transducer. Defaults to 5.0e5.</p></td>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -1286,6 +1360,8 @@ transducer. Defaults to 5.0e5.</p></td>
   
       <p>Get the render color for a material.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -1302,13 +1378,19 @@ transducer. Defaults to 5.0e5.</p></td>
           <td>
                 <code>str</code>
           </td>
-          <td><p>the name of the material. E.g. "water"</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the name of the material. E.g. "water"</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Raises:</strong></p>
   <table>
@@ -1323,10 +1405,16 @@ transducer. Defaults to 5.0e5.</p></td>
           <td>
                 <code>ValueError</code>
           </td>
-          <td><p>raised if the material is not supported.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>raised if the material is not supported.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -1341,7 +1429,11 @@ transducer. Defaults to 5.0e5.</p></td>
 <td><code>str</code></td>          <td>
                 <code>str</code>
           </td>
-          <td><p>the render color of the material.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the render color of the material.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -1396,16 +1488,22 @@ transducer. Defaults to 5.0e5.</p></td>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        
+          <script src="../../javascripts/mathjax.js"></script>
+        
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
       
     
   </body>

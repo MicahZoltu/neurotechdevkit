@@ -1,0 +1,1495 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://agencyenterprise.github.io/neurotechdevkit/generated/gallery/plot_ultrasound_imaging_multiplane/">
+      
+      
+        <link rel="prev" href="../plot_time_reverse/">
+      
+      
+        <link rel="next" href="../plot_ultrasound_imaging_scanline/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Ultrasound imaging simulation with multi-plane waves - Neurotech Development Kit</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../css/mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../sg_gallery-binder.css">
+    
+      <link rel="stylesheet" href="../../../sg_gallery-dataframe.css">
+    
+      <link rel="stylesheet" href="../../../sg_gallery-rendered-html.css">
+    
+      <link rel="stylesheet" href="../../../sg_gallery.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ultrasound-imaging-simulation-with-multi-plane-waves" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Neurotech Development Kit" class="md-header__button md-logo" aria-label="Neurotech Development Kit" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Neurotech Development Kit
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ultrasound imaging simulation with multi-plane waves
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/agencyenterprise/neurotechdevkit" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Neurotech Development Kit" class="md-nav__button md-logo" aria-label="Neurotech Development Kit" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Neurotech Development Kit
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/agencyenterprise/neurotechdevkit" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Usage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Usage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../usage/loading_scenarios/" class="md-nav__link">
+        Scenarios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../usage/defining_sources/" class="md-nav__link">
+        Sources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../usage/running_simulation/" class="md-nav__link">
+        Simulation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../usage/troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../usage/gpu/" class="md-nav__link">
+        GPU support
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/scenarios/" class="md-nav__link">
+        Scenarios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/grid/" class="md-nav__link">
+        Grid
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/problem/" class="md-nav__link">
+        Problem
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/materials/" class="md-nav__link">
+        Materials
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/sources/" class="md-nav__link">
+        Sources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/results/" class="md-nav__link">
+        Results
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Examples</a>
+          
+            <label for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plot_pulsed_simulation/" class="md-nav__link">
+        Plot pulsed simulation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plot_adding_custom_source/" class="md-nav__link">
+        Custom source
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plot_store_results/" class="md-nav__link">
+        Save and load results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plot_scenarios/" class="md-nav__link">
+        Plot scenarios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plot_metrics/" class="md-nav__link">
+        Reading simulation metrics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plot_customized_center_frequency/" class="md-nav__link">
+        Custom center frequency
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plot_multiple_sources/" class="md-nav__link">
+        Adding multiple sources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plot_3d/" class="md-nav__link">
+        Visualizing 3D results with Napari
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plot_scenario2_predefined_target/" class="md-nav__link">
+        Scenario 2 predefined target
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plot_phased_array_source/" class="md-nav__link">
+        Phased array source
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plot_full_scenario/" class="md-nav__link">
+        Implementing a full scenario
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plot_time_reverse/" class="md-nav__link">
+        Time-reverse simulation for phased array
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Ultrasound imaging simulation with multi-plane waves
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Ultrasound imaging simulation with multi-plane waves
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#define-a-scenario" class="md-nav__link">
+    Define a scenario
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plot_ultrasound_imaging_scanline/" class="md-nav__link">
+        Ultrasound imaging simulation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/" class="md-nav__link">
+        Contributing
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#define-a-scenario" class="md-nav__link">
+    Define a scenario
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<!--
+ DO NOT EDIT.
+ THIS FILE WAS AUTOMATICALLY GENERATED BY mkdocs-gallery.
+ TO MAKE CHANGES, EDIT THE SOURCE PYTHON FILE:
+ "docs/examples/plot_ultrasound_imaging_multiplane.py"
+ LINE NUMBERS ARE GIVEN BELOW.
+-->
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a href="#download_links">here</a>
+to download the full example code</p>
+</div>
+<h1 id="ultrasound-imaging-simulation-with-multi-plane-waves">Ultrasound imaging simulation with multi-plane waves</h1>
+<p>Ultrasound imaging is a medical imaging technique that uses sound waves to
+create visual representations of internal body structures. It is widely used in
+various medical fields, including obstetrics and cardiology, for diagnostic
+purposes. The technology relies on the principle that sound waves can penetrate
+and scatter off tissues, generating echoes that are then used to create detailed
+images.</p>
+<p>In this notebook, we continue using NDK to simulate the image captured by an
+ultrasound transducer, as a follow up to the <code>plot_ultrasound_imaging_scanline</code>
+example.</p>
+<p>We'll follow a similar three step process:</p>
+<ol>
+<li>transmit pulse</li>
+<li>receive echo</li>
+<li>reconstruct image</li>
+</ol>
+<p>Here, we'll use a phased array transducer to transmit multiple unfocused plane
+waves at different angles. We'll then receive the echoes and reconstruct the
+image using the same beamforming and demodulation techniques as the
+<code>plot_ultrasound_imaging_scanline</code> example.</p>
+<p>For more details, check out the <code>plot_ultrasound_imaging_scanline</code> example
+first.</p>
+<!-- GENERATED FROM PYTHON SOURCE LINES 32-46 -->
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kn">import</span> <span class="nn">tqdm.notebook</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kn">import</span> <span class="nn">neurotechdevkit</span> <span class="k">as</span> <span class="nn">ndk</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># Imaging modules</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="kn">from</span> <span class="nn">neurotechdevkit.imaging</span> <span class="kn">import</span> <span class="n">beamform</span><span class="p">,</span> <span class="n">demodulate</span><span class="p">,</span> <span class="n">util</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="kn">from</span> <span class="nn">neurotechdevkit.results</span> <span class="kn">import</span> <span class="n">PulsedResult2D</span><span class="p">,</span> <span class="n">SteadyStateResult2D</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="kn">from</span> <span class="nn">neurotechdevkit.scenarios.built_in</span> <span class="kn">import</span> <span class="n">Scenario3</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="kn">from</span> <span class="nn">neurotechdevkit.sources</span> <span class="kn">import</span> <span class="n">PhasedArraySource2D</span>
+</code></pre></div>
+<!-- GENERATED FROM PYTHON SOURCE LINES 47-48 -->
+
+<p>Scenario parameters</p>
+<!-- GENERATED FROM PYTHON SOURCE LINES 48-72 -->
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">SPEED_OF_SOUND_WATER</span> <span class="o">=</span> <span class="mi">1500</span>  <span class="c1"># meters per second</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Plane-wave pulse parameters</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">TONE_CENTER_FREQUENCY</span> <span class="o">=</span> <span class="mf">0.5e6</span>  <span class="c1"># Hz</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">TILT_ANGLES_DEG</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">start</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">5</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">)</span>  <span class="c1"># Plane-wave pulses</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># Phased array transducer parameters</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">ARRAY_PITCH</span> <span class="o">=</span> <span class="mf">300e-6</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">ARRAY_ELEMENT_WIDTH</span> <span class="o">=</span> <span class="mf">270e-6</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">ARRAY_NUM_ELEMENTS</span> <span class="o">=</span> <span class="mi">128</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">TRANSDUCER_6DB_PULSE_ECHO_FRACTIONAL_BANDWIDTH</span> <span class="o">=</span> <span class="p">(</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="mf">0.5</span>  <span class="c1"># transmit/receive frequency bandwidth as a fraction of center frequency</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">)</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="c1"># Simulation parameters - choosing somewhat arbitrary values</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="n">SAMPLING_POINTS_PER_PERIOD</span> <span class="o">=</span> <span class="mi">24</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="n">RANDOM_SEED</span> <span class="o">=</span> <span class="mi">58295</span>  <span class="c1"># Use if we need the specific function to be deterministic</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>    <span class="n">seed</span><span class="o">=</span><span class="mi">58295</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="p">)</span>  <span class="c1"># Use if we only need the notebook to be deterministic</span>
+</code></pre></div>
+<!-- GENERATED FROM PYTHON SOURCE LINES 73-87 -->
+
+<h2 id="define-a-scenario">Define a scenario</h2>
+<p>Ultrasound imaging measures the scattering of sound waves, which occur due to
+changes in acoustic impedance (speed and density). In normal tissue, these
+changes occur across different scales. Large tissue boundaries cause specular
+scattering, and microscopic heterogeneities cause diffuse scattering.</p>
+<p>To mimic these properties, we create ultrasound phantoms that are similarly
+heterogeneous across different scales. Their bulk acoustic impedance differs
+from the background medium (water), and their within-phantom impedances also
+vary at small scales.</p>
+<p>For the transducer, we choose a phased array that can both steer ultrasonic
+waves and record independently at multiple elements.</p>
+<!-- GENERATED FROM PYTHON SOURCE LINES 89-92 -->
+
+<p>We visualize the scenario layout with the material masks and
+then visualize the acoustic properties that affect wave scattering and
+propagation.</p>
+<!-- GENERATED FROM PYTHON SOURCE LINES 94-125 -->
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">create_scenario</span><span class="p">(</span><span class="n">tilt_angle</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Scenario3</span><span class="p">:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Helper function to initialize scenario with different tilt angles.&quot;&quot;&quot;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">scenario</span> <span class="o">=</span> <span class="n">Scenario3</span><span class="p">()</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">scenario</span><span class="o">.</span><span class="n">center_frequency</span> <span class="o">=</span> <span class="n">TONE_CENTER_FREQUENCY</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">source_position</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">unit_direction</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="n">source</span> <span class="o">=</span> <span class="n">PhasedArraySource2D</span><span class="p">(</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="n">position</span><span class="o">=</span><span class="n">source_position</span><span class="p">,</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="n">direction</span><span class="o">=</span><span class="n">unit_direction</span><span class="p">,</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        <span class="n">num_elements</span><span class="o">=</span><span class="n">ARRAY_NUM_ELEMENTS</span><span class="p">,</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        <span class="n">num_points</span><span class="o">=</span><span class="n">ARRAY_NUM_ELEMENTS</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>        <span class="n">tilt_angle</span><span class="o">=</span><span class="n">tilt_angle</span><span class="p">,</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        <span class="c1"># Unfocused source for plane-wave</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        <span class="n">focal_length</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>        <span class="n">pitch</span><span class="o">=</span><span class="n">ARRAY_PITCH</span><span class="p">,</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>        <span class="n">element_width</span><span class="o">=</span><span class="n">ARRAY_ELEMENT_WIDTH</span><span class="p">,</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>    <span class="p">)</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>    <span class="n">scenario</span><span class="o">.</span><span class="n">sources</span> <span class="o">=</span> <span class="p">[</span><span class="n">source</span><span class="p">]</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    <span class="c1"># Place point receivers at the transducer sources</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>    <span class="n">scenario</span><span class="o">.</span><span class="n">receiver_coords</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">element_positions</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>    <span class="n">scenario</span><span class="o">.</span><span class="n">make_grid</span><span class="p">()</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>    <span class="n">scenario</span><span class="o">.</span><span class="n">compile_problem</span><span class="p">()</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>    <span class="k">return</span> <span class="n">scenario</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="n">scenario</span> <span class="o">=</span> <span class="n">create_scenario</span><span class="p">()</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="n">scenario</span><span class="o">.</span><span class="n">render_layout</span><span class="p">()</span>
+</code></pre></div>
+<p><img alt="Scenario Layout" class="mkd-glr-single-img" src="../images/mkd_glr_plot_ultrasound_imaging_multiplane_001.png" srcset="../images/mkd_glr_plot_ultrasound_imaging_multiplane_001.png" /></p>
+<!-- GENERATED FROM PYTHON SOURCE LINES 126-131 -->
+
+<p>Plot the relevant material metrics</p>
+<ul>
+<li>vp - speed of sound</li>
+<li>rho - density</li>
+<li>alpha - attenuation</li>
+</ul>
+<!-- GENERATED FROM PYTHON SOURCE LINES 131-140 -->
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">attribute</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s2">&quot;vp&quot;</span><span class="p">,</span> <span class="s2">&quot;rho&quot;</span><span class="p">,</span> <span class="s2">&quot;alpha&quot;</span><span class="p">]):</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">im</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">problem</span><span class="o">.</span><span class="n">medium</span><span class="p">,</span> <span class="n">attribute</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">axs</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">attribute</span><span class="p">)</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">axs</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;y [a.u.]&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="n">axs</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;x [a.u.]&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="vp, rho, alpha" class="mkd-glr-single-img" src="../images/mkd_glr_plot_ultrasound_imaging_multiplane_002.png" srcset="../images/mkd_glr_plot_ultrasound_imaging_multiplane_002.png" /></p>
+<!-- GENERATED FROM PYTHON SOURCE LINES 141-151 -->
+
+<h1 id="1-transmit-ultrasonic-plane-waves">1. Transmit ultrasonic plane waves</h1>
+<p>We run multiple NDK simulations, each sending an ultrasonic plane wave at the
+phantoms at different angles. Each echo provides a low-resolution image of the
+target object. By summing the complex-valued images, the low-resolution
+image's phases cancel out and create a higher-resolution "compound" image.</p>
+<p>In this example, we're using the terms pulse/echo/plane-wave somewhat
+interchangeably, but more specifically pulse=<code>transmitted ultrasonic wave</code>,
+echo=<code>the sensor signals received from a given pulse</code>, and plane-wave=<code>a
+specific kind of pulse where the wavefront is a plane/line</code></p>
+<!-- GENERATED FROM PYTHON SOURCE LINES 153-154 -->
+
+<p>Let's first visualize the plane wave at the default tilt angle (0&deg;).</p>
+<!-- GENERATED FROM PYTHON SOURCE LINES 156-160 -->
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">result_steady_state</span> <span class="o">=</span> <span class="n">create_scenario</span><span class="p">()</span><span class="o">.</span><span class="n">simulate_steady_state</span><span class="p">()</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result_steady_state</span><span class="p">,</span> <span class="n">SteadyStateResult2D</span><span class="p">)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">result_steady_state</span><span class="o">.</span><span class="n">render_steady_state_amplitudes</span><span class="p">()</span>
+</code></pre></div>
+<p><img alt="Steady-State Wave Amplitude" class="mkd-glr-single-img" src="../images/mkd_glr_plot_ultrasound_imaging_multiplane_003.png" srcset="../images/mkd_glr_plot_ultrasound_imaging_multiplane_003.png" /></p>
+<p class="mkd-glr-script-out">Out:</p>
+<div class="mkd-glr-script-out-disp highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Estimated<span class="w"> </span><span class="nb">time</span><span class="w"> </span>to<span class="w"> </span><span class="nb">complete</span><span class="w"> </span>simulation:<span class="w"> </span><span class="m">48</span><span class="w"> </span>seconds.<span class="w"> </span>Memory<span class="w"> </span>required<span class="w"> </span>is<span class="w"> </span><span class="m">8</span>.112811402326496<span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>available<span class="w"> </span><span class="m">73</span>.624408064<span class="w"> </span>GB<span class="o">)</span>.<span class="w"> </span>These<span class="w"> </span>values<span class="w"> </span>are<span class="w"> </span>approximated.
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>/home/circleci/.cache/pypoetry/virtualenvs/neurotechdevkit-3aSsmiER-py3.10/lib/python3.10/site-packages/devito/finite_differences/differentiable.py:224:<span class="w"> </span>DeprecationWarning:<span class="w"> </span>NotImplemented<span class="w"> </span>should<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>boolean<span class="w"> </span>context
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span>super<span class="o">(</span>Differentiable,<span class="w"> </span>self<span class="o">)</span>.__eq__<span class="o">(</span>other<span class="o">)</span><span class="w"> </span>and<span class="se">\</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>/home/circleci/.cache/pypoetry/virtualenvs/neurotechdevkit-3aSsmiER-py3.10/lib/python3.10/site-packages/devito/finite_differences/differentiable.py:224:<span class="w"> </span>DeprecationWarning:<span class="w"> </span>NotImplemented<span class="w"> </span>should<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>boolean<span class="w"> </span>context
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span>super<span class="o">(</span>Differentiable,<span class="w"> </span>self<span class="o">)</span>.__eq__<span class="o">(</span>other<span class="o">)</span><span class="w"> </span>and<span class="se">\</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>gcc<span class="w"> </span>-O3<span class="w"> </span>-g<span class="w"> </span>-fPIC<span class="w"> </span>-Wall<span class="w"> </span>-std<span class="o">=</span>c99<span class="w"> </span>-march<span class="o">=</span>native<span class="w"> </span>-Wno-unused-result<span class="w"> </span>-Wno-unused-variable<span class="w"> </span>-Wno-unused-but-set-variable<span class="w"> </span>-ffast-math<span class="w"> </span>-shared<span class="w"> </span>-fopenmp<span class="w"> </span>/tmp/devito-jitcache-uid1001/1011276648d681f31c8e6e36747c98a368395344.c<span class="w"> </span>-lm<span class="w"> </span>-o<span class="w"> </span>/tmp/devito-jitcache-uid1001/1011276648d681f31c8e6e36747c98a368395344.so
+</code></pre></div>
+<!-- GENERATED FROM PYTHON SOURCE LINES 161-164 -->
+
+<p>We can see that the plane wave sonicates a large area of the
+medium, including the center phantom and (to a lesser extent) the phantom on
+the right.</p>
+<!-- GENERATED FROM PYTHON SOURCE LINES 166-170 -->
+
+<h2 id="1-transmit-multi-plane-wave">1. Transmit multi-plane wave</h2>
+<p>Now, let's send several plane waves from the transducer and measure the
+reflected/scattered acoustic waves. We can then compound the different plane
+waves to improve the spatial resolution.</p>
+<!-- GENERATED FROM PYTHON SOURCE LINES 172-173 -->
+
+<p>Helper functions: simulate long enough for ultrasound scattering reflection</p>
+<!-- GENERATED FROM PYTHON SOURCE LINES 173-185 -->
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">def</span> <span class="nf">calc_simulation_time</span><span class="p">(</span><span class="n">scenario</span><span class="p">:</span> <span class="n">Scenario3</span><span class="p">):</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="n">simulation_time</span> <span class="o">=</span> <span class="n">ndk</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">_time</span><span class="o">.</span><span class="n">select_simulation_time_for_pulsed</span><span class="p">(</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>        <span class="n">grid</span><span class="o">=</span><span class="n">scenario</span><span class="o">.</span><span class="n">grid</span><span class="p">,</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>        <span class="n">materials</span><span class="o">=</span><span class="n">scenario</span><span class="o">.</span><span class="n">materials</span><span class="p">,</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>        <span class="n">delay</span><span class="o">=</span><span class="n">ndk</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">_time</span><span class="o">.</span><span class="n">find_largest_delay_in_sources</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">sources</span><span class="p">),</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="p">)</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    <span class="c1"># Run pulse for twice the standard simulation time to allow for reflections</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">simulation_time</span>
+</code></pre></div>
+<!-- GENERATED FROM PYTHON SOURCE LINES 186-189 -->
+
+<p>Send several plane waves from the transducer and measure the
+reflected/scattered acoustic waves We can then compound the different plane
+waves to improve the spatial resolution</p>
+<!-- GENERATED FROM PYTHON SOURCE LINES 189-210 -->
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">results</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">PulsedResult2D</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># keep track of the tx delays used</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">element_delays_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">tilt_angle</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="n">tqdm</span><span class="o">.</span><span class="n">notebook</span><span class="o">.</span><span class="n">tqdm</span><span class="p">(</span><span class="n">TILT_ANGLES_DEG</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Simulating pulses&quot;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;pulse&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">):</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="c1"># Current limitation of NDK: need to re-generate scenario to simulate a new pulse</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="c1"># https://github.com/agencyenterprise/neurotechdevkit/issues/108</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="n">scenario</span> <span class="o">=</span> <span class="n">create_scenario</span><span class="p">(</span><span class="n">tilt_angle</span><span class="o">=</span><span class="n">tilt_angle</span><span class="p">)</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>    <span class="c1"># Get the element delays (set by the tilt angle)</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>    <span class="n">source</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">sources</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">ndk</span><span class="o">.</span><span class="n">sources</span><span class="o">.</span><span class="n">PhasedArraySource</span><span class="p">)</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    <span class="n">element_delays_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">source</span><span class="o">.</span><span class="n">element_delays</span><span class="p">)</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">simulate_pulse</span><span class="p">(</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>        <span class="n">points_per_period</span><span class="o">=</span><span class="n">SAMPLING_POINTS_PER_PERIOD</span><span class="p">,</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>        <span class="n">simulation_time</span><span class="o">=</span><span class="n">calc_simulation_time</span><span class="p">(</span><span class="n">scenario</span><span class="p">),</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>    <span class="p">)</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+<p class="mkd-glr-script-out">Out:</p>
+<div class="mkd-glr-script-out-disp highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Simulating<span class="w"> </span>pulses:<span class="w">   </span><span class="m">0</span>%<span class="p">|</span><span class="w">          </span><span class="p">|</span><span class="w"> </span><span class="m">0</span>/5<span class="w"> </span><span class="o">[</span><span class="m">00</span>:00&lt;?,<span class="w"> </span>?pulse/s<span class="o">]</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Estimated<span class="w"> </span><span class="nb">time</span><span class="w"> </span>to<span class="w"> </span><span class="nb">complete</span><span class="w"> </span>simulation:<span class="w"> </span><span class="m">2</span><span class="w"> </span>minutes.<span class="w"> </span>Memory<span class="w"> </span>required<span class="w"> </span>is<span class="w"> </span><span class="m">9</span>.04987804400852<span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>available<span class="w"> </span><span class="m">73</span>.624408064<span class="w"> </span>GB<span class="o">)</span>.<span class="w"> </span>These<span class="w"> </span>values<span class="w"> </span>are<span class="w"> </span>approximated.
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>/home/circleci/.cache/pypoetry/virtualenvs/neurotechdevkit-3aSsmiER-py3.10/lib/python3.10/site-packages/devito/finite_differences/differentiable.py:224:<span class="w"> </span>DeprecationWarning:<span class="w"> </span>NotImplemented<span class="w"> </span>should<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>boolean<span class="w"> </span>context
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span>super<span class="o">(</span>Differentiable,<span class="w"> </span>self<span class="o">)</span>.__eq__<span class="o">(</span>other<span class="o">)</span><span class="w"> </span>and<span class="se">\</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>/home/circleci/.cache/pypoetry/virtualenvs/neurotechdevkit-3aSsmiER-py3.10/lib/python3.10/site-packages/devito/finite_differences/differentiable.py:224:<span class="w"> </span>DeprecationWarning:<span class="w"> </span>NotImplemented<span class="w"> </span>should<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>boolean<span class="w"> </span>context
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span>super<span class="o">(</span>Differentiable,<span class="w"> </span>self<span class="o">)</span>.__eq__<span class="o">(</span>other<span class="o">)</span><span class="w"> </span>and<span class="se">\</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>gcc<span class="w"> </span>-O3<span class="w"> </span>-g<span class="w"> </span>-fPIC<span class="w"> </span>-Wall<span class="w"> </span>-std<span class="o">=</span>c99<span class="w"> </span>-march<span class="o">=</span>native<span class="w"> </span>-Wno-unused-result<span class="w"> </span>-Wno-unused-variable<span class="w"> </span>-Wno-unused-but-set-variable<span class="w"> </span>-ffast-math<span class="w"> </span>-shared<span class="w"> </span>-fopenmp<span class="w"> </span>/tmp/devito-jitcache-uid1001/1c6c81e18ccb60993ff4587151f479c4ddc2ad72.c<span class="w"> </span>-lm<span class="w"> </span>-o<span class="w"> </span>/tmp/devito-jitcache-uid1001/1c6c81e18ccb60993ff4587151f479c4ddc2ad72.so
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>Estimated<span class="w"> </span><span class="nb">time</span><span class="w"> </span>to<span class="w"> </span><span class="nb">complete</span><span class="w"> </span>simulation:<span class="w"> </span><span class="m">2</span><span class="w"> </span>minutes.<span class="w"> </span>Memory<span class="w"> </span>required<span class="w"> </span>is<span class="w"> </span><span class="m">9</span>.351857053491578<span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>available<span class="w"> </span><span class="m">73</span>.624408064<span class="w"> </span>GB<span class="o">)</span>.<span class="w"> </span>These<span class="w"> </span>values<span class="w"> </span>are<span class="w"> </span>approximated.
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>/home/circleci/.cache/pypoetry/virtualenvs/neurotechdevkit-3aSsmiER-py3.10/lib/python3.10/site-packages/devito/finite_differences/differentiable.py:224:<span class="w"> </span>DeprecationWarning:<span class="w"> </span>NotImplemented<span class="w"> </span>should<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>boolean<span class="w"> </span>context
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span>super<span class="o">(</span>Differentiable,<span class="w"> </span>self<span class="o">)</span>.__eq__<span class="o">(</span>other<span class="o">)</span><span class="w"> </span>and<span class="se">\</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>/home/circleci/.cache/pypoetry/virtualenvs/neurotechdevkit-3aSsmiER-py3.10/lib/python3.10/site-packages/devito/finite_differences/differentiable.py:224:<span class="w"> </span>DeprecationWarning:<span class="w"> </span>NotImplemented<span class="w"> </span>should<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>boolean<span class="w"> </span>context
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span>super<span class="o">(</span>Differentiable,<span class="w"> </span>self<span class="o">)</span>.__eq__<span class="o">(</span>other<span class="o">)</span><span class="w"> </span>and<span class="se">\</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>gcc<span class="w"> </span>-O3<span class="w"> </span>-g<span class="w"> </span>-fPIC<span class="w"> </span>-Wall<span class="w"> </span>-std<span class="o">=</span>c99<span class="w"> </span>-march<span class="o">=</span>native<span class="w"> </span>-Wno-unused-result<span class="w"> </span>-Wno-unused-variable<span class="w"> </span>-Wno-unused-but-set-variable<span class="w"> </span>-ffast-math<span class="w"> </span>-shared<span class="w"> </span>-fopenmp<span class="w"> </span>/tmp/devito-jitcache-uid1001/e07cd2f8389d76a667ca31890019459680668e30.c<span class="w"> </span>-lm<span class="w"> </span>-o<span class="w"> </span>/tmp/devito-jitcache-uid1001/e07cd2f8389d76a667ca31890019459680668e30.so
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>Estimated<span class="w"> </span><span class="nb">time</span><span class="w"> </span>to<span class="w"> </span><span class="nb">complete</span><span class="w"> </span>simulation:<span class="w"> </span><span class="m">2</span><span class="w"> </span>minutes.<span class="w"> </span>Memory<span class="w"> </span>required<span class="w"> </span>is<span class="w"> </span><span class="m">9</span>.663912587953751<span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>available<span class="w"> </span><span class="m">73</span>.624408064<span class="w"> </span>GB<span class="o">)</span>.<span class="w"> </span>These<span class="w"> </span>values<span class="w"> </span>are<span class="w"> </span>approximated.
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>/home/circleci/.cache/pypoetry/virtualenvs/neurotechdevkit-3aSsmiER-py3.10/lib/python3.10/site-packages/devito/finite_differences/differentiable.py:224:<span class="w"> </span>DeprecationWarning:<span class="w"> </span>NotImplemented<span class="w"> </span>should<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>boolean<span class="w"> </span>context
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span>super<span class="o">(</span>Differentiable,<span class="w"> </span>self<span class="o">)</span>.__eq__<span class="o">(</span>other<span class="o">)</span><span class="w"> </span>and<span class="se">\</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>/home/circleci/.cache/pypoetry/virtualenvs/neurotechdevkit-3aSsmiER-py3.10/lib/python3.10/site-packages/devito/finite_differences/differentiable.py:224:<span class="w"> </span>DeprecationWarning:<span class="w"> </span>NotImplemented<span class="w"> </span>should<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>boolean<span class="w"> </span>context
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span>super<span class="o">(</span>Differentiable,<span class="w"> </span>self<span class="o">)</span>.__eq__<span class="o">(</span>other<span class="o">)</span><span class="w"> </span>and<span class="se">\</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>gcc<span class="w"> </span>-O3<span class="w"> </span>-g<span class="w"> </span>-fPIC<span class="w"> </span>-Wall<span class="w"> </span>-std<span class="o">=</span>c99<span class="w"> </span>-march<span class="o">=</span>native<span class="w"> </span>-Wno-unused-result<span class="w"> </span>-Wno-unused-variable<span class="w"> </span>-Wno-unused-but-set-variable<span class="w"> </span>-ffast-math<span class="w"> </span>-shared<span class="w"> </span>-fopenmp<span class="w"> </span>/tmp/devito-jitcache-uid1001/51927bba3e257670a098847a173af57dfaf3048d.c<span class="w"> </span>-lm<span class="w"> </span>-o<span class="w"> </span>/tmp/devito-jitcache-uid1001/51927bba3e257670a098847a173af57dfaf3048d.so
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>Estimated<span class="w"> </span><span class="nb">time</span><span class="w"> </span>to<span class="w"> </span><span class="nb">complete</span><span class="w"> </span>simulation:<span class="w"> </span><span class="m">2</span><span class="w"> </span>minutes.<span class="w"> </span>Memory<span class="w"> </span>required<span class="w"> </span>is<span class="w"> </span><span class="m">9</span>.351857053491578<span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>available<span class="w"> </span><span class="m">73</span>.624408064<span class="w"> </span>GB<span class="o">)</span>.<span class="w"> </span>These<span class="w"> </span>values<span class="w"> </span>are<span class="w"> </span>approximated.
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>/home/circleci/.cache/pypoetry/virtualenvs/neurotechdevkit-3aSsmiER-py3.10/lib/python3.10/site-packages/devito/finite_differences/differentiable.py:224:<span class="w"> </span>DeprecationWarning:<span class="w"> </span>NotImplemented<span class="w"> </span>should<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>boolean<span class="w"> </span>context
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span>super<span class="o">(</span>Differentiable,<span class="w"> </span>self<span class="o">)</span>.__eq__<span class="o">(</span>other<span class="o">)</span><span class="w"> </span>and<span class="se">\</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>/home/circleci/.cache/pypoetry/virtualenvs/neurotechdevkit-3aSsmiER-py3.10/lib/python3.10/site-packages/devito/finite_differences/differentiable.py:224:<span class="w"> </span>DeprecationWarning:<span class="w"> </span>NotImplemented<span class="w"> </span>should<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>boolean<span class="w"> </span>context
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span>super<span class="o">(</span>Differentiable,<span class="w"> </span>self<span class="o">)</span>.__eq__<span class="o">(</span>other<span class="o">)</span><span class="w"> </span>and<span class="se">\</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>Estimated<span class="w"> </span><span class="nb">time</span><span class="w"> </span>to<span class="w"> </span><span class="nb">complete</span><span class="w"> </span>simulation:<span class="w"> </span><span class="m">2</span><span class="w"> </span>minutes.<span class="w"> </span>Memory<span class="w"> </span>required<span class="w"> </span>is<span class="w"> </span><span class="m">9</span>.04987804400852<span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>available<span class="w"> </span><span class="m">73</span>.624408064<span class="w"> </span>GB<span class="o">)</span>.<span class="w"> </span>These<span class="w"> </span>values<span class="w"> </span>are<span class="w"> </span>approximated.
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>/home/circleci/.cache/pypoetry/virtualenvs/neurotechdevkit-3aSsmiER-py3.10/lib/python3.10/site-packages/devito/finite_differences/differentiable.py:224:<span class="w"> </span>DeprecationWarning:<span class="w"> </span>NotImplemented<span class="w"> </span>should<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>boolean<span class="w"> </span>context
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span>super<span class="o">(</span>Differentiable,<span class="w"> </span>self<span class="o">)</span>.__eq__<span class="o">(</span>other<span class="o">)</span><span class="w"> </span>and<span class="se">\</span>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>/home/circleci/.cache/pypoetry/virtualenvs/neurotechdevkit-3aSsmiER-py3.10/lib/python3.10/site-packages/devito/finite_differences/differentiable.py:224:<span class="w"> </span>DeprecationWarning:<span class="w"> </span>NotImplemented<span class="w"> </span>should<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>used<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>boolean<span class="w"> </span>context
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span>super<span class="o">(</span>Differentiable,<span class="w"> </span>self<span class="o">)</span>.__eq__<span class="o">(</span>other<span class="o">)</span><span class="w"> </span>and<span class="se">\</span>
+</code></pre></div>
+<!-- GENERATED FROM PYTHON SOURCE LINES 211-216 -->
+
+<h2 id="2-receive-echo-visualizing-received-simulated-signals">2. Receive echo: visualizing received (simulated) signals</h2>
+<p>In a real imaging situation, we usually only have access to the RF signals
+measured at the ultrasound sensor elements; we don't know what's in the grid
+and can't access the full wavefield.</p>
+<!-- GENERATED FROM PYTHON SOURCE LINES 218-220 -->
+
+<p>The receivers at N sensor elements give us data traces of shape:
+<code>[N, num_fast_time_samples]</code></p>
+<!-- GENERATED FROM PYTHON SOURCE LINES 220-233 -->
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">assert</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">traces</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="n">ARRAY_NUM_ELEMENTS</span><span class="p">,</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">traces</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">grid</span><span class="p">),</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">)</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">time_steps</span> <span class="o">=</span> <span class="p">[</span><span class="n">result</span><span class="o">.</span><span class="n">traces</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">step</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_array_equal</span><span class="p">(</span><span class="n">time_steps</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">time_steps</span><span class="p">)</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="n">freq_sampling</span> <span class="o">=</span> <span class="n">TONE_CENTER_FREQUENCY</span> <span class="o">*</span> <span class="n">SAMPLING_POINTS_PER_PERIOD</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">time_steps</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">freq_sampling</span><span class="p">)</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Traces shape:&quot;</span><span class="p">,</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">traces</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time grid:&quot;</span><span class="p">,</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">traces</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">grid</span><span class="p">)</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sampling frequency [Hz]: </span><span class="si">{:.2e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">freq_sampling</span><span class="p">))</span>
+</code></pre></div>
+<p class="mkd-glr-script-out">Out:</p>
+<div class="mkd-glr-script-out-disp highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Traces<span class="w"> </span>shape:<span class="w"> </span><span class="o">(</span><span class="m">128</span>,<span class="w"> </span><span class="m">2393</span><span class="o">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Time<span class="w"> </span>grid:<span class="w"> </span><span class="o">[</span><span class="m">0</span>.0000000e+00<span class="w"> </span><span class="m">8</span>.3333333e-08<span class="w"> </span><span class="m">1</span>.6666667e-07<span class="w"> </span>...<span class="w"> </span><span class="m">1</span>.9916666e-04<span class="w"> </span><span class="m">1</span>.9925000e-04
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w"> </span><span class="m">1</span>.9933333e-04<span class="o">]</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>Sampling<span class="w"> </span>frequency<span class="w"> </span><span class="o">[</span>Hz<span class="o">]</span>:<span class="w"> </span><span class="m">1</span>.20e+07
+</code></pre></div>
+<!-- GENERATED FROM PYTHON SOURCE LINES 234-235 -->
+
+<p>Pad RF signals to longest length, in case they are not all the same length</p>
+<!-- GENERATED FROM PYTHON SOURCE LINES 235-248 -->
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">rf_signal_lengths</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">traces</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">grid</span><span class="p">)</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">rf_signal_max_len</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">rf_signal_lengths</span><span class="p">)</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">rf_signal_max_len_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">rf_signal_lengths</span><span class="p">)</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">time</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="n">rf_signal_max_len_idx</span><span class="p">]</span><span class="o">.</span><span class="n">traces</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">grid</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="c1"># Shape: `[num_fast_time_samples, num_elements, num_pulses]`</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="n">rf_signals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    <span class="p">(</span><span class="n">rf_signal_max_len</span><span class="p">,</span> <span class="n">ARRAY_NUM_ELEMENTS</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)),</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="p">)</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="k">for</span> <span class="n">pulse_idx</span><span class="p">,</span> <span class="n">result</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>    <span class="n">rf_signals</span><span class="p">[:</span> <span class="n">rf_signal_lengths</span><span class="p">[</span><span class="n">pulse_idx</span><span class="p">],</span> <span class="p">:,</span> <span class="n">pulse_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">traces</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">T</span>
+</code></pre></div>
+<!-- GENERATED FROM PYTHON SOURCE LINES 249-252 -->
+
+<p>The data at the beginning of each pulse simply contains the transmitted
+pulse, so let's remove it from the raw-data visualizations to prevent it from
+overwhelming the reflected image.</p>
+<!-- GENERATED FROM PYTHON SOURCE LINES 252-265 -->
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">extra_buffer_fraction</span> <span class="o">=</span> <span class="mf">0.05</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">source</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">sources</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">ndk</span><span class="o">.</span><span class="n">sources</span><span class="o">.</span><span class="n">PhasedArraySource</span><span class="p">)</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="n">array_element_positions</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">element_positions</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="n">distance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">array_element_positions</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">array_element_positions</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="k">for</span> <span class="n">pulse_idx</span><span class="p">,</span> <span class="n">element_delays</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">element_delays_list</span><span class="p">):</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>    <span class="n">max_time_delay</span> <span class="o">=</span> <span class="n">element_delays</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>    <span class="n">last_invalid_time</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">extra_buffer_fraction</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>        <span class="n">distance</span> <span class="o">/</span> <span class="n">SPEED_OF_SOUND_WATER</span> <span class="o">+</span> <span class="n">max_time_delay</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>    <span class="p">)</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>    <span class="n">valid_time_mask</span> <span class="o">=</span> <span class="n">time</span> <span class="o">&gt;</span> <span class="n">last_invalid_time</span>
+</code></pre></div>
+<!-- GENERATED FROM PYTHON SOURCE LINES 266-289 -->
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">NUM_VISUALIZE</span> <span class="o">=</span> <span class="mi">8</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">channel_idxs</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="n">ARRAY_NUM_ELEMENTS</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">NUM_VISUALIZE</span><span class="p">)</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">pulse_idxs</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">TILT_ANGLES_DEG</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="n">NUM_VISUALIZE</span><span class="p">)</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="n">rf_signal_visualize</span> <span class="o">=</span> <span class="n">rf_signals</span><span class="p">[:,</span> <span class="n">channel_idxs</span><span class="p">,</span> <span class="n">pulse_idxs</span><span class="p">]</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="c1"># Plot with some offsets</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="n">CHANNEL_OFFSET</span> <span class="o">=</span> <span class="mi">1000</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>    <span class="n">time</span><span class="p">[</span><span class="n">valid_time_mask</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1e3</span><span class="p">,</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>    <span class="n">rf_signal_visualize</span><span class="p">[</span><span class="n">valid_time_mask</span><span class="p">]</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>    <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">NUM_VISUALIZE</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>    <span class="o">*</span> <span class="n">NUM_VISUALIZE</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>    <span class="o">*</span> <span class="n">CHANNEL_OFFSET</span><span class="p">,</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>    <span class="n">label</span><span class="o">=</span><span class="p">[</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>        <span class="sa">f</span><span class="s2">&quot;channel-</span><span class="si">{</span><span class="n">channel_idx</span><span class="si">}</span><span class="s2"> echo-</span><span class="si">{</span><span class="n">echo_idx</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>        <span class="k">for</span> <span class="p">(</span><span class="n">channel_idx</span><span class="p">,</span> <span class="n">echo_idx</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">channel_idxs</span><span class="p">,</span> <span class="n">pulse_idxs</span><span class="p">)</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>    <span class="p">],</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="p">)</span>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Example radiofrequency signals (RF)&quot;</span><span class="p">)</span>
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;time [ms]&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="Example radiofrequency signals (RF)" class="mkd-glr-single-img" src="../images/mkd_glr_plot_ultrasound_imaging_multiplane_004.png" srcset="../images/mkd_glr_plot_ultrasound_imaging_multiplane_004.png" /></p>
+<!-- GENERATED FROM PYTHON SOURCE LINES 290-292 -->
+
+<p>Plotting across elements (for a single shot) shows the typical
+hyperbolas for each scatterer (object).</p>
+<!-- GENERATED FROM PYTHON SOURCE LINES 294-309 -->
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">pulse_idx</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">TILT_ANGLES_DEG</span><span class="p">))</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    <span class="n">rf_signals</span><span class="p">[</span><span class="n">valid_time_mask</span><span class="p">,</span> <span class="p">:,</span> <span class="n">pulse_idx</span><span class="p">]</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>    <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">ARRAY_NUM_ELEMENTS</span><span class="p">)</span> <span class="o">*</span> <span class="n">CHANNEL_OFFSET</span><span class="p">,</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>    <span class="n">time</span><span class="p">[</span><span class="n">valid_time_mask</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="p">)</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;echo </span><span class="si">{</span><span class="n">pulse_idx</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([])</span>  <span class="c1"># We added values for offset, so values don&#39;t mean anything</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;time [ms]&quot;</span><span class="p">)</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;channel&quot;</span><span class="p">)</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="n">ax</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+</code></pre></div>
+<p><img alt="echo 4" class="mkd-glr-single-img" src="../images/mkd_glr_plot_ultrasound_imaging_multiplane_005.png" srcset="../images/mkd_glr_plot_ultrasound_imaging_multiplane_005.png" /></p>
+<!-- GENERATED FROM PYTHON SOURCE LINES 310-312 -->
+
+<p>This helps to visualize the slight time-offsets of each array
+element in receiving the echoes.</p>
+<!-- GENERATED FROM PYTHON SOURCE LINES 314-322 -->
+
+<h2 id="3-reconstruct-image">3. Reconstruct image</h2>
+<p>In multi-plane-wave imaging, each pulse-echo image is constructed separately,
+then added together.</p>
+<p>Similar to the focused-pulse <code>109-ultrasound-imaging-scanline.ipynb</code> notebook,
+this notebook demodulates the RF signals to I/Q and then beamforms to create
+each pulse-echo frame.</p>
+<!-- GENERATED FROM PYTHON SOURCE LINES 324-333 -->
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">iq_signals</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">demodulate</span><span class="o">.</span><span class="n">demodulate_rf_to_iq</span><span class="p">(</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    <span class="n">rf_signals</span><span class="p">,</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    <span class="n">freq_sampling</span><span class="p">,</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    <span class="n">freq_carrier</span><span class="o">=</span><span class="n">TONE_CENTER_FREQUENCY</span><span class="p">,</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    <span class="n">bandwidth</span><span class="o">=</span><span class="n">TRANSDUCER_6DB_PULSE_ECHO_FRACTIONAL_BANDWIDTH</span><span class="p">,</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="p">)</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="k">assert</span> <span class="n">iq_signals</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="n">rf_signals</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div>
+<!-- GENERATED FROM PYTHON SOURCE LINES 334-335 -->
+
+<p>Beam-form I/Q signals into an image</p>
+<!-- GENERATED FROM PYTHON SOURCE LINES 335-374 -->
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">scenario</span><span class="o">.</span><span class="n">sources</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">source</span> <span class="o">=</span> <span class="n">scenario</span><span class="o">.</span><span class="n">sources</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">ndk</span><span class="o">.</span><span class="n">sources</span><span class="o">.</span><span class="n">PhasedArraySource</span><span class="p">)</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="n">pitch</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">pitch</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="n">width</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">element_width</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="n">empirical_pitch</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>    <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shot</span><span class="o">.</span><span class="n">receiver_coordinates</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="p">)</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_allclose</span><span class="p">(</span><span class="n">empirical_pitch</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">)</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="c1"># Generate an image at the scenario grid</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="c1"># NOTE: .mesh uses different x/y space</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="n">x_mesh</span><span class="p">,</span> <span class="n">y_mesh</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shot</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">space</span><span class="o">.</span><span class="n">mesh</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="c1"># Switch to imaging convention: x for parallel-to-array, z for depth</span>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="n">imaging_x_mesh</span> <span class="o">=</span> <span class="n">y_mesh</span> <span class="o">+</span> <span class="n">scenario</span><span class="o">.</span><span class="n">origin</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="n">imaging_z_mesh</span> <span class="o">=</span> <span class="n">x_mesh</span> <span class="o">+</span> <span class="n">scenario</span><span class="o">.</span><span class="n">origin</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="n">iq_signals_beamformed_list</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">tilt_angle</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">TILT_ANGLES_DEG</span><span class="p">):</span>
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>    <span class="n">iq_signals_beamformed</span> <span class="o">=</span> <span class="n">beamform</span><span class="o">.</span><span class="n">beamform_delay_and_sum</span><span class="p">(</span>
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>        <span class="n">iq_signals</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">idx</span><span class="p">],</span>
+<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a>        <span class="n">x</span><span class="o">=</span><span class="n">imaging_x_mesh</span><span class="p">,</span>
+<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a>        <span class="n">z</span><span class="o">=</span><span class="n">imaging_z_mesh</span><span class="p">,</span>
+<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a>        <span class="n">pitch</span><span class="o">=</span><span class="n">pitch</span><span class="p">,</span>
+<a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a>        <span class="n">tx_delays</span><span class="o">=</span><span class="n">element_delays_list</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span>
+<a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a>        <span class="n">freq_sampling</span><span class="o">=</span><span class="n">freq_sampling</span><span class="p">,</span>
+<a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a>        <span class="n">freq_carrier</span><span class="o">=</span><span class="n">TONE_CENTER_FREQUENCY</span><span class="p">,</span>
+<a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a>        <span class="n">f_number</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a>        <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
+<a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a>        <span class="n">bandwidth</span><span class="o">=</span><span class="n">TRANSDUCER_6DB_PULSE_ECHO_FRACTIONAL_BANDWIDTH</span><span class="p">,</span>
+<a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a>        <span class="n">speed_sound</span><span class="o">=</span><span class="n">SPEED_OF_SOUND_WATER</span><span class="p">,</span>  <span class="c1"># water</span>
+<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a>    <span class="p">)</span>
+<a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a>    <span class="n">iq_signals_beamformed_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">iq_signals_beamformed</span><span class="p">)</span>
+<a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a>
+<a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a><span class="n">iq_signals_beamformed_compound</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">iq_signals_beamformed_list</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-16-37" name="__codelineno-16-37" href="#__codelineno-16-37"></a><span class="n">iq_signals_beamformed_compound</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div>
+<p class="mkd-glr-script-out">Out:</p>
+<div class="mkd-glr-script-out-disp highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="o">(</span><span class="m">201</span>,<span class="w"> </span><span class="m">201</span>,<span class="w"> </span><span class="m">5</span><span class="o">)</span>
+</code></pre></div>
+<!-- GENERATED FROM PYTHON SOURCE LINES 375-376 -->
+
+<h2 id="visualize-reconstructed-image">Visualize reconstructed image</h2>
+<!-- GENERATED FROM PYTHON SOURCE LINES 378-397 -->
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">def</span> <span class="nf">plot_ultrasound_image</span><span class="p">(</span><span class="n">x_mesh</span><span class="p">,</span> <span class="n">z_mesh</span><span class="p">,</span> <span class="n">iq_signals_bf</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="mi">40</span><span class="p">):</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>        <span class="n">x_mesh</span><span class="p">,</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>        <span class="n">z_mesh</span><span class="p">,</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>        <span class="n">util</span><span class="o">.</span><span class="n">log_compress</span><span class="p">(</span><span class="n">iq_signals_bf</span><span class="p">,</span> <span class="n">db</span><span class="p">),</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>        <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>    <span class="p">)</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>    <span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>    <span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;-</span><span class="si">{</span><span class="n">db</span><span class="si">}</span><span class="s2"> dB&quot;</span><span class="p">,</span> <span class="s2">&quot;0 dB&quot;</span><span class="p">])</span>  <span class="c1"># horizontal colorbar</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>  <span class="c1"># Invert the y-axis to flip the image vertically</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Log-compressed image&quot;</span><span class="p">)</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;[m]&quot;</span><span class="p">)</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;[m]&quot;</span><span class="p">)</span>
+</code></pre></div>
+<!-- GENERATED FROM PYTHON SOURCE LINES 398-400 -->
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">DB_VIS</span> <span class="o">=</span> <span class="mi">30</span>
+</code></pre></div>
+<!-- GENERATED FROM PYTHON SOURCE LINES 401-411 -->
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">imaging_z_mesh</span> <span class="o">&gt;</span> <span class="mf">0.02</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="n">plot_ultrasound_image</span><span class="p">(</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>    <span class="n">imaging_x_mesh</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>    <span class="n">imaging_z_mesh</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>    <span class="n">iq_signals_beamformed_compound</span><span class="p">[</span><span class="n">mask</span><span class="p">,</span> <span class="p">:,</span> <span class="nb">len</span><span class="p">(</span><span class="n">TILT_ANGLES_DEG</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">],</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>    <span class="n">db</span><span class="o">=</span><span class="n">DB_VIS</span><span class="p">,</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="p">)</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Single pulse-echo image&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="Single pulse-echo image" class="mkd-glr-single-img" src="../images/mkd_glr_plot_ultrasound_imaging_multiplane_006.png" srcset="../images/mkd_glr_plot_ultrasound_imaging_multiplane_006.png" /></p>
+<p class="mkd-glr-script-out">Out:</p>
+<div class="mkd-glr-script-out-disp highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Text<span class="o">(</span><span class="m">0</span>.5,<span class="w"> </span><span class="m">1</span>.0,<span class="w"> </span><span class="s1">&#39;Single pulse-echo image&#39;</span><span class="o">)</span>
+</code></pre></div>
+<!-- GENERATED FROM PYTHON SOURCE LINES 412-416 -->
+
+<p>A single plane-wave pulse is unfocused, so the image is blurry.
+On the other hand, it sonicates a larger area than a focused ultrasound beam
+(a.k.a. "scan line"), so it includes both the center circle and the right
+circle (blurrily).</p>
+<!-- GENERATED FROM PYTHON SOURCE LINES 418-426 -->
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">plot_ultrasound_image</span><span class="p">(</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>    <span class="n">imaging_x_mesh</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>    <span class="n">imaging_z_mesh</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>    <span class="n">iq_signals_beamformed_compound</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">),</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>    <span class="n">db</span><span class="o">=</span><span class="n">DB_VIS</span><span class="p">,</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="p">)</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Compound image&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="Compound image" class="mkd-glr-single-img" src="../images/mkd_glr_plot_ultrasound_imaging_multiplane_007.png" srcset="../images/mkd_glr_plot_ultrasound_imaging_multiplane_007.png" /></p>
+<p class="mkd-glr-script-out">Out:</p>
+<div class="mkd-glr-script-out-disp highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>Text<span class="o">(</span><span class="m">0</span>.5,<span class="w"> </span><span class="m">1</span>.0,<span class="w"> </span><span class="s1">&#39;Compound image&#39;</span><span class="o">)</span>
+</code></pre></div>
+<!-- GENERATED FROM PYTHON SOURCE LINES 427-433 -->
+
+<p>Compounding multiple plane waves improves the image focus.</p>
+<p>The speckles in the image are a normal part of B-mode imaging. Additionally,
+the phantom on the right experiences a slight "shadow," because not all of the
+plane waves reach it. If we increase the width of the array so that the plane
+waves are wider, we would get better coverage of the phantom on the right.</p>
+<p><strong>Total running time of the script:</strong> ( 3 minutes  31.124 seconds)</p>
+<div id="download_links"></div>
+
+<p><a class="md-button center" href="../plot_ultrasound_imaging_multiplane.py"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg></span> Download Python source code: plot_ultrasound_imaging_multiplane.py</a></p>
+<p><a class="md-button center" href="../plot_ultrasound_imaging_multiplane.ipynb"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg></span> Download Jupyter notebook: plot_ultrasound_imaging_multiplane.ipynb</a></p>
+<p><a class="mkd-glr-signature" href="https://mkdocs-gallery.github.io">Gallery generated by mkdocs-gallery</a></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+        
+          <script src="../../../javascripts/mathjax.js"></script>
+        
+      
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+      
+    
+  </body>
+</html>

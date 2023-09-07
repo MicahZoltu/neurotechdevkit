@@ -17,7 +17,7 @@
         <link rel="next" href="../../generated/gallery/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.9">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
@@ -25,10 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -787,6 +787,10 @@
         
           
         
+          
+        
+          
+        
       
       
         
@@ -971,6 +975,34 @@
     <li class="md-nav__item">
       <a href="../../generated/gallery/plot_time_reverse/" class="md-nav__link">
         Time-reverse simulation for phased array
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../generated/gallery/plot_ultrasound_imaging_multiplane/" class="md-nav__link">
+        Ultrasound imaging simulation with multi-plane waves
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../generated/gallery/plot_ultrasound_imaging_scanline/" class="md-nav__link">
+        Ultrasound imaging simulation
       </a>
     </li>
   
@@ -1243,7 +1275,7 @@
 
 
 <h2 id="neurotechdevkit.results.PulsedResult" class="doc doc-heading">
-        <code>PulsedResult</code>
+          <code>PulsedResult</code>
 
   
   <span class="doc doc-labels">
@@ -1254,12 +1286,14 @@
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.results._results.Result" href="#neurotechdevkit.results.Result">Result</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.results._results.Result" href="#neurotechdevkit.results.Result">Result</a></code></p>
 
   
       <p>A base container for holding the results of a pulsed simulation.</p>
 <p>This class should not be instantiated, use PulsedResult2D or PulsedResult3D.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1277,7 +1311,11 @@
           <td>
                 <code>scenario.<span title="scenario.Scenario">Scenario</span></code>
           </td>
-          <td><p>the scenario from which this result came.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the scenario from which this result came.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1287,7 +1325,11 @@
           <td>
                 <code>float</code>
           </td>
-          <td><p>the center frequency (in hertz) of the sources.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the center frequency (in hertz) of the sources.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1297,9 +1339,13 @@
           <td>
                 <code>float</code>
           </td>
-          <td><p>the effective time step (in seconds) along the
+          <td>
+            <div class="doc-md-description">
+              <p>the effective time step (in seconds) along the
 time axis of the wavefield. This can differ from the simulation dt
-if the recording undersampling factor is larger than 1.</p></td>
+if the recording undersampling factor is larger than 1.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1309,8 +1355,12 @@ if the recording undersampling factor is larger than 1.</p></td>
           <td>
                 <code>stride.<span title="stride.Operator">Operator</span></code>
           </td>
-          <td><p>the stride Operator that was executed to run
-the simulation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Operator that was executed to run
+the simulation.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1320,7 +1370,11 @@ the simulation.</p></td>
           <td>
                 <code>stride.<span title="stride.Shot">Shot</span></code>
           </td>
-          <td><p>the stride Shot which was used for the simulation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Shot which was used for the simulation.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1328,10 +1382,14 @@ the simulation.</p></td>
         <tr>
           <td><code>wavefield</code></td>
           <td>
-                <code><span title="numpy.typing">npt</span>.<span title="numpy.typing.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
+                <code><span title="numpy">npt</span>.<span title="numpy.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
           </td>
-          <td><p>an array containing the resulting
-simulation data.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>an array containing the resulting
+simulation data.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1341,15 +1399,18 @@ simulation data.</p></td>
           <td>
                 <code>stride.<span title="stride.Traces">Traces</span></code>
           </td>
-          <td><p>the stride Traces object returned from executing
-the pde.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Traces object returned from executing
+the pde.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
         </tr>
     </tbody>
   </table>
-
 
 
   
@@ -1377,18 +1438,20 @@ the pde.</p></td>
 
 
 <h2 id="neurotechdevkit.results.PulsedResult2D" class="doc doc-heading">
-        <code>PulsedResult2D</code>
+          <code>PulsedResult2D</code>
 
 
 </h2>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.results._results.PulsedResult" href="#neurotechdevkit.results.PulsedResult">PulsedResult</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.results._results.PulsedResult" href="#neurotechdevkit.results.PulsedResult">PulsedResult</a></code></p>
 
   
       <p>A container for holding the results of a 2D pulsed simulation.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1406,8 +1469,12 @@ the pde.</p></td>
           <td>
                 <code><span title="neurotechdevkit.scenarios">scenarios</span>.<a class="autorefs autorefs-internal" title="neurotechdevkit.scenarios.Scenario2D" href="../scenarios/#neurotechdevkit.scenarios.Scenario2D">Scenario2D</a></code>
           </td>
-          <td><p>the 2D scenario from which this
-result came.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the 2D scenario from which this
+result came.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1417,7 +1484,11 @@ result came.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the center frequency (in hertz) of the sources.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the center frequency (in hertz) of the sources.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1427,9 +1498,13 @@ result came.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the effective time step (in seconds) along the
+          <td>
+            <div class="doc-md-description">
+              <p>the effective time step (in seconds) along the
 time axis of the wavefield. This can differ from the simulation dt
-if the recording downsampling factor is larger than 1.</p></td>
+if the recording downsampling factor is larger than 1.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1439,8 +1514,12 @@ if the recording downsampling factor is larger than 1.</p></td>
           <td>
                 <code>stride.<span title="stride.Operator">Operator</span></code>
           </td>
-          <td><p>the stride Operator that was executed to run the
-simulation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Operator that was executed to run the
+simulation.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1450,7 +1529,11 @@ simulation.</p></td>
           <td>
                 <code>stride.<span title="stride.Shot">Shot</span></code>
           </td>
-          <td><p>the stride Shot which was used for the simulation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Shot which was used for the simulation.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1458,10 +1541,14 @@ simulation.</p></td>
         <tr>
           <td><code>wavefield</code></td>
           <td>
-                <code><span title="numpy.typing">npt</span>.<span title="numpy.typing.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
+                <code><span title="numpy">npt</span>.<span title="numpy.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
           </td>
-          <td><p>a 3 dimensional array (two axes for
-space and one for time) containing the resulting simulation data.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>a 3 dimensional array (two axes for
+space and one for time) containing the resulting simulation data.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1471,8 +1558,12 @@ space and one for time) containing the resulting simulation data.</p></td>
           <td>
                 <code>stride.<span title="stride.Traces">Traces</span></code>
           </td>
-          <td><p>the stride Traces object returned from executing
-the pde.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Traces object returned from executing
+the pde.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1481,10 +1572,10 @@ the pde.</p></td>
   </table>
 
 
-
   
 
   <div class="doc doc-children">
+
 
 
 
@@ -1510,6 +1601,8 @@ the pde.</p></td>
 <p>Currently only mp4 format supported.
 <code>ffmpeg</code> command line tools needs to be installed.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -1526,8 +1619,12 @@ the pde.</p></td>
           <td>
                 <code>str</code>
           </td>
-          <td><p>the file with path an extension where the animation would be
-saved. Currently only supports mp4 extension.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the file with path an extension where the animation would be
+saved. Currently only supports mp4 extension.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1537,7 +1634,11 @@ saved. Currently only supports mp4 extension.</p></td>
           <td>
                 <code>bool</code>
           </td>
-          <td><p>whether or not to show the source transducer layer.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>whether or not to show the source transducer layer.</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -1547,7 +1648,11 @@ saved. Currently only supports mp4 extension.</p></td>
           <td>
                 <code>bool</code>
           </td>
-          <td><p>whether or not to show the target layer.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>whether or not to show the target layer.</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -1557,8 +1662,12 @@ saved. Currently only supports mp4 extension.</p></td>
           <td>
                 <code>bool</code>
           </td>
-          <td><p>whether or not to display a thin white outline of
-the transition between different materials.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>whether or not to display a thin white outline of
+the transition between different materials.</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -1568,8 +1677,12 @@ the transition between different materials.</p></td>
           <td>
                 <code>int</code>
           </td>
-          <td><p>the number of time steps to be skipped when creating
-the animation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the number of time steps to be skipped when creating
+the animation.</p>
+            </div>
+          </td>
           <td>
                 <code>1</code>
           </td>
@@ -1579,8 +1692,12 @@ the animation.</p></td>
           <td>
                 <code>tuple[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>, <span title="numpy">np</span>.<span title="numpy.float_">float_</span>] | None</code>
           </td>
-          <td><p>the input time limit tuple to validate. The expected format is
-(minimum_time, maximum_time).</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the input time limit tuple to validate. The expected format is
+(minimum_time, maximum_time).</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -1590,9 +1707,13 @@ the animation.</p></td>
           <td>
                 <code>str</code>
           </td>
-          <td><p>the normalization method used to scale scalar data to the [0, 1]
+          <td>
+            <div class="doc-md-description">
+              <p>the normalization method used to scale scalar data to the [0, 1]
 range before mapping to colors using cmap. For a list of available
-scales, call <code>matplotlib.scale.get_scale_names()</code>.</p></td>
+scales, call <code>matplotlib.scale.get_scale_names()</code>.</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;linear&#39;</code>
           </td>
@@ -1602,7 +1723,11 @@ scales, call <code>matplotlib.scale.get_scale_names()</code>.</p></td>
           <td>
                 <code>int</code>
           </td>
-          <td><p>the frames per second in the animation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the frames per second in the animation.</p>
+            </div>
+          </td>
           <td>
                 <code>25</code>
           </td>
@@ -1612,7 +1737,11 @@ scales, call <code>matplotlib.scale.get_scale_names()</code>.</p></td>
           <td>
                 <code>int</code>
           </td>
-          <td><p>the number of dots per inch in the frames of the animation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the number of dots per inch in the frames of the animation.</p>
+            </div>
+          </td>
           <td>
                 <code>100</code>
           </td>
@@ -1622,8 +1751,12 @@ scales, call <code>matplotlib.scale.get_scale_names()</code>.</p></td>
           <td>
                 <code>int</code>
           </td>
-          <td><p>the bitrate for the saved movie file, which is one way to control
-the output file size and quality.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the bitrate for the saved movie file, which is one way to control
+the output file size and quality.</p>
+            </div>
+          </td>
           <td>
                 <code>2500</code>
           </td>
@@ -1633,8 +1766,12 @@ the output file size and quality.</p></td>
           <td>
                 <code>bool</code>
           </td>
-          <td><p>a boolean that allows the animation to be saved with the same
-file name that is already exists.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>a boolean that allows the animation to be saved with the same
+file name that is already exists.</p>
+            </div>
+          </td>
           <td>
                 <code>False</code>
           </td>
@@ -1645,6 +1782,7 @@ file name that is already exists.</p></td>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -1664,6 +1802,8 @@ Jupyter Notebook environment.
 In a non-interactive environment (script) the result of this animation would be
 lost. Use <code>create_video_file</code> method instead.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -1680,7 +1820,11 @@ lost. Use <code>create_video_file</code> method instead.</p>
           <td>
                 <code>bool</code>
           </td>
-          <td><p>whether or not to show the source transducer layer.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>whether or not to show the source transducer layer.</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -1690,7 +1834,11 @@ lost. Use <code>create_video_file</code> method instead.</p>
           <td>
                 <code>bool</code>
           </td>
-          <td><p>whether or not to show the target layer.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>whether or not to show the target layer.</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -1700,8 +1848,12 @@ lost. Use <code>create_video_file</code> method instead.</p>
           <td>
                 <code>bool</code>
           </td>
-          <td><p>whether or not to display a thin white outline of
-the transition between different materials.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>whether or not to display a thin white outline of
+the transition between different materials.</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -1711,8 +1863,12 @@ the transition between different materials.</p></td>
           <td>
                 <code>int</code>
           </td>
-          <td><p>the number of time steps to be skipped when creating
-the animation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the number of time steps to be skipped when creating
+the animation.</p>
+            </div>
+          </td>
           <td>
                 <code>1</code>
           </td>
@@ -1722,8 +1878,12 @@ the animation.</p></td>
           <td>
                 <code>tuple[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>, <span title="numpy">np</span>.<span title="numpy.float_">float_</span>] | None</code>
           </td>
-          <td><p>the input time limit tuple to validate. The expected format is
-(minimum_time, maximum_time).</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the input time limit tuple to validate. The expected format is
+(minimum_time, maximum_time).</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -1733,15 +1893,21 @@ the animation.</p></td>
           <td>
                 <code>str</code>
           </td>
-          <td><p>the normalization method used to scale scalar data to the [0, 1]
+          <td>
+            <div class="doc-md-description">
+              <p>the normalization method used to scale scalar data to the [0, 1]
 range before mapping to colors using cmap. For a list
-of available scales, call <code>matplotlib.scale.get_scale_names()</code>.</p></td>
+of available scales, call <code>matplotlib.scale.get_scale_names()</code>.</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;linear&#39;</code>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -1756,7 +1922,11 @@ of available scales, call <code>matplotlib.scale.get_scale_names()</code>.</p></
           <td>
                 <code><span title="matplotlib.animation.FuncAnimation">FuncAnimation</span></code>
           </td>
-          <td><p>An matplotlib animation object.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>An matplotlib animation object.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -1778,18 +1948,20 @@ of available scales, call <code>matplotlib.scale.get_scale_names()</code>.</p></
 
 
 <h2 id="neurotechdevkit.results.PulsedResult3D" class="doc doc-heading">
-        <code>PulsedResult3D</code>
+          <code>PulsedResult3D</code>
 
 
 </h2>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.results._results.PulsedResult" href="#neurotechdevkit.results.PulsedResult">PulsedResult</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.results._results.PulsedResult" href="#neurotechdevkit.results.PulsedResult">PulsedResult</a></code></p>
 
   
       <p>A container for holding the results of a 3D pulsed simulation.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1807,8 +1979,12 @@ of available scales, call <code>matplotlib.scale.get_scale_names()</code>.</p></
           <td>
                 <code><span title="neurotechdevkit.scenarios">scenarios</span>.<a class="autorefs autorefs-internal" title="neurotechdevkit.scenarios.Scenario3D" href="../scenarios/#neurotechdevkit.scenarios.Scenario3D">Scenario3D</a></code>
           </td>
-          <td><p>the 3D scenario from which this result
-came.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the 3D scenario from which this result
+came.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1818,7 +1994,11 @@ came.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the center frequency (in hertz) of the sources.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the center frequency (in hertz) of the sources.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1828,9 +2008,13 @@ came.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the effective time step (in seconds) along the
+          <td>
+            <div class="doc-md-description">
+              <p>the effective time step (in seconds) along the
 time axis of the wavefield. This can differ from the simulation dt
-if the recording downsampling factor is larger than 1.</p></td>
+if the recording downsampling factor is larger than 1.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1840,8 +2024,12 @@ if the recording downsampling factor is larger than 1.</p></td>
           <td>
                 <code>stride.<span title="stride.Operator">Operator</span></code>
           </td>
-          <td><p>the stride Operator that was executed to run the
-simulation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Operator that was executed to run the
+simulation.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1851,7 +2039,11 @@ simulation.</p></td>
           <td>
                 <code>stride.<span title="stride.Shot">Shot</span></code>
           </td>
-          <td><p>the stride Shot which was used for the simulation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Shot which was used for the simulation.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1859,10 +2051,14 @@ simulation.</p></td>
         <tr>
           <td><code>wavefield</code></td>
           <td>
-                <code><span title="numpy.typing">npt</span>.<span title="numpy.typing.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
+                <code><span title="numpy">npt</span>.<span title="numpy.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
           </td>
-          <td><p>a 4 dimensional array (three axes for
-space and one for time) containing the resulting simulation data.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>a 4 dimensional array (three axes for
+space and one for time) containing the resulting simulation data.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1872,8 +2068,12 @@ space and one for time) containing the resulting simulation data.</p></td>
           <td>
                 <code>stride.<span title="stride.Traces">Traces</span></code>
           </td>
-          <td><p>the stride Traces object returned from executing
-the pde.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Traces object returned from executing
+the pde.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1882,10 +2082,10 @@ the pde.</p></td>
   </table>
 
 
-
   
 
   <div class="doc doc-children">
+
 
 
 
@@ -1911,6 +2111,8 @@ the pde.</p></td>
 <p>Currently only mp4 format supported.
 <code>ffmpeg</code> command line tools needs to be installed.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -1927,8 +2129,12 @@ the pde.</p></td>
           <td>
                 <code>str</code>
           </td>
-          <td><p>the file with path an extension where the animation would be
-saved. Currently only supports mp4 extension.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the file with path an extension where the animation would be
+saved. Currently only supports mp4 extension.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1938,7 +2144,11 @@ saved. Currently only supports mp4 extension.</p></td>
           <td>
                 <code>bool</code>
           </td>
-          <td><p>whether or not to show the source transducer layer.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>whether or not to show the source transducer layer.</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -1948,7 +2158,11 @@ saved. Currently only supports mp4 extension.</p></td>
           <td>
                 <code>bool</code>
           </td>
-          <td><p>whether or not to show the target layer.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>whether or not to show the target layer.</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -1958,8 +2172,12 @@ saved. Currently only supports mp4 extension.</p></td>
           <td>
                 <code>bool</code>
           </td>
-          <td><p>whether or not to display a thin white outline of
-the transition between different materials.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>whether or not to display a thin white outline of
+the transition between different materials.</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -1969,8 +2187,12 @@ the transition between different materials.</p></td>
           <td>
                 <code>int</code>
           </td>
-          <td><p>the number of time steps to be skipped when creating
-the animation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the number of time steps to be skipped when creating
+the animation.</p>
+            </div>
+          </td>
           <td>
                 <code>1</code>
           </td>
@@ -1980,7 +2202,11 @@ the animation.</p></td>
           <td>
                 <code>int | None</code>
           </td>
-          <td><p>the axis along which to slice.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the axis along which to slice.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -1990,8 +2216,12 @@ the animation.</p></td>
           <td>
                 <code>float | None</code>
           </td>
-          <td><p>the position (in meters) along the slice axis at
-which the slice should be made.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the position (in meters) along the slice axis at
+which the slice should be made.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2001,8 +2231,12 @@ which the slice should be made.</p></td>
           <td>
                 <code>tuple[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>, <span title="numpy">np</span>.<span title="numpy.float_">float_</span>] | None</code>
           </td>
-          <td><p>the input time limit tuple to validate. The expected format is
-(minimum_time, maximum_time).</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the input time limit tuple to validate. The expected format is
+(minimum_time, maximum_time).</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2012,9 +2246,13 @@ which the slice should be made.</p></td>
           <td>
                 <code>str</code>
           </td>
-          <td><p>the normalization method used to scale scalar data to the [0, 1]
+          <td>
+            <div class="doc-md-description">
+              <p>the normalization method used to scale scalar data to the [0, 1]
 range before mapping to colors using cmap. For a list of available
-scales, call <code>matplotlib.scale.get_scale_names()</code>.</p></td>
+scales, call <code>matplotlib.scale.get_scale_names()</code>.</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;linear&#39;</code>
           </td>
@@ -2024,7 +2262,11 @@ scales, call <code>matplotlib.scale.get_scale_names()</code>.</p></td>
           <td>
                 <code>int</code>
           </td>
-          <td><p>the frames per second in the animation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the frames per second in the animation.</p>
+            </div>
+          </td>
           <td>
                 <code>25</code>
           </td>
@@ -2034,7 +2276,11 @@ scales, call <code>matplotlib.scale.get_scale_names()</code>.</p></td>
           <td>
                 <code>int</code>
           </td>
-          <td><p>the number of dots per inch in the frames of the animation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the number of dots per inch in the frames of the animation.</p>
+            </div>
+          </td>
           <td>
                 <code>100</code>
           </td>
@@ -2044,8 +2290,12 @@ scales, call <code>matplotlib.scale.get_scale_names()</code>.</p></td>
           <td>
                 <code>int</code>
           </td>
-          <td><p>the bitrate for the saved movie file, which is one way to control
-the output file size and quality.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the bitrate for the saved movie file, which is one way to control
+the output file size and quality.</p>
+            </div>
+          </td>
           <td>
                 <code>2500</code>
           </td>
@@ -2055,8 +2305,12 @@ the output file size and quality.</p></td>
           <td>
                 <code>bool</code>
           </td>
-          <td><p>a boolean that allows the animation to be saved with the same
-file name that is already exists.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>a boolean that allows the animation to be saved with the same
+file name that is already exists.</p>
+            </div>
+          </td>
           <td>
                 <code>False</code>
           </td>
@@ -2067,6 +2321,7 @@ file name that is already exists.</p></td>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -2086,6 +2341,8 @@ Jupyter Notebook environment.
 In a non-interactive environment (script) the result of this animation would be
 lost. Use <code>create_video_file</code> method instead.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -2102,7 +2359,11 @@ lost. Use <code>create_video_file</code> method instead.</p>
           <td>
                 <code>bool</code>
           </td>
-          <td><p>whether or not to show the source transducer layer.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>whether or not to show the source transducer layer.</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -2112,7 +2373,11 @@ lost. Use <code>create_video_file</code> method instead.</p>
           <td>
                 <code>bool</code>
           </td>
-          <td><p>whether or not to show the target layer.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>whether or not to show the target layer.</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -2122,8 +2387,12 @@ lost. Use <code>create_video_file</code> method instead.</p>
           <td>
                 <code>bool</code>
           </td>
-          <td><p>whether or not to display a thin white outline of
-the transition between different materials.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>whether or not to display a thin white outline of
+the transition between different materials.</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -2133,8 +2402,12 @@ the transition between different materials.</p></td>
           <td>
                 <code>int</code>
           </td>
-          <td><p>the number of time steps to be skipped when creating
-the animation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the number of time steps to be skipped when creating
+the animation.</p>
+            </div>
+          </td>
           <td>
                 <code>1</code>
           </td>
@@ -2144,8 +2417,12 @@ the animation.</p></td>
           <td>
                 <code>tuple[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>, <span title="numpy">np</span>.<span title="numpy.float_">float_</span>] | None</code>
           </td>
-          <td><p>the input time limit tuple to validate. The expected format is
-(minimum_time, maximum_time).</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the input time limit tuple to validate. The expected format is
+(minimum_time, maximum_time).</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2155,15 +2432,21 @@ the animation.</p></td>
           <td>
                 <code>str</code>
           </td>
-          <td><p>the normalization method used to scale scalar data to the [0, 1]
+          <td>
+            <div class="doc-md-description">
+              <p>the normalization method used to scale scalar data to the [0, 1]
 range before mapping to colors using cmap. For a list
-of available scales, call <code>matplotlib.scale.get_scale_names()</code>.</p></td>
+of available scales, call <code>matplotlib.scale.get_scale_names()</code>.</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;linear&#39;</code>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -2178,7 +2461,11 @@ of available scales, call <code>matplotlib.scale.get_scale_names()</code>.</p></
           <td>
                 <code><span title="matplotlib.animation.FuncAnimation">FuncAnimation</span></code>
           </td>
-          <td><p>An matplotlib animation object.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>An matplotlib animation object.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2200,7 +2487,7 @@ of available scales, call <code>matplotlib.scale.get_scale_names()</code>.</p></
 
 
 <h2 id="neurotechdevkit.results.Result" class="doc doc-heading">
-        <code>Result</code>
+          <code>Result</code>
 
   
   <span class="doc doc-labels">
@@ -2211,13 +2498,15 @@ of available scales, call <code>matplotlib.scale.get_scale_names()</code>.</p></
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code>abc.<span title="abc.ABC">ABC</span></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code>abc.<span title="abc.ABC">ABC</span></code></p>
 
   
       <p>A base container for holding the results of a simulation.</p>
 <p>This class should not be instantiated, use SteadyStateResult2D, SteadyStateResult3D,
 PulsedResult2D, or PulsedResult3D.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2235,7 +2524,11 @@ PulsedResult2D, or PulsedResult3D.</p>
           <td>
                 <code><span title="neurotechdevkit.scenarios">scenarios</span>.<a class="autorefs autorefs-internal" title="neurotechdevkit.scenarios.Scenario" href="../scenarios/#neurotechdevkit.scenarios.Scenario">Scenario</a></code>
           </td>
-          <td><p>the scenario from which this result came.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the scenario from which this result came.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2245,7 +2538,11 @@ PulsedResult2D, or PulsedResult3D.</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the center frequency (in hertz) of the sources.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the center frequency (in hertz) of the sources.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2255,9 +2552,13 @@ PulsedResult2D, or PulsedResult3D.</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the effective time step (in seconds) along the time axis
+          <td>
+            <div class="doc-md-description">
+              <p>the effective time step (in seconds) along the time axis
 of the wavefield. This can differ from the simulation dt if the recording
-undersampling factor is larger than 1.</p></td>
+undersampling factor is larger than 1.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2267,8 +2568,12 @@ undersampling factor is larger than 1.</p></td>
           <td>
                 <code>stride.<span title="stride.Operator">Operator</span></code>
           </td>
-          <td><p>the stride Operator that was executed to run the
-simulation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Operator that was executed to run the
+simulation.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2278,7 +2583,11 @@ simulation.</p></td>
           <td>
                 <code>stride.<span title="stride.Shot">Shot</span></code>
           </td>
-          <td><p>the stride Shot which was used for the simulation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Shot which was used for the simulation.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2286,10 +2595,14 @@ simulation.</p></td>
         <tr>
           <td><code>wavefield</code></td>
           <td>
-                <code><span title="numpy.typing">npt</span>.<span title="numpy.typing.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
+                <code><span title="numpy">npt</span>.<span title="numpy.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
           </td>
-          <td><p>an array containing the resulting simulation
-data.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>an array containing the resulting simulation
+data.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2299,8 +2612,12 @@ data.</p></td>
           <td>
                 <code>stride.<span title="stride.Traces">Traces</span></code>
           </td>
-          <td><p>the stride Traces object returned from executing the
-pde.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Traces object returned from executing the
+pde.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2309,10 +2626,10 @@ pde.</p></td>
   </table>
 
 
-
   
 
   <div class="doc doc-children">
+
 
 
 
@@ -2349,6 +2666,8 @@ encounter issues calling this function.</p>
 the user would like to download the results in order to visualize them locally
 in 3D.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -2365,8 +2684,12 @@ in 3D.</p>
           <td>
                 <code>str | pathlib.<span title="pathlib.Path">Path</span></code>
           </td>
-          <td><p>the path to the file where the results should be exported. Usually
-a .tar.gz file.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the path to the file where the results should be exported. Usually
+a .tar.gz file.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2391,7 +2714,7 @@ a .tar.gz file.</p></td>
 
 
 <h2 id="neurotechdevkit.results.SteadyStateResult" class="doc doc-heading">
-        <code>SteadyStateResult</code>
+          <code>SteadyStateResult</code>
 
   
   <span class="doc doc-labels">
@@ -2402,13 +2725,15 @@ a .tar.gz file.</p></td>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.results._results.Result" href="#neurotechdevkit.results.Result">Result</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.results._results.Result" href="#neurotechdevkit.results.Result">Result</a></code></p>
 
   
       <p>A base container for holding the results of a steady-state simulation.</p>
 <p>This class should not be instantiated, use SteadyStateResult2D or
 SteadyStateResult3D.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2426,7 +2751,11 @@ SteadyStateResult3D.</p>
           <td>
                 <code>scenario.<span title="scenario.Scenario">Scenario</span></code>
           </td>
-          <td><p>the scenario from which this result came.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the scenario from which this result came.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2436,7 +2765,11 @@ SteadyStateResult3D.</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the center frequency (in hertz) of the sources.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the center frequency (in hertz) of the sources.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2446,9 +2779,13 @@ SteadyStateResult3D.</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the effective time step (in seconds) along the time axis
+          <td>
+            <div class="doc-md-description">
+              <p>the effective time step (in seconds) along the time axis
 of the wavefield. This can differ from the simulation dt if the recording
-undersampling factor is larger than 1.</p></td>
+undersampling factor is larger than 1.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2458,8 +2795,12 @@ undersampling factor is larger than 1.</p></td>
           <td>
                 <code>stride.<span title="stride.Operator">Operator</span></code>
           </td>
-          <td><p>the stride Operator that was executed to run the
-simulation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Operator that was executed to run the
+simulation.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2469,7 +2810,11 @@ simulation.</p></td>
           <td>
                 <code>stride.<span title="stride.Shot">Shot</span></code>
           </td>
-          <td><p>the stride Shot which was used for the simulation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Shot which was used for the simulation.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2477,10 +2822,14 @@ simulation.</p></td>
         <tr>
           <td><code>wavefield</code></td>
           <td>
-                <code><span title="numpy.typing">npt</span>.<span title="numpy.typing.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
+                <code><span title="numpy">npt</span>.<span title="numpy.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
           </td>
-          <td><p>an array containing the resulting
-simulation data.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>an array containing the resulting
+simulation data.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2490,15 +2839,18 @@ simulation data.</p></td>
           <td>
                 <code>stride.<span title="stride.Traces">Traces</span></code>
           </td>
-          <td><p>the stride Traces object returned from executing
-the pde.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Traces object returned from executing
+the pde.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
         </tr>
     </tbody>
   </table>
-
 
 
   
@@ -2541,6 +2893,7 @@ metric is another dictionary containing the following:</p>
 
 
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -2555,6 +2908,8 @@ metric is another dictionary containing the following:</p>
   
       <p>Return the steady-state array and while computing it if necessary.</p>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -2566,9 +2921,13 @@ metric is another dictionary containing the following:</p>
     <tbody>
         <tr>
           <td>
-                <code><span title="numpy.typing">npt</span>.<span title="numpy.typing.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
+                <code><span title="numpy">npt</span>.<span title="numpy.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
           </td>
-          <td><p>An array containing steady-state pressure wave amplitudes (in pascals).</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>An array containing steady-state pressure wave amplitudes (in pascals).</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2590,18 +2949,20 @@ metric is another dictionary containing the following:</p>
 
 
 <h2 id="neurotechdevkit.results.SteadyStateResult2D" class="doc doc-heading">
-        <code>SteadyStateResult2D</code>
+          <code>SteadyStateResult2D</code>
 
 
 </h2>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.results._results.SteadyStateResult" href="#neurotechdevkit.results.SteadyStateResult">SteadyStateResult</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.results._results.SteadyStateResult" href="#neurotechdevkit.results.SteadyStateResult">SteadyStateResult</a></code></p>
 
   
       <p>A container for holding the results of a 2D steady-state simulation.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2619,8 +2980,12 @@ metric is another dictionary containing the following:</p>
           <td>
                 <code><span title="neurotechdevkit.scenarios">scenarios</span>.<a class="autorefs autorefs-internal" title="neurotechdevkit.scenarios.Scenario2D" href="../scenarios/#neurotechdevkit.scenarios.Scenario2D">Scenario2D</a></code>
           </td>
-          <td><p>the 2D scenario from which this result
-came.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the 2D scenario from which this result
+came.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2630,7 +2995,11 @@ came.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the center frequency (in hertz) of the sources.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the center frequency (in hertz) of the sources.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2640,9 +3009,13 @@ came.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the effective time step (in seconds) along the
+          <td>
+            <div class="doc-md-description">
+              <p>the effective time step (in seconds) along the
 time axis of the wavefield. This can differ from the simulation dt
-if the recording downsampling factor is larger than 1.</p></td>
+if the recording downsampling factor is larger than 1.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2652,8 +3025,12 @@ if the recording downsampling factor is larger than 1.</p></td>
           <td>
                 <code>stride.<span title="stride.Operator">Operator</span></code>
           </td>
-          <td><p>the stride Operator that was executed to run
-the simulation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Operator that was executed to run
+the simulation.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2663,7 +3040,11 @@ the simulation.</p></td>
           <td>
                 <code>stride.<span title="stride.Shot">Shot</span></code>
           </td>
-          <td><p>the stride Shot which was used for the simulation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Shot which was used for the simulation.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2671,10 +3052,14 @@ the simulation.</p></td>
         <tr>
           <td><code>wavefield</code></td>
           <td>
-                <code><span title="numpy.typing">npt</span>.<span title="numpy.typing.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
+                <code><span title="numpy">npt</span>.<span title="numpy.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
           </td>
-          <td><p>a 3 dimensional array (two axes for
-space and one for time) containing the resulting simulation data.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>a 3 dimensional array (two axes for
+space and one for time) containing the resulting simulation data.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2684,8 +3069,12 @@ space and one for time) containing the resulting simulation data.</p></td>
           <td>
                 <code>stride.<span title="stride.Traces">Traces</span></code>
           </td>
-          <td><p>the stride Traces object returned from executing
-the pde.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Traces object returned from executing
+the pde.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2694,10 +3083,10 @@ the pde.</p></td>
   </table>
 
 
-
   
 
   <div class="doc doc-children">
+
 
 
 
@@ -2722,6 +3111,8 @@ the pde.</p></td>
       <p>Create a matplotlib figure with the steady-state pressure wave amplitude.</p>
 <p>The grid can be turned on via: <code>plt.grid(True)</code></p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -2738,7 +3129,11 @@ the pde.</p></td>
           <td>
                 <code>bool</code>
           </td>
-          <td><p>whether or not to show the source transducer layer.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>whether or not to show the source transducer layer.</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -2748,7 +3143,11 @@ the pde.</p></td>
           <td>
                 <code>bool</code>
           </td>
-          <td><p>whether or not to show the target layer.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>whether or not to show the target layer.</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -2758,8 +3157,12 @@ the pde.</p></td>
           <td>
                 <code>bool</code>
           </td>
-          <td><p>whether or not to display a thin white outline of
-the transition between different materials.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>whether or not to display a thin white outline of
+the transition between different materials.</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -2784,18 +3187,20 @@ the transition between different materials.</p></td>
 
 
 <h2 id="neurotechdevkit.results.SteadyStateResult3D" class="doc doc-heading">
-        <code>SteadyStateResult3D</code>
+          <code>SteadyStateResult3D</code>
 
 
 </h2>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.results._results.SteadyStateResult" href="#neurotechdevkit.results.SteadyStateResult">SteadyStateResult</a></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="neurotechdevkit.results._results.SteadyStateResult" href="#neurotechdevkit.results.SteadyStateResult">SteadyStateResult</a></code></p>
 
   
       <p>A container for holding the results of a 3D steady-state simulation.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2813,8 +3218,12 @@ the transition between different materials.</p></td>
           <td>
                 <code><span title="neurotechdevkit.scenarios">scenarios</span>.<a class="autorefs autorefs-internal" title="neurotechdevkit.scenarios.Scenario3D" href="../scenarios/#neurotechdevkit.scenarios.Scenario3D">Scenario3D</a></code>
           </td>
-          <td><p>the 3D scenario from which this result
-came.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the 3D scenario from which this result
+came.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2824,7 +3233,11 @@ came.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the center frequency (in hertz) of the sources.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the center frequency (in hertz) of the sources.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2834,9 +3247,13 @@ came.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the effective time step (in seconds) along the
+          <td>
+            <div class="doc-md-description">
+              <p>the effective time step (in seconds) along the
 time axis of the wavefield. This can differ from the simulation dt
-if the recording downsampling factor is larger than 1.</p></td>
+if the recording downsampling factor is larger than 1.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2846,8 +3263,12 @@ if the recording downsampling factor is larger than 1.</p></td>
           <td>
                 <code>stride.<span title="stride.Operator">Operator</span></code>
           </td>
-          <td><p>the stride Operator that was executed to run the
-simulation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Operator that was executed to run the
+simulation.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2857,7 +3278,11 @@ simulation.</p></td>
           <td>
                 <code>stride.<span title="stride.Shot">Shot</span></code>
           </td>
-          <td><p>the stride Shot which was used for the simulation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Shot which was used for the simulation.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2865,10 +3290,14 @@ simulation.</p></td>
         <tr>
           <td><code>wavefield</code></td>
           <td>
-                <code><span title="numpy.typing">npt</span>.<span title="numpy.typing.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
+                <code><span title="numpy">npt</span>.<span title="numpy.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
           </td>
-          <td><p>a 4 dimensional array (three axes for
-space and one for time) containing the resulting simulation data.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>a 4 dimensional array (three axes for
+space and one for time) containing the resulting simulation data.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2878,8 +3307,12 @@ space and one for time) containing the resulting simulation data.</p></td>
           <td>
                 <code>stride.<span title="stride.Traces">Traces</span></code>
           </td>
-          <td><p>the stride Traces object returned from executing
-the pde.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Traces object returned from executing
+the pde.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2888,10 +3321,10 @@ the pde.</p></td>
   </table>
 
 
-
   
 
   <div class="doc doc-children">
+
 
 
 
@@ -2919,6 +3352,8 @@ needs to be specified via <code>slice_axis</code> and <code>slice_position</code
 at z=0.01 m, use <code>slice_axis=2</code> and <code>slice_position=0.01</code>.</p>
 <p>The grid can be turned on via: <code>plt.grid(True)</code></p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -2935,7 +3370,11 @@ at z=0.01 m, use <code>slice_axis=2</code> and <code>slice_position=0.01</code>.
           <td>
                 <code>bool</code>
           </td>
-          <td><p>whether or not to show the source transducer layer.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>whether or not to show the source transducer layer.</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -2945,7 +3384,11 @@ at z=0.01 m, use <code>slice_axis=2</code> and <code>slice_position=0.01</code>.
           <td>
                 <code>bool</code>
           </td>
-          <td><p>whether or not to show the target layer.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>whether or not to show the target layer.</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -2955,8 +3398,12 @@ at z=0.01 m, use <code>slice_axis=2</code> and <code>slice_position=0.01</code>.
           <td>
                 <code>bool</code>
           </td>
-          <td><p>whether or not to display a thin white outline of
-the transition between different materials.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>whether or not to display a thin white outline of
+the transition between different materials.</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -2967,6 +3414,7 @@ the transition between different materials.</p></td>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -3008,6 +3456,7 @@ documentation for more information on the GUI.</p>
 </div>
 
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -3025,6 +3474,8 @@ documentation for more information on the GUI.</p>
 spatial dimensions. If the ndim of the wavefield is N, then the wavefield has N-1
 spatial dimensions and 1 time dimension.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -3041,7 +3492,11 @@ spatial dimensions and 1 time dimension.</p>
           <td>
                 <code><span title="typing.Union">Union</span>[<span title="neurotechdevkit.scenarios">scenarios</span>.<a class="autorefs autorefs-internal" title="neurotechdevkit.scenarios.Scenario2D" href="../scenarios/#neurotechdevkit.scenarios.Scenario2D">Scenario2D</a>, <span title="neurotechdevkit.scenarios">scenarios</span>.<a class="autorefs autorefs-internal" title="neurotechdevkit.scenarios.Scenario3D" href="../scenarios/#neurotechdevkit.scenarios.Scenario3D">Scenario3D</a>]</code>
           </td>
-          <td><p>the scenario from which this result came.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the scenario from which this result came.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3051,7 +3506,11 @@ spatial dimensions and 1 time dimension.</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the center frequency (in hertz) of the sources.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the center frequency (in hertz) of the sources.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3061,9 +3520,13 @@ spatial dimensions and 1 time dimension.</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the effective time step (in seconds) along the
+          <td>
+            <div class="doc-md-description">
+              <p>the effective time step (in seconds) along the
 time axis of the wavefield. This can differ from the simulation dt if
-the recording downsampling factor is larger than 1.</p></td>
+the recording downsampling factor is larger than 1.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3073,8 +3536,12 @@ the recording downsampling factor is larger than 1.</p></td>
           <td>
                 <code>stride.<span title="stride.Operator">Operator</span></code>
           </td>
-          <td><p>the stride Operator that was executed to run the
-simulation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Operator that was executed to run the
+simulation.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3084,7 +3551,11 @@ simulation.</p></td>
           <td>
                 <code>stride.<span title="stride.Shot">Shot</span></code>
           </td>
-          <td><p>the stride Shot which was used for the simulation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Shot which was used for the simulation.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3092,10 +3563,14 @@ simulation.</p></td>
         <tr>
           <td><code>wavefield</code></td>
           <td>
-                <code><span title="numpy.typing">npt</span>.<span title="numpy.typing.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
+                <code><span title="numpy">npt</span>.<span title="numpy.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
           </td>
-          <td><p>an array containing the resulting
-simulation data.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>an array containing the resulting
+simulation data.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3105,14 +3580,20 @@ simulation data.</p></td>
           <td>
                 <code>stride.<span title="stride.Traces">Traces</span></code>
           </td>
-          <td><p>the stride Traces object returned from executing
-the pde.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Traces object returned from executing
+the pde.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Raises:</strong></p>
   <table>
@@ -3127,10 +3608,16 @@ the pde.</p></td>
           <td>
                 <code>ValueError</code>
           </td>
-          <td><p>if the ndim of the wavefield is less than 3 or more than 4.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>if the ndim of the wavefield is less than 3 or more than 4.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -3145,7 +3632,11 @@ the pde.</p></td>
 <td><code>Result</code></td>          <td>
                 <code><span title="typing.Union">Union</span>[<a class="autorefs autorefs-internal" title="neurotechdevkit.results._results.PulsedResult2D" href="#neurotechdevkit.results.PulsedResult2D">PulsedResult2D</a>, <a class="autorefs autorefs-internal" title="neurotechdevkit.results._results.PulsedResult3D" href="#neurotechdevkit.results.PulsedResult3D">PulsedResult3D</a>]</code>
           </td>
-          <td><p>a PulsedResult2D or PulsedResult3D, depending on the wavefield shape.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>a PulsedResult2D or PulsedResult3D, depending on the wavefield shape.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -3153,6 +3644,7 @@ the pde.</p></td>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -3171,6 +3663,8 @@ the pde.</p></td>
 wavefield spatial dimensions. If the ndim of the wavefield is N, then the wavefield
 has N-1 spatial dimensions and 1 time dimension.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -3187,7 +3681,11 @@ has N-1 spatial dimensions and 1 time dimension.</p>
           <td>
                 <code><span title="typing.Union">Union</span>[<span title="neurotechdevkit.scenarios">scenarios</span>.<a class="autorefs autorefs-internal" title="neurotechdevkit.scenarios.Scenario2D" href="../scenarios/#neurotechdevkit.scenarios.Scenario2D">Scenario2D</a>, <span title="neurotechdevkit.scenarios">scenarios</span>.<a class="autorefs autorefs-internal" title="neurotechdevkit.scenarios.Scenario3D" href="../scenarios/#neurotechdevkit.scenarios.Scenario3D">Scenario3D</a>]</code>
           </td>
-          <td><p>the scenario from which this result came.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the scenario from which this result came.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3197,7 +3695,11 @@ has N-1 spatial dimensions and 1 time dimension.</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the center frequency (in hertz) of the sources.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the center frequency (in hertz) of the sources.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3207,9 +3709,13 @@ has N-1 spatial dimensions and 1 time dimension.</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>the effective time step (in seconds) along the
+          <td>
+            <div class="doc-md-description">
+              <p>the effective time step (in seconds) along the
 time axis of the wavefield. This can differ from the simulation dt if
-the recording downsampling factor is larger than 1.</p></td>
+the recording downsampling factor is larger than 1.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3219,8 +3725,12 @@ the recording downsampling factor is larger than 1.</p></td>
           <td>
                 <code>stride.<span title="stride.Operator">Operator</span></code>
           </td>
-          <td><p>the stride Operator that was executed to run
-the simulation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Operator that was executed to run
+the simulation.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3230,7 +3740,11 @@ the simulation.</p></td>
           <td>
                 <code>stride.<span title="stride.Shot">Shot</span></code>
           </td>
-          <td><p>the stride Shot which was used for the simulation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Shot which was used for the simulation.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3238,10 +3752,14 @@ the simulation.</p></td>
         <tr>
           <td><code>wavefield</code></td>
           <td>
-                <code><span title="numpy.typing">npt</span>.<span title="numpy.typing.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
+                <code><span title="numpy">npt</span>.<span title="numpy.NDArray">NDArray</span>[<span title="numpy">np</span>.<span title="numpy.float_">float_</span>]</code>
           </td>
-          <td><p>an array containing the resulting
-simulation data.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>an array containing the resulting
+simulation data.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3251,14 +3769,20 @@ simulation data.</p></td>
           <td>
                 <code>stride.<span title="stride.Traces">Traces</span></code>
           </td>
-          <td><p>the stride Traces object returned from executing
-the pde.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the stride Traces object returned from executing
+the pde.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Raises:</strong></p>
   <table>
@@ -3273,10 +3797,16 @@ the pde.</p></td>
           <td>
                 <code>ValueError</code>
           </td>
-          <td><p>if the ndim of the wavefield is less than 3 or more than 4.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>if the ndim of the wavefield is less than 3 or more than 4.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -3291,8 +3821,12 @@ the pde.</p></td>
 <td><code>Result</code></td>          <td>
                 <code><a class="autorefs autorefs-internal" title="neurotechdevkit.results._results.SteadyStateResult" href="#neurotechdevkit.results.SteadyStateResult">SteadyStateResult</a></code>
           </td>
-          <td><p>a SteadyStateResult2D or SteadyStateResult3D, depending on the wavefield
-shape.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>a SteadyStateResult2D or SteadyStateResult3D, depending on the wavefield
+shape.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -3300,6 +3834,7 @@ shape.</p></td>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -3327,6 +3862,8 @@ simulations the result object will contain the original wavefield.</p>
 the user would like to download the results in order to visualize them locally
 in 3D.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -3343,14 +3880,20 @@ in 3D.</p>
           <td>
                 <code>str | pathlib.<span title="pathlib.Path">Path</span></code>
           </td>
-          <td><p>the path to an existing result file previously saved via
-Result.save_to_disk.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the path to an existing result file previously saved via
+Result.save_to_disk.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -3365,7 +3908,11 @@ Result.save_to_disk.</p></td>
           <td>
                 <code><a class="autorefs autorefs-internal" title="neurotechdevkit.results._results.Result" href="#neurotechdevkit.results.Result">Result</a></code>
           </td>
-          <td><p>A Results object (SteadyStateResult or PulsedResult)</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A Results object (SteadyStateResult or PulsedResult)</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -3420,16 +3967,22 @@ Result.save_to_disk.</p></td>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        
+          <script src="../../javascripts/mathjax.js"></script>
+        
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
       
     
   </body>

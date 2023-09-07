@@ -17,7 +17,7 @@
         <link rel="next" href="../problem/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.9">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
@@ -25,10 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -638,6 +638,10 @@
         
           
         
+          
+        
+          
+        
       
       
         
@@ -828,6 +832,34 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../generated/gallery/plot_ultrasound_imaging_multiplane/" class="md-nav__link">
+        Ultrasound imaging simulation with multi-plane waves
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../generated/gallery/plot_ultrasound_imaging_scanline/" class="md-nav__link">
+        Ultrasound imaging simulation
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -945,15 +977,15 @@
 
 
 <h2 id="neurotechdevkit.grid.Grid" class="doc doc-heading">
-        <code>Grid</code>
+          <code>Grid</code>
 
 
 </h2>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code>stride.<span title="stride.Grid">Grid</span></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code>stride.<span title="stride.Grid">Grid</span></code></p>
 
   
       <p>Grid class for neurotechdevkit. It is a subclass of stride.Grid.</p>
@@ -961,10 +993,10 @@
 define the simulation domain and the grid spacing.</p>
 
 
-
   
 
   <div class="doc doc-children">
+
 
 
 
@@ -994,6 +1026,8 @@ define the simulation domain and the grid spacing.</p>
 <p>Note that the time component of the grid is not defined here. That is
 created at simulation time because it depends on simulation parameters.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -1010,8 +1044,12 @@ created at simulation time because it depends on simulation parameters.</p>
           <td>
                 <code><span title="typing.Union">Union</span>[<span title="typing.Tuple">Tuple</span>[float, float], <span title="typing.Tuple">Tuple</span>[float, float, float]]</code>
           </td>
-          <td><p>a tuple of two or three floats representing the dimensions
-(in meters) of the simulation.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>a tuple of two or three floats representing the dimensions
+(in meters) of the simulation.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1021,8 +1059,12 @@ created at simulation time because it depends on simulation parameters.</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>a float representing the speed of sound in water (in
-m/s).</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>a float representing the speed of sound in water (in
+m/s).</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1032,8 +1074,12 @@ m/s).</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>a float representing the center frequency of the
-source (in Hz).</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>a float representing the center frequency of the
+source (in Hz).</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1043,7 +1089,11 @@ source (in Hz).</p></td>
           <td>
                 <code>int</code>
           </td>
-          <td><p>an integer representing the number of points per wavelength.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>an integer representing the number of points per wavelength.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1053,10 +1103,14 @@ source (in Hz).</p></td>
           <td>
                 <code><span title="typing.Union">Union</span>[int, <span title="typing.Iterable">Iterable</span>[int]]</code>
           </td>
-          <td><p>an integer or an iterable of integers representing the number
+          <td>
+            <div class="doc-md-description">
+              <p>an integer or an iterable of integers representing the number
 of gridpoints to add as boundary layers on each side of the grid.
 Extras are added both before and after the grid on each axis.
-Default is 50.</p></td>
+Default is 50.</p>
+            </div>
+          </td>
           <td>
                 <code>50</code>
           </td>
@@ -1066,15 +1120,21 @@ Default is 50.</p></td>
           <td>
                 <code><span title="typing.Union">Union</span>[int, <span title="typing.Iterable">Iterable</span>[int]]</code>
           </td>
-          <td><p>an integer or an iterable of integers representing the
+          <td>
+            <div class="doc-md-description">
+              <p>an integer or an iterable of integers representing the
 number of gridpoints within the boundary layers that are
-absorbing. Default is 40.</p></td>
+absorbing. Default is 40.</p>
+            </div>
+          </td>
           <td>
                 <code>40</code>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -1089,7 +1149,11 @@ absorbing. Default is 40.</p></td>
 <td><code>Grid</code></td>          <td>
                 <code><a class="autorefs autorefs-internal" title="neurotechdevkit.grid.Grid" href="#neurotechdevkit.grid.Grid">Grid</a></code>
           </td>
-          <td><p>the Grid object.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the Grid object.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -1097,6 +1161,7 @@ absorbing. Default is 40.</p></td>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -1116,6 +1181,8 @@ absorbing. Default is 40.</p></td>
   
       <p>Create an NDK Grid with the given shape.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -1132,7 +1199,11 @@ absorbing. Default is 40.</p></td>
           <td>
                 <code><span title="typing.Tuple">Tuple</span>[int, int]</code>
           </td>
-          <td><p>a tuple of two integers representing the shape of the grid.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>a tuple of two integers representing the shape of the grid.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1142,14 +1213,20 @@ absorbing. Default is 40.</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>a float representing the axis-wise spacing of the grid, in
-meters.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>a float representing the axis-wise spacing of the grid, in
+meters.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -1164,7 +1241,11 @@ meters.</p></td>
 <td><code>Grid</code></td>          <td>
                 <code><a class="autorefs autorefs-internal" title="neurotechdevkit.grid.Grid" href="#neurotechdevkit.grid.Grid">Grid</a></code>
           </td>
-          <td><p>the Grid object.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the Grid object.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -1228,16 +1309,22 @@ meters.</p></td>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        
+          <script src="../../javascripts/mathjax.js"></script>
+        
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
       
     
   </body>
