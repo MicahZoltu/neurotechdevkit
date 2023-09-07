@@ -688,6 +688,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#neurotechdevkit.results._results.SteadyStateResult3D.get_steady_state_result_2d" class="md-nav__link">
+    get_steady_state_result_2d()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#neurotechdevkit.results._results.SteadyStateResult3D.render_steady_state_amplitudes" class="md-nav__link">
     render_steady_state_amplitudes()
   </a>
@@ -1191,6 +1198,13 @@
   
     <nav class="md-nav" aria-label="SteadyStateResult3D">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neurotechdevkit.results._results.SteadyStateResult3D.get_steady_state_result_2d" class="md-nav__link">
+    get_steady_state_result_2d()
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#neurotechdevkit.results._results.SteadyStateResult3D.render_steady_state_amplitudes" class="md-nav__link">
@@ -3332,6 +3346,119 @@ the pde.</p>
 
 
 
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="neurotechdevkit.results._results.SteadyStateResult3D.get_steady_state_result_2d" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_steady_state_result_2d</span><span class="p">(</span><span class="n">slice_axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">slice_position</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Return a 2D steady-state result from a 3D steady-state result.</p>
+<p>This function will take a slice of the 3D steady-state result and return a 2D
+steady-state result of the slice. A slice through the scenario can be specified
+via <code>slice_axis</code> and <code>slice_position</code>. Eg. to take a slice at z=0.01 m, use
+<code>slice_axis=2</code> and <code>slice_position=0.01</code>. If <code>slice_axis</code> and <code>slice_position</code>
+are not specified, the slice will be taken along the scenario's <code>slice_axis</code> and
+<code>slice_position</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When taking a 2D slice of a 3D steady-state result, the sources and target
+are not being accounted for and will not be preserved in the 2D result.</p>
+</div>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>slice_axis</code></td>
+          <td>
+                <code><span title="typing.Optional">Optional</span>[<span title="neurotechdevkit.scenarios._utils.SliceAxis">SliceAxis</span>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The axis along which to slice the 3D field to be recorded. If
+None, then the complete field will be recorded. Use 0 for X axis, 1 for
+Y axis and 2 for Z axis. Defaults to None.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>slice_position</code></td>
+          <td>
+                <code><span title="typing.Optional">Optional</span>[float]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The position (in meters) along the slice axis at which the
+slice of the 3D field should be made. Position must be within the slice
+axis range. Eg. for a slice with origin -0.035 and extent 0.07, the
+valid range is [-0.035, 0.035]. Defaults to None.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="neurotechdevkit.results._results.SteadyStateResult2D" href="#neurotechdevkit.results.SteadyStateResult2D">SteadyStateResult2D</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A SteadyStateResult2D object containing the 2D slice of the 3D steady-state</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="neurotechdevkit.results._results.SteadyStateResult2D" href="#neurotechdevkit.results.SteadyStateResult2D">SteadyStateResult2D</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>simulation results.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
 
 
 <div class="doc doc-object doc-function">
