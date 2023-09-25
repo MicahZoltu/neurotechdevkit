@@ -418,12 +418,13 @@ class Scenario(abc.ABC):
 
         sub_problem = self._setup_sub_problem("steady-state")
         pde = self._create_pde()
+        recording_time_bounds_inclusive = self._get_steady_state_recording_time_bounds(
+            points_per_period, n_cycles_steady_state
+        )
         traces = self._execute_pde(
             pde=pde,
             sub_problem=sub_problem,
-            save_bounds=self._get_steady_state_recording_time_bounds(
-                points_per_period, n_cycles_steady_state
-            ),
+            save_bounds=recording_time_bounds_inclusive,
             save_undersampling=recording_time_undersampling,
             wavefield_slice=self._wavefield_slice(),
             n_jobs=n_jobs,
@@ -434,6 +435,10 @@ class Scenario(abc.ABC):
         # put the time axis last and remove the empty last frame
         wavefield = np.moveaxis(pde.wavefield.data[:-1], 0, -1)
 
+        new_indices = traces.grid.time.grid[
+            recording_time_bounds_inclusive[0] : recording_time_bounds_inclusive[1]
+            + 1 : recording_time_undersampling
+        ]
         return results.create_steady_state_result(
             scenario=self,  # type: ignore
             center_frequency=self.center_frequency,
@@ -512,10 +517,11 @@ class Scenario(abc.ABC):
 
         sub_problem = self._setup_sub_problem("pulsed")
         pde = self._create_pde()
+        recording_time_bounds_inclusive = self._get_pulsed_recording_time_bounds()
         traces = self._execute_pde(
             pde=pde,
             sub_problem=sub_problem,
-            save_bounds=self._get_pulsed_recording_time_bounds(),
+            save_bounds=recording_time_bounds_inclusive,
             save_undersampling=recording_time_undersampling,
             wavefield_slice=self._wavefield_slice(slice_axis, slice_position),
             n_jobs=n_jobs,

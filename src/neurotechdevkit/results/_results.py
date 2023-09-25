@@ -65,6 +65,7 @@ class Result(abc.ABC):
     shot: stride.Shot
     wavefield: npt.NDArray[np.float_]
     traces: stride.Traces
+    recording_times: npt.NDArray[np.float_]
 
     def save_to_disk(self, filepath: str | pathlib.Path) -> None:
         """Save the result to a tarball containing the data as a gzip compressed file.
