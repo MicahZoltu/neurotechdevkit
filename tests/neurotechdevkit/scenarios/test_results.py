@@ -416,7 +416,7 @@ def test_pulsed_results_recorded_times(result_args):
         }
     )
     result = create_pulsed_result(**result_args)
-    timestamps = result._recording_times()
+    timestamps = result.recording_times()
     expected = np.linspace(start=0, stop=8.4, num=5)
     np.testing.assert_allclose(timestamps, expected)
 
@@ -428,7 +428,7 @@ def test_validate_time_lim_argument(time_lim, result_args, monkeypatch):
     def mock_times(fake_self):
         return np.array([0, 1, 2, 3, 4, 5])
 
-    monkeypatch.setattr(PulsedResult2D, "_recording_times", mock_times)
+    monkeypatch.setattr(PulsedResult2D, "recording_times", mock_times)
     result_args.update({"wavefield": np.ones((4, 5, 6))})
     result = create_pulsed_result(**result_args)
     with pytest.raises(ValueError):

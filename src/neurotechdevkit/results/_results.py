@@ -623,8 +623,9 @@ class PulsedResult(Result):
 
     recorded_slice: tuple[int, float] | None = None
 
-    def _recording_times(self) -> npt.NDArray[np.float_]:
+    def recording_times(self) -> npt.NDArray[np.float_]:
         """Compute the time (in seconds) for each recorded frame in the wavefield.
+        Starts from 0.
 
         Returns:
             A 1D array with the time in seconds for each step.
@@ -650,7 +651,7 @@ class PulsedResult(Result):
             (len(time_lim) != 2)
             or (time_lim[0] < 0)
             or (time_lim[1] <= time_lim[0])
-            or (time_lim[1] > self._recording_times()[-1])
+            or (time_lim[1] > self.recording_times()[-1])
         ):
             raise ValueError("Wrong value for time_lim")
 
@@ -886,7 +887,7 @@ class PulsedResult2D(PulsedResult):
 
         if time_lim is not None:
             self._validate_time_lim(time_lim)
-            times = self._recording_times()
+            times = self.recording_times()
             time_mask = np.logical_and(times >= time_lim[0], times <= time_lim[1])
             wavefield = wavefield[:, :, time_mask]
 
@@ -1151,7 +1152,7 @@ class PulsedResult3D(PulsedResult):
 
         if time_lim is not None:
             self._validate_time_lim(time_lim)
-            times = self._recording_times()
+            times = self.recording_times()
             time_start_idx = (np.abs(times - time_lim[0])).argmin()
             time_end_idx = (np.abs(times - time_lim[1])).argmin()
             time_slice = slice(time_start_idx, time_end_idx + 1, None)
