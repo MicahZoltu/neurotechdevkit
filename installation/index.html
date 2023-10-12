@@ -981,10 +981,10 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>neurotechdevkit
 </code></pre></div>
 <p>You also have to install stride, it can be done running:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/trustimaging/stride
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/trustimaging/stride@2520c59
 </code></pre></div>
 <h2 id="setting-up-a-compiler">Setting up a compiler</h2>
-<p>NDK uses <a href="https://www.devitoproject.org/devito/">devito</a> to perform the heavy computational operations. Devito generates, compiles and runs C code to achieve better performance.
+<p>NDK uses <a href="https://www.devitoproject.org/">devito</a> to perform the heavy computational operations. Devito generates, compiles and runs C code to achieve better performance.
 The compiler used by Devito has to be selected, and paths for the linker might also be added as environment variables.</p>
 <p>As a last step <strong>before running NDK</strong>, follow the instructions below depending on your OS.</p>
 <details>
