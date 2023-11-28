@@ -236,6 +236,16 @@ class PointSource3D(PointSource):
         )
 
 
+def swap_coordinates(array):
+    if isinstance(array, np.ndarray):
+        return np.array([array[1], array[0]])
+    elif isinstance(array, list):
+        return [array[1], array[0]]
+    elif isinstance(array, tuple):
+        return (array[1], array[0])
+    return array
+
+
 class FocusedSource2D(Source):
     """A focused source in 2D.
 
@@ -257,7 +267,8 @@ class FocusedSource2D(Source):
         `_center_angle` points from the focus to the transducer, so they are
         opposite.
         """
-        return np.arctan2(-self.unit_direction[1], -self.unit_direction[0])
+        directions = swap_coordinates(self.unit_direction)
+        return np.arctan2(-directions[1], -directions[0])
 
     @property
     def _angle_range(self) -> float:
@@ -284,7 +295,10 @@ class FocusedSource2D(Source):
         if self.aperture > 2 * self.focal_length:
             raise ValueError("aperture cannot be larger than twice the focal length")
 
-        circle_center = self.position + self.unit_direction * self.focal_length
+        circle_center = (
+            swap_coordinates(self.position)
+            + swap_coordinates(self.unit_direction) * self.focal_length
+        )
         radius = self.focal_length
 
         center_angle = self._center_angle
@@ -1323,7 +1337,6 @@ class PhasedArraySource3D(PhasedArraySource):
         n_remaining = n_points - points.shape[0]
 
         if n_remaining > 0:
-
             # First compute the center
             x_width = x_max - x_min
             centre = np.array([(x_min + x_max) / 2, height / 2])

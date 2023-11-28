@@ -61,6 +61,16 @@ class SourceRenderType(enum.Enum):
             )
 
 
+def swap_coordinates(array):
+    if isinstance(array, np.ndarray):
+        return np.array([array[1], array[0]])
+    elif isinstance(array, list):
+        return [array[1], array[0]]
+    elif isinstance(array, tuple):
+        return (array[1], array[0])
+    return array
+
+
 class SourceDrawingParams(NamedTuple):
     """A container for the parameters needed to draw a source.
 

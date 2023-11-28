@@ -10,26 +10,36 @@ from .._base import Scenario2D
 from .._utils import Target, create_grid_circular_mask, create_grid_elliptical_mask
 
 
+def swap_coordinates(array):
+    if isinstance(array, np.ndarray):
+        return np.array([array[1], array[0]])
+    elif isinstance(array, list):
+        return [array[1], array[0]]
+    elif isinstance(array, tuple):
+        return (array[1], array[0])
+    return array
+
+
 class Scenario0(Scenario2D):
     """Scenario 0."""
 
     center_frequency = 5e5  # Hz
     target = Target(
         target_id="target_1",
-        center=[0.0285, 0.0024],
+        center=swap_coordinates([0.0285, 0.0024]),
         radius=0.0017,
         description="Represents a simulated tumor.",
     )
     sources = [
         FocusedSource2D(
-            position=[0.01, 0.0],
-            direction=[1.0, 0.0],
+            position=swap_coordinates([0.01, 0.0]),
+            direction=swap_coordinates([1.0, 0.0]),
             aperture=0.01,
             focal_length=0.01,
             num_points=1000,
         )
     ]
-    origin = [0.0, -0.02]
+    origin = swap_coordinates([0.0, -0.02])
 
     material_properties = {
         "water": Material(vp=1500.0, rho=1000.0, alpha=0.0, render_color="#2E86AB"),
@@ -59,7 +69,7 @@ class Scenario0(Scenario2D):
     def make_grid(self):
         """Make the grid for scenario 0."""
         self.grid = Grid.make_grid(
-            extent=(0.05, 0.04),  # m
+            extent=swap_coordinates((0.05, 0.04)),  # m
             speed_water=1500,  # m/s
             ppw=6,  # desired resolution for complexity=fast
             center_frequency=self.center_frequency,
@@ -94,8 +104,8 @@ def _create_scenario_0_mask(material, grid, origin):
 
 
 def _create_skull_interface_mask(grid, origin):
-    skull_outer_radii = np.array([0.01275, 0.01])
-    skull_center = np.array([0.025, 0.0])
+    skull_outer_radii = swap_coordinates(np.array([0.01275, 0.01]))
+    skull_center = swap_coordinates(np.array([0.025, 0.0]))
 
     skull_a, skull_b = skull_outer_radii
     outer_skull_mask = create_grid_elliptical_mask(
@@ -105,9 +115,9 @@ def _create_skull_interface_mask(grid, origin):
 
 
 def _create_brain_interface_mask(grid, origin):
-    skull_outer_radii = np.array([0.01275, 0.01])
+    skull_outer_radii = swap_coordinates(np.array([0.01275, 0.01]))
     skull_thickness = 0.001
-    skull_center = np.array([0.025, 0.0])
+    skull_center = swap_coordinates(np.array([0.025, 0.0]))
 
     skull_a, skull_b = skull_outer_radii
     brain_center = skull_center
@@ -121,6 +131,6 @@ def _create_brain_interface_mask(grid, origin):
 
 def _create_tumor_mask(grid, origin):
     tumor_radius = 0.0013
-    tumor_center = np.array([0.0285, 0.0025])
+    tumor_center = swap_coordinates(np.array([0.0285, 0.0025]))
     tumor_mask = create_grid_circular_mask(grid, origin, tumor_center, tumor_radius)
     return tumor_mask

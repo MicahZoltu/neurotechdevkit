@@ -10,6 +10,10 @@ from mosaic.types import Struct
 from neurotechdevkit.grid import Grid
 
 
+def transpose(arr):
+    return arr.T
+
+
 class Problem(stride.Problem):
     """Problem class for NDK. It is a subclass of stride.Problem.
 
@@ -52,7 +56,7 @@ class Problem(stride.Problem):
         alpha = stride.ScalarField(name="alpha", grid=self.grid)  # [dB/cm]
 
         for name, material in materials.items():
-            material_mask = masks[name]
+            material_mask = transpose(masks[name])
             vp.data[material_mask] = material.vp
             rho.data[material_mask] = material.rho
             alpha.data[material_mask] = material.alpha

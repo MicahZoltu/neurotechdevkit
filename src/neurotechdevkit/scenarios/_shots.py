@@ -97,6 +97,16 @@ def _add_sources_to_geometry(
     return point_transducers
 
 
+def swap_coordinates(array):
+    if isinstance(array, np.ndarray):
+        return np.array([array[1], array[0]])
+    elif isinstance(array, list):
+        return [array[1], array[0]]
+    elif isinstance(array, tuple):
+        return (array[1], array[0])
+    return array
+
+
 def _add_point_transducers_to_geometry(
     problem: Problem, coords: npt.NDArray[np.float_]
 ) -> list[TransducerLocation]:
@@ -122,7 +132,8 @@ def _add_point_transducers_to_geometry(
     source_locations = []
     offset = problem.geometry.num_locations
     for n in range(coords.shape[0]):
-        problem.geometry.add(offset + n, transducer, coords[n, :])
+        coord = coords[n, :]
+        problem.geometry.add(offset + n, transducer, swap_coordinates(coord))
         source_locations.append(problem.geometry.get(offset + n))
 
     return source_locations

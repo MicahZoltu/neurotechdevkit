@@ -54,8 +54,11 @@ def create_steady_state_figure(
     fig = plt.figure()
     ax = fig.gca()
     # the extent for imshow is "(left, right, bottom, top)"
+    # imshow_extent = np.array(
+    #     [origin[1], origin[1] + extent[1], origin[0] + extent[0], origin[0]]
+    # )
     imshow_extent = np.array(
-        [origin[1], origin[1] + extent[1], origin[0] + extent[0], origin[0]]
+        [origin[0], origin[0] + extent[1], origin[1] + extent[0], origin[1]]
     )
 
     ax.imshow(amplitudes, cmap="viridis", extent=imshow_extent)
@@ -101,8 +104,11 @@ def create_pulsed_figure(
     max_pressure = wavefield.max()
 
     cmap = _create_centered_bidirectional_cmap(vmin=min_pressure, vmax=max_pressure)
+    # imshow_extent = np.array(
+    #     [origin[1], origin[1] + extent[1], origin[0] + extent[0], origin[0]]
+    # )
     imshow_extent = np.array(
-        [origin[1], origin[1] + extent[1], origin[0] + extent[0], origin[0]]
+        [origin[0], origin[0] + extent[1], origin[1] + extent[0], origin[1]]
     )
     # reference image, it would be replaced when creating the animation.
     mid_point = wavefield.shape[-1] // 2
@@ -149,8 +155,12 @@ def configure_result_plot(
         _configure_legend(ax, show_sources, show_target)
 
     configure_grid(ax)
-    ax.set_xlim(origin[1], origin[1] + extent[1])
-    ax.set_ylim(origin[0] + extent[0], origin[0])
+    # ax.set_xlim(origin[1], origin[1] + extent[1])
+    # ax.set_ylim(origin[0] + extent[0], origin[0])
+
+    ax.set_xlim(origin[0], origin[0] + extent[1])
+    ax.set_ylim(origin[1] + extent[0], origin[1])
+
     configure_axis_labels(ax, horizontal_label, vertical_label)
     configure_axis_ticks(ax)
 

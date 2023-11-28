@@ -22,6 +22,9 @@ from .legends import (
     TargetHandler,
 )
 
+def transpose(arr):
+    return arr.T
+
 
 def create_layout_fig(
     extent: npt.NDArray[np.float_],
@@ -56,13 +59,16 @@ def create_layout_fig(
     fig = plt.figure()
     ax = fig.gca()
     # the extent for imshow is "(left, right, bottom, top)"
+    # imshow_extent = np.array(
+    #     [origin[1], origin[1] + extent[1], origin[0] + extent[0], origin[0]]
+    # )
     imshow_extent = np.array(
-        [origin[1], origin[1] + extent[1], origin[0] + extent[0], origin[0]]
+        [origin[0], origin[0] + extent[1], origin[1] + extent[0], origin[1]]
     )
 
     cmap = matplotlib.colors.ListedColormap(color_sequence)
     clim = (-0.5, len(color_sequence) - 0.5)
-    ax.imshow(field, cmap=cmap, extent=imshow_extent, clim=clim)
+    ax.imshow(transpose(field), cmap=cmap, extent=imshow_extent, clim=clim)
     return fig, ax
 
 
@@ -75,8 +81,8 @@ def configure_layout_plot(
     show_target: bool,
     extent: npt.NDArray[np.float_],
     origin: npt.NDArray[np.float_],
-    vertical_label: str = "X",
-    horizontal_label: str = "Y",
+    vertical_label: str = "Y",
+    horizontal_label: str = "X",
     title: str = "Scenario Layout",
 ) -> None:
     """Configure a layout plot figure including axes, title, and legend.
@@ -102,8 +108,12 @@ def configure_layout_plot(
     _configure_legend(ax, layer_labels, color_sequence, show_target, show_sources)
     configure_grid(ax)
 
-    ax.set_xlim(origin[1], origin[1] + extent[1])
-    ax.set_ylim(origin[0] + extent[0], origin[0])
+    # ax.set_xlim(origin[1], origin[1] + extent[1])
+    # ax.set_ylim(origin[0] + extent[0], origin[0])
+
+    ax.set_xlim(origin[0], origin[0] + extent[1])
+    ax.set_ylim(origin[1] + extent[0], origin[1])
+
     configure_axis_labels(ax, horizontal_label, vertical_label)
     configure_axis_ticks(ax)
 

@@ -40,6 +40,16 @@ from ._utils import (
 nest_asyncio.apply()
 
 
+def swap_coordinates(array):
+    if isinstance(array, np.ndarray):
+        return np.array([array[1], array[0]])
+    elif isinstance(array, list):
+        return [array[1], array[0]]
+    elif isinstance(array, tuple):
+        return (array[1], array[0])
+    return array
+
+
 class Scenario(abc.ABC):
     """The base scenario."""
 
@@ -347,7 +357,7 @@ class Scenario(abc.ABC):
         assert hasattr(self, "material_masks")
         assert self.grid.space is not None
 
-        layer = np.zeros(self.grid.space.shape, dtype=int)
+        layer = np.zeros(swap_coordinates(self.grid.space.shape), dtype=int)
 
         for layer_name in self.material_layers:
             material_mask = self.material_masks[layer_name]
@@ -885,11 +895,13 @@ class Scenario2D(Scenario):
                 ax=ax,
                 material_field=self.material_layer_ids,
                 dx=self.dx,
-                origin=np.array(self.origin, dtype=float),
+                origin=swap_coordinates(np.array(self.origin, dtype=float)),
                 upsample_factor=self.material_outline_upsample_factor,
             )
         if show_target:
-            rendering.draw_target(ax, self.target_center, self.target_radius)
+            rendering.draw_target(
+                ax, swap_coordinates(self.target_center), self.target_radius
+            )
         if show_sources:
             assert self.sources
             for source in self.sources:

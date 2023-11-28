@@ -229,6 +229,16 @@ class SteadyStateResult(Result):
         return save_data
 
 
+def swap_coordinates(array):
+    if isinstance(array, np.ndarray):
+        return np.array([array[1], array[0]])
+    elif isinstance(array, list):
+        return [array[1], array[0]]
+    elif isinstance(array, tuple):
+        return (array[1], array[0])
+    return array
+
+
 class SteadyStateResult2D(SteadyStateResult):
     """A container for holding the results of a 2D steady-state simulation.
 
@@ -281,12 +291,14 @@ class SteadyStateResult2D(SteadyStateResult):
                 ax=ax,
                 material_field=material_field,
                 dx=self.scenario.dx,
-                origin=np.array(self.scenario.origin, dtype=float),
+                origin=swap_coordinates(np.array(self.scenario.origin, dtype=float)),
                 upsample_factor=self.scenario.material_outline_upsample_factor,
             )
         if show_target:
             rendering.draw_target(
-                ax, self.scenario.target_center, self.scenario.target_radius
+                ax,
+                swap_coordinates(self.scenario.target_center),
+                self.scenario.target_radius,
             )
         if show_sources:
             for source in self.scenario.sources:
@@ -300,8 +312,8 @@ class SteadyStateResult2D(SteadyStateResult):
             show_target=show_target,
             extent=self.scenario.extent,
             origin=np.array(self.scenario.origin, dtype=float),
-            vertical_label="X",
-            horizontal_label="Y",
+            vertical_label="Y",
+            horizontal_label="X",
             title="Steady-State Wave Amplitude",
         )
 
@@ -925,8 +937,8 @@ class PulsedResult2D(PulsedResult):
             show_sources=show_sources,
             show_target=show_target,
             clim=(min_pressure, max_pressure),
-            vertical_label="X",
-            horizontal_label="Y",
+            vertical_label="Y",
+            horizontal_label="X",
             title="Pulsed Wave Amplitude",
         )
         animation = rendering.make_animation(

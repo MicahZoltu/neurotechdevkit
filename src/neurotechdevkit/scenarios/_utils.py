@@ -232,6 +232,16 @@ def create_grid_spherical_mask(
     return _create_nd_ellipse_mask(grid, origin, center, radii)
 
 
+def swap_coordinates(array):
+    if isinstance(array, np.ndarray):
+        return np.array([array[1], array[0]])
+    elif isinstance(array, list):
+        return [array[1], array[0]]
+    elif isinstance(array, tuple):
+        return (array[1], array[0])
+    return array
+
+
 def _create_nd_ellipse_mask(
     grid: stride.Grid,
     origin: npt.NDArray[np.float_],
@@ -255,8 +265,8 @@ def _create_nd_ellipse_mask(
         The 2D or 3D boolean mask where gridpoints within the ellipse are True.
     """
     assert grid.space is not None
-    shape = grid.space.shape
-    spacing = grid.space.spacing
+    shape = swap_coordinates(grid.space.shape)
+    spacing = swap_coordinates(grid.space.spacing)
 
     X = np.meshgrid(
         *[np.arange(n) * d + p for n, d, p in zip(shape, spacing, origin)],

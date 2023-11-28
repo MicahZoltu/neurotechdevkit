@@ -34,10 +34,15 @@ def draw_target(
         target_radius: the radius (in meters) of the target.
 
     """
+
     target_artist = create_target_drawing_artist(
         target_loc, target_radius, transform=ax.transData
     )
     ax.add_artist(target_artist)
+
+
+def transpose(arr):
+    return arr.T
 
 
 def draw_material_outlines(
@@ -68,7 +73,7 @@ def draw_material_outlines(
             detecting transitions between materials. If the factor is N, then each pixel
             will be split into N^2 pixels. Defaults to 1 (no resampling).
     """
-    field = _upsample_field(material_field, upsample_factor)
+    field = _upsample_field(transpose(material_field), upsample_factor)
     outline_mask = _get_outline_mask(field)
 
     shape = outline_mask.shape

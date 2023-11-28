@@ -24,6 +24,16 @@ def _compute_grid_shape(extent: npt.NDArray[np.float_], dx: float) -> tuple[int,
     return tuple(steps + 1 for steps in n_steps)
 
 
+def swap_coordinates(array):
+    if isinstance(array, np.ndarray):
+        return np.array([array[1], array[0]])
+    elif isinstance(array, list):
+        return [array[1], array[0]]
+    elif isinstance(array, tuple):
+        return (array[1], array[0])
+    return array
+
+
 class Grid(stride.Grid):
     """
     Grid class for neurotechdevkit. It is a subclass of stride.Grid.
@@ -83,7 +93,7 @@ class Grid(stride.Grid):
         Returns:
             Grid: the Grid object.
         """
-        _extent = np.array(extent, dtype=float)
+        _extent = swap_coordinates(np.array(extent, dtype=float))
         n_dims = len(_extent)
         dx = speed_water / center_frequency / ppw  # m
         shape = _compute_grid_shape(_extent, dx)

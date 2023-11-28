@@ -40,6 +40,7 @@ source = ndk.sources.FocusedSource2D(
 scenario = ndk.built_in.Scenario0()
 scenario.sources = [source]
 scenario.make_grid()
+scenario.render_layout(show_material_outlines=True)
 scenario.compile_problem()
 result = scenario.simulate_steady_state()
 assert isinstance(result, ndk.results.SteadyStateResult2D)
