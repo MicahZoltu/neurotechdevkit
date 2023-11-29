@@ -34,7 +34,7 @@ def draw_target(
         target_radius: the radius (in meters) of the target.
 
     """
-
+    target_loc = swap_coordinates(target_loc)
     target_artist = create_target_drawing_artist(
         target_loc, target_radius, transform=ax.transData
     )
@@ -43,6 +43,16 @@ def draw_target(
 
 def transpose(arr):
     return arr.T
+
+
+def swap_coordinates(array):
+    if isinstance(array, np.ndarray):
+        return np.array([array[1], array[0]])
+    elif isinstance(array, list):
+        return [array[1], array[0]]
+    elif isinstance(array, tuple):
+        return (array[1], array[0])
+    return array
 
 
 def draw_material_outlines(
@@ -73,6 +83,7 @@ def draw_material_outlines(
             detecting transitions between materials. If the factor is N, then each pixel
             will be split into N^2 pixels. Defaults to 1 (no resampling).
     """
+    origin = swap_coordinates(origin)
     field = _upsample_field(transpose(material_field), upsample_factor)
     outline_mask = _get_outline_mask(field)
 

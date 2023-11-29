@@ -7,6 +7,16 @@ import numpy.typing as npt
 import stride
 
 
+def swap_coordinates(array):
+    if isinstance(array, np.ndarray):
+        return np.array([array[1], array[0]])
+    elif isinstance(array, list):
+        return [array[1], array[0]]
+    elif isinstance(array, tuple):
+        return (array[1], array[0])
+    return array
+
+
 def _compute_grid_shape(extent: npt.NDArray[np.float_], dx: float) -> tuple[int, ...]:
     """Compute the shape of the grid for a given extent and dx.
 
@@ -18,20 +28,10 @@ def _compute_grid_shape(extent: npt.NDArray[np.float_], dx: float) -> tuple[int,
     Returns:
         tuple[int, ...]: a tuple of integers representing the shape of the grid.
     """
-    n_steps_float = extent / dx
+    n_steps_float = swap_coordinates(extent) / dx
     n_steps = n_steps_float.round().astype(int)
     np.testing.assert_allclose(n_steps_float, n_steps, rtol=1e-5)
     return tuple(steps + 1 for steps in n_steps)
-
-
-def swap_coordinates(array):
-    if isinstance(array, np.ndarray):
-        return np.array([array[1], array[0]])
-    elif isinstance(array, list):
-        return [array[1], array[0]]
-    elif isinstance(array, tuple):
-        return (array[1], array[0])
-    return array
 
 
 class Grid(stride.Grid):
@@ -93,7 +93,7 @@ class Grid(stride.Grid):
         Returns:
             Grid: the Grid object.
         """
-        _extent = swap_coordinates(np.array(extent, dtype=float))
+        _extent = np.array(extent, dtype=float)
         n_dims = len(_extent)
         dx = speed_water / center_frequency / ppw  # m
         shape = _compute_grid_shape(_extent, dx)

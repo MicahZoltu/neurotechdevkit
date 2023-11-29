@@ -22,6 +22,7 @@ from .legends import (
     TargetHandler,
 )
 
+
 def transpose(arr):
     return arr.T
 

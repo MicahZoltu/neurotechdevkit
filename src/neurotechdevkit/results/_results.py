@@ -229,16 +229,6 @@ class SteadyStateResult(Result):
         return save_data
 
 
-def swap_coordinates(array):
-    if isinstance(array, np.ndarray):
-        return np.array([array[1], array[0]])
-    elif isinstance(array, list):
-        return [array[1], array[0]]
-    elif isinstance(array, tuple):
-        return (array[1], array[0])
-    return array
-
-
 class SteadyStateResult2D(SteadyStateResult):
     """A container for holding the results of a 2D steady-state simulation.
 
@@ -291,13 +281,13 @@ class SteadyStateResult2D(SteadyStateResult):
                 ax=ax,
                 material_field=material_field,
                 dx=self.scenario.dx,
-                origin=swap_coordinates(np.array(self.scenario.origin, dtype=float)),
+                origin=np.array(self.scenario.origin, dtype=float),
                 upsample_factor=self.scenario.material_outline_upsample_factor,
             )
         if show_target:
             rendering.draw_target(
                 ax,
-                swap_coordinates(self.scenario.target_center),
+                self.scenario.target_center,
                 self.scenario.target_radius,
             )
         if show_sources:

@@ -895,13 +895,11 @@ class Scenario2D(Scenario):
                 ax=ax,
                 material_field=self.material_layer_ids,
                 dx=self.dx,
-                origin=swap_coordinates(np.array(self.origin, dtype=float)),
+                origin=np.array(self.origin, dtype=float),
                 upsample_factor=self.material_outline_upsample_factor,
             )
         if show_target:
-            rendering.draw_target(
-                ax, swap_coordinates(self.target_center), self.target_radius
-            )
+            rendering.draw_target(ax, self.target_center, self.target_radius)
         if show_sources:
             assert self.sources
             for source in self.sources:
