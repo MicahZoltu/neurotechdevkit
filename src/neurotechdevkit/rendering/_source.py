@@ -131,7 +131,8 @@ def create_source_drawing_artist(
             f"Source type not supported: {source_params.source_type}"
         )
     hw = data_width / 2
-    position = np.flip(source_params.position)  # into plot data coordinates
+    # position = np.flip(source_params.position)  # into plot data coordinates
+    position = source_params.position
     upper_left = position - hw
     lower_right = position + hw
 

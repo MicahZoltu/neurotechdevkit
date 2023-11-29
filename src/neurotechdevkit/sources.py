@@ -11,8 +11,6 @@ import numpy.typing as npt
 from scipy.linalg import expm
 from stride.utils import geometries
 
-from .scenarios._utils import swap_coordinates
-
 
 class Source(abc.ABC):
     """An abstract class that represents a generic Source object.
@@ -71,7 +69,7 @@ class Source(abc.ABC):
         The position of the source is defined as the coordinates of the point at the
         center of symmetry of the source.
         """
-        return swap_coordinates(np.array(self._position))
+        return np.array(self._position)
 
     @property
     def unit_direction(self) -> npt.NDArray[np.float_]:
