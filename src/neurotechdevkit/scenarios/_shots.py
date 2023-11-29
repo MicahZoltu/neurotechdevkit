@@ -7,6 +7,7 @@ from stride.problem.geometry import TransducerLocation
 
 from .. import sources
 from ..problem import Problem
+from ._utils import swap_coordinates
 
 
 def create_shot(
@@ -95,16 +96,6 @@ def _add_sources_to_geometry(
         point_transducers.extend(source_transducers)
 
     return point_transducers
-
-
-def swap_coordinates(array):
-    if isinstance(array, np.ndarray):
-        return np.array([array[1], array[0]])
-    elif isinstance(array, list):
-        return [array[1], array[0]]
-    elif isinstance(array, tuple):
-        return (array[1], array[0])
-    return array
 
 
 def _add_point_transducers_to_geometry(

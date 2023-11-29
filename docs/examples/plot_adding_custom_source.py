@@ -30,8 +30,8 @@ This example demonstrates how to add a source to the simulation.
 import neurotechdevkit as ndk
 
 source = ndk.sources.FocusedSource2D(
-    position=[0.00, 0.0],
-    direction=[0.9, 0.0],
+    position=ndk.scenarios._utils.swap_coordinates([0.00, 0.0]),
+    direction=ndk.scenarios._utils.swap_coordinates([0.9, 0.0]),
     aperture=0.01,
     focal_length=0.01,
     num_points=1000,

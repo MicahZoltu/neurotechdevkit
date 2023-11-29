@@ -9,9 +9,7 @@ from mosaic.types import Struct
 
 from neurotechdevkit.grid import Grid
 
-
-def transpose(arr):
-    return arr.T
+from .scenarios._utils import transpose
 
 
 class Problem(stride.Problem):

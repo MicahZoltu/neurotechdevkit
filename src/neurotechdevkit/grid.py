@@ -6,15 +6,7 @@ import numpy as np
 import numpy.typing as npt
 import stride
 
-
-def swap_coordinates(array):
-    if isinstance(array, np.ndarray):
-        return np.array([array[1], array[0]])
-    elif isinstance(array, list):
-        return [array[1], array[0]]
-    elif isinstance(array, tuple):
-        return (array[1], array[0])
-    return array
+from .scenarios._utils import swap_coordinates
 
 
 def _compute_grid_shape(extent: npt.NDArray[np.float_], dx: float) -> tuple[int, ...]:

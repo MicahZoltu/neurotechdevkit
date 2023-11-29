@@ -242,6 +242,10 @@ def swap_coordinates(array):
     return array
 
 
+def transpose(arr):
+    return arr.T
+
+
 def _create_nd_ellipse_mask(
     grid: stride.Grid,
     origin: npt.NDArray[np.float_],

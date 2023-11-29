@@ -7,17 +7,12 @@ from ...grid import Grid
 from ...materials import Material
 from ...sources import FocusedSource2D
 from .._base import Scenario2D
-from .._utils import Target, create_grid_circular_mask, create_grid_elliptical_mask
-
-
-def swap_coordinates(array):
-    if isinstance(array, np.ndarray):
-        return np.array([array[1], array[0]])
-    elif isinstance(array, list):
-        return [array[1], array[0]]
-    elif isinstance(array, tuple):
-        return (array[1], array[0])
-    return array
+from .._utils import (
+    Target,
+    create_grid_circular_mask,
+    create_grid_elliptical_mask,
+    swap_coordinates,
+)
 
 
 class Scenario0(Scenario2D):

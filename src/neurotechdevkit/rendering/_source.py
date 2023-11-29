@@ -18,6 +18,8 @@ from neurotechdevkit.sources import (
     Source,
 )
 
+from ..scenarios._utils import swap_coordinates
+
 _COMPONENT_DIR = pathlib.Path(__file__).parent / "components"
 
 _ANGLE_OPTION_FILENAMES = {
@@ -328,6 +330,7 @@ def _translate_and_rotate(
     Returns:
         An array containing the transformed image data.
     """
+    direction = swap_coordinates(direction)
     rotation = (np.pi + np.arctan2(direction[1], direction[0])) * 180 / np.pi
 
     padded_width = 1200  # should be large enough for any of the source icons

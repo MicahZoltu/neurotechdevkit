@@ -11,6 +11,8 @@ import numpy.typing as npt
 from scipy.linalg import expm
 from stride.utils import geometries
 
+from .scenarios._utils import swap_coordinates
+
 
 class Source(abc.ABC):
     """An abstract class that represents a generic Source object.
@@ -236,16 +238,6 @@ class PointSource3D(PointSource):
         )
 
 
-def swap_coordinates(array):
-    if isinstance(array, np.ndarray):
-        return np.array([array[1], array[0]])
-    elif isinstance(array, list):
-        return [array[1], array[0]]
-    elif isinstance(array, tuple):
-        return (array[1], array[0])
-    return array
-
-
 class FocusedSource2D(Source):
     """A focused source in 2D.
 
@@ -267,8 +259,7 @@ class FocusedSource2D(Source):
         `_center_angle` points from the focus to the transducer, so they are
         opposite.
         """
-        directions = swap_coordinates(self.unit_direction)
-        return np.arctan2(-directions[1], -directions[0])
+        return np.arctan2(-self.unit_direction[1], -self.unit_direction[0])
 
     @property
     def _angle_range(self) -> float:
@@ -296,8 +287,7 @@ class FocusedSource2D(Source):
             raise ValueError("aperture cannot be larger than twice the focal length")
 
         circle_center = (
-            swap_coordinates(self.position)
-            + swap_coordinates(self.unit_direction) * self.focal_length
+            swap_coordinates(self.position) + self.unit_direction * self.focal_length
         )
         radius = self.focal_length
 

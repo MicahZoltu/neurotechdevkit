@@ -34,20 +34,11 @@ from ._utils import (
     create_grid_spherical_mask,
     drop_element,
     slice_field,
+    swap_coordinates,
     wavelet_helper,
 )
 
 nest_asyncio.apply()
-
-
-def swap_coordinates(array):
-    if isinstance(array, np.ndarray):
-        return np.array([array[1], array[0]])
-    elif isinstance(array, list):
-        return [array[1], array[0]]
-    elif isinstance(array, tuple):
-        return (array[1], array[0])
-    return array
 
 
 class Scenario(abc.ABC):

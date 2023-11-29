@@ -3,6 +3,7 @@ import matplotlib.axes
 import numpy as np
 import numpy.typing as npt
 
+from ..scenarios._utils import swap_coordinates, transpose
 from ._source import SourceDrawingParams, create_source_drawing_artist
 from ._target import create_target_drawing_artist
 
@@ -39,20 +40,6 @@ def draw_target(
         target_loc, target_radius, transform=ax.transData
     )
     ax.add_artist(target_artist)
-
-
-def transpose(arr):
-    return arr.T
-
-
-def swap_coordinates(array):
-    if isinstance(array, np.ndarray):
-        return np.array([array[1], array[0]])
-    elif isinstance(array, list):
-        return [array[1], array[0]]
-    elif isinstance(array, tuple):
-        return (array[1], array[0])
-    return array
 
 
 def draw_material_outlines(

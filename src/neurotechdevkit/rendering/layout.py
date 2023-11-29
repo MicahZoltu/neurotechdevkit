@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import numpy.typing as npt
 
+from ..scenarios._utils import transpose
 from ._formatting import (
     configure_axis_labels,
     configure_axis_ticks,
@@ -21,10 +22,6 @@ from .legends import (
     TargetHandle,
     TargetHandler,
 )
-
-
-def transpose(arr):
-    return arr.T
 
 
 def create_layout_fig(

@@ -14,10 +14,13 @@ def plot_scenario(chosen_scenario):
     print(f"Simulating scenario: {chosen_scenario.__name__}")
     scenario = chosen_scenario()
     scenario.make_grid()
+    scenario.render_layout()
     scenario.compile_problem()
     result = scenario.simulate_steady_state()
     result.render_steady_state_amplitudes(show_material_outlines=False)
 
+
+plot_scenario(ndk.scenarios.built_in.Scenario0)
 
 # %%
 # Simulating scenario: scenario 0
