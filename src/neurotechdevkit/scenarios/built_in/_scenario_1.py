@@ -9,7 +9,7 @@ from ... import rendering, sources
 from ...grid import Grid
 from ...materials import Material
 from .._base import Scenario, Scenario2D, Scenario3D
-from .._utils import SliceAxis, Target, swap_coordinates
+from .._utils import SliceAxis, Target, swap_coordinates, transpose
 
 
 class Scenario1(Scenario):
@@ -86,22 +86,22 @@ class Scenario1_2D(Scenario1, Scenario2D):
         https://asa.scitation.org/doi/pdf/10.1121/10.0013426
     """
 
-    target = Target("target_1", [0.064, 0.0], 0.004, "")
+    target = Target("target_1", swap_coordinates([0.064, 0.0]), 0.004, "")
     sources = [
         sources.FocusedSource2D(
-            position=[0.0, 0.0],
-            direction=[1.0, 0.0],
+            position=swap_coordinates([0.0, 0.0]),
+            direction=swap_coordinates([1.0, 0.0]),
             aperture=0.064,
             focal_length=0.064,
             num_points=1000,
         )
     ]
-    origin = [0.0, -0.035]
+    origin = swap_coordinates([0.0, -0.035])
     material_outline_upsample_factor = 8
 
     def make_grid(self):
         """Make the grid for scenario 1 2D."""
-        extent = (0.12, 0.07)
+        extent = swap_coordinates((0.12, 0.07))
         self.grid = self._make_grid(extent)
         self.material_masks = self._make_material_masks()
 
@@ -121,24 +121,24 @@ class Scenario1_3D(Scenario1, Scenario3D):
 
     target = Target(
         target_id="target_1",
-        center=[0.064, 0.0, 0.0],
+        center=swap_coordinates([0.064, 0.0, 0.0]),
         radius=0.004,
         description=(
             "A centered location below the skull at approximately the focal point."
         ),
     )
-    origin = [0.0, -0.035, -0.035]
+    origin = swap_coordinates([0.0, -0.035, -0.035])
     sources = [
         sources.FocusedSource3D(
-            position=[0.0, 0.0, 0.0],
-            direction=[1.0, 0.0, 0.0],
+            position=swap_coordinates([0.0, 0.0, 0.0]),
+            direction=swap_coordinates([1.0, 0.0, 0.0]),
             aperture=0.064,
             focal_length=0.064,
             num_points=20_000,
         )
     ]
     viewer_config_3d = rendering.ViewerConfig3D(
-        init_angles=(-15, 45, 160),
+        init_angles=(-15, 45, 160),  # TODO: to we need to swap this as well?
         init_zoom=3.0,
         colormaps={
             "water": "blue",
@@ -161,7 +161,7 @@ class Scenario1_3D(Scenario1, Scenario3D):
 
     def make_grid(self):
         """Make the grid for scenario 1 3D."""
-        extent = (0.12, 0.07, 0.07)
+        extent = swap_coordinates((0.12, 0.07, 0.07))
         self.grid = self._make_grid(extent)
         self.material_masks = self._make_material_masks()
 
@@ -203,7 +203,7 @@ def _create_scenario_1_mask(material, grid):
     else:
         raise ValueError(material)
 
-    return mask
+    return transpose(mask)
 
 
 def _fill_mask(mask, start, end, dx):
