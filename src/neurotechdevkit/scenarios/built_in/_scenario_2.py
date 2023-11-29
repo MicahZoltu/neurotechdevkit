@@ -13,7 +13,7 @@ from ... import rendering, sources
 from ...grid import Grid
 from ...materials import Material
 from .._base import Scenario, Scenario2D, Scenario3D
-from .._utils import SliceAxis, Target
+from .._utils import SliceAxis, Target, swap_coordinates, transpose
 
 
 @enum.unique
@@ -27,8 +27,8 @@ class BenchmarkSkullMaskFile(enum.Enum):
 class BenchmarkExtent(enum.Enum):
     """Aliases for the extent for each Scenario2 benchmark."""
 
-    BENCHMARK_7 = (0.120, 0.070, 0.070)  # m
-    BENCHMARK_8 = (0.225, 0.170, 0.190)  # m
+    BENCHMARK_7 = swap_coordinates((0.120, 0.070, 0.070))  # m
+    BENCHMARK_8 = swap_coordinates((0.225, 0.170, 0.190))  # m
 
 
 class Scenario2(Scenario):
@@ -104,7 +104,7 @@ class Scenario2_2D(Scenario2D, Scenario2):
     PREDEFINED_TARGET_OPTIONS = {
         "primary-visual-cortex": Target(
             target_id="primary-visual-cortex",
-            center=[0.047, 0.002],
+            center=swap_coordinates([0.047, 0.002]),
             radius=0.010,
             description=(
                 "A region of the primary visual cortex (approximate 2D location and"
@@ -115,7 +115,7 @@ class Scenario2_2D(Scenario2D, Scenario2):
         ),
         "right-inferior-frontal-gyrus": Target(
             target_id="right-inferior-frontal-gyrus",
-            center=[0.175, 0.048],
+            center=swap_coordinates([0.175, 0.048]),
             radius=0.008,
             description=(
                 "The right inferior frontal gyrus (approximate 2D location and size)."
@@ -126,7 +126,7 @@ class Scenario2_2D(Scenario2D, Scenario2):
         ),
         "posterior-cingulate-cortex": Target(
             target_id="posterior-cingulate-cortex",
-            center=[0.10, 0.005],
+            center=swap_coordinates([0.10, 0.005]),
             radius=0.01,
             description=(
                 "The posterior cingulate cortex (approximate 2D location and size)."
@@ -138,7 +138,7 @@ class Scenario2_2D(Scenario2D, Scenario2):
     }
     target = Target(
         target_id="primary-visual-cortex",
-        center=[0.047, 0.002],
+        center=swap_coordinates([0.047, 0.002]),
         radius=0.010,
         description=(
             "A region of the primary visual cortex (approximate 2D location and"
@@ -147,11 +147,11 @@ class Scenario2_2D(Scenario2D, Scenario2):
             " See for more details: https://doi.org/10.1038/srep34026"
         ),
     )
-    origin = [0.0, -0.085]
+    origin = swap_coordinates([0.0, -0.085])
     sources = [
         sources.FocusedSource2D(
-            position=[0.0, 0.0],
-            direction=[1.0, 0.0],
+            position=swap_coordinates([0.0, 0.0]),
+            direction=swap_coordinates([1.0, 0.0]),
             aperture=0.064,
             focal_length=0.064,
             num_points=1000,
@@ -183,7 +183,7 @@ class Scenario2_3D(Scenario2, Scenario3D):
     PREDEFINED_TARGET_OPTIONS = {
         "primary-visual-cortex": Target(
             target_id="primary-visual-cortex",
-            center=[0.047, 0.002, 0.005],
+            center=swap_coordinates([0.047, 0.002, 0.005]),
             radius=0.010,
             description=(
                 "A region of the primary visual cortex (estimated location and size)."
@@ -194,7 +194,7 @@ class Scenario2_3D(Scenario2, Scenario3D):
         ),
         "right-inferior-frontal-gyrus": Target(
             target_id="right-inferior-frontal-gyrus",
-            center=[0.175, 0.048, -0.010],
+            center=swap_coordinates([0.175, 0.048, -0.010]),
             radius=0.008,
             description=(
                 "The right inferior frontal gyrus (estimated location and size)."
@@ -205,7 +205,7 @@ class Scenario2_3D(Scenario2, Scenario3D):
         ),
         "posterior-cingulate-cortex": Target(
             target_id="posterior-cingulate-cortex",
-            center=[0.10, 0.005, 0.020],
+            center=swap_coordinates([0.10, 0.005, 0.020]),
             radius=0.01,
             description=(
                 "The posterior cingulate cortex (estimated location and size). Studies"
@@ -216,7 +216,7 @@ class Scenario2_3D(Scenario2, Scenario3D):
         ),
         "ventral-intermediate-nucleus": Target(
             target_id="ventral-intermediate-nucleus",
-            center=[0.12, 0.01, -0.015],
+            center=swap_coordinates([0.12, 0.01, -0.015]),
             radius=0.005,
             description=(
                 "The right ventral intermediate nucleus of the thalamus (estimated"
@@ -228,7 +228,7 @@ class Scenario2_3D(Scenario2, Scenario3D):
         ),
         "left-temporal-lobe": Target(
             target_id="left-temporal-lobe",
-            center=[0.14, -0.03, -0.03],
+            center=swap_coordinates([0.14, -0.03, -0.03]),
             radius=0.015,
             description=(
                 "The left temporal lobe (estimated location and size). Studies are"
@@ -242,7 +242,7 @@ class Scenario2_3D(Scenario2, Scenario3D):
 
     target = Target(
         target_id="primary-visual-cortex",
-        center=[0.047, 0.002, 0.005],
+        center=swap_coordinates([0.047, 0.002, 0.005]),
         radius=0.010,
         description=(
             "A region of the primary visual cortex (estimated location and size)."
@@ -252,11 +252,11 @@ class Scenario2_3D(Scenario2, Scenario3D):
         ),
     )
 
-    origin = [0.0, -0.085, -0.095]
+    origin = swap_coordinates([0.0, -0.085, -0.095])
     sources = [
         sources.FocusedSource3D(
-            position=[0.0, 0.0, 0.0],
-            direction=[1.0, 0.0, 0.0],
+            position=swap_coordinates([0.0, 0.0, 0.0]),
+            direction=swap_coordinates([1.0, 0.0, 0.0]),
             aperture=0.064,
             focal_length=0.064,
             num_points=20_000,
@@ -264,7 +264,7 @@ class Scenario2_3D(Scenario2, Scenario3D):
     ]
 
     viewer_config_3d = rendering.ViewerConfig3D(
-        init_angles=(90, 10, -60),
+        init_angles=(90, 10, -60),  # TODO: do I have to update these as well?
         init_zoom=2.0,
         colormaps={
             "water": "blue",
@@ -299,7 +299,7 @@ class Scenario2_2D_Benchmark7(Scenario2_2D):
     """
 
     # origin at [top, center] of extent
-    origin = [0.0, -0.035]  # m
+    origin = swap_coordinates([0.0, -0.035])  # m
 
     def make_grid(self):
         """Make the grid for 2-D version of Benchmark 7."""
@@ -319,7 +319,7 @@ class Scenario2_3D_Benchmark7(Scenario2_3D):
     """
 
     # origin at [top, center, center] of extent
-    origin = [0.0, -0.035, -0.035]  # m
+    origin = swap_coordinates([0.0, -0.035, -0.035])  # m
 
     def make_grid(self):
         """Make the grid for Benchmark 7."""
@@ -385,4 +385,4 @@ def _create_scenario_2_mask(
     else:
         raise ValueError(material)
 
-    return mask
+    return transpose(mask)

@@ -20,8 +20,6 @@ def plot_scenario(chosen_scenario):
     result.render_steady_state_amplitudes(show_material_outlines=False)
 
 
-plot_scenario(ndk.scenarios.built_in.Scenario1_2D)
-
 # %%
 # Simulating scenario: scenario 0
 # ===================================
