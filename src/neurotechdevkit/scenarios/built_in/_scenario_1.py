@@ -9,7 +9,7 @@ from ... import rendering, sources
 from ...grid import Grid
 from ...materials import Material
 from .._base import Scenario, Scenario2D, Scenario3D
-from .._utils import SliceAxis, Target
+from .._utils import SliceAxis, Target, swap_coordinates
 
 
 class Scenario1(Scenario):
@@ -167,7 +167,6 @@ class Scenario1_3D(Scenario1, Scenario3D):
 
 
 def _create_scenario_1_mask(material, grid):
-
     # layers are defined by X position
     dx = grid.space.spacing[0]
 

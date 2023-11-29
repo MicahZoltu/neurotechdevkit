@@ -71,7 +71,7 @@ class Source(abc.ABC):
         The position of the source is defined as the coordinates of the point at the
         center of symmetry of the source.
         """
-        return np.array(self._position)
+        return swap_coordinates(np.array(self._position))
 
     @property
     def unit_direction(self) -> npt.NDArray[np.float_]:
@@ -286,9 +286,7 @@ class FocusedSource2D(Source):
         if self.aperture > 2 * self.focal_length:
             raise ValueError("aperture cannot be larger than twice the focal length")
 
-        circle_center = (
-            swap_coordinates(self.position) + self.unit_direction * self.focal_length
-        )
+        circle_center = self.position + self.unit_direction * self.focal_length
         radius = self.focal_length
 
         center_angle = self._center_angle

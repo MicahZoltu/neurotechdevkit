@@ -233,12 +233,16 @@ def create_grid_spherical_mask(
 
 
 def swap_coordinates(array):
-    if isinstance(array, np.ndarray):
-        return np.array([array[1], array[0]])
-    elif isinstance(array, list):
-        return [array[1], array[0]]
-    elif isinstance(array, tuple):
-        return (array[1], array[0])
+    if isinstance(array, (np.ndarray, list, tuple)):
+        if len(array) < 2:
+            return array
+        else:
+            if isinstance(array, np.ndarray):
+                return np.concatenate(([array[1], array[0]], array[2:]))
+            elif isinstance(array, list):
+                return [array[1], array[0]] + array[2:]
+            elif isinstance(array, tuple):
+                return (array[1], array[0]) + array[2:]
     return array
 
 
