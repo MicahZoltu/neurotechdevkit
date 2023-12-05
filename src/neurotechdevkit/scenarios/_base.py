@@ -586,7 +586,7 @@ class Scenario(abc.ABC):
             problem=problem,
             sources=sources,
             receiver_coords=receiver_coords,
-            origin=np.array(np.array(self.origin, dtype=float), dtype=float),
+            origin=np.array(self.origin, dtype=float),
             wavelet=wavelet,
             dx=self.dx,
         )

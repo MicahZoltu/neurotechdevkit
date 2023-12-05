@@ -11,6 +11,8 @@ import numpy.typing as npt
 from scipy.linalg import expm
 from stride.utils import geometries
 
+from neurotechdevkit.scenarios._utils import swap_coordinates
+
 
 class Source(abc.ABC):
     """An abstract class that represents a generic Source object.
@@ -1063,8 +1065,9 @@ class PhasedArraySource2D(PhasedArraySource):
         dx, dy = 1, 0
 
         # vectors to align
-        u = np.array([dy, -dx])
-        v = unit_direction
+        # u = np.array([dy, -dx])
+        u = np.array([dx, dy])
+        v = swap_coordinates(unit_direction)
 
         # rotation parameters
         angle = np.arctan2(v[1], v[0]) - np.arctan2(u[1], u[0])
