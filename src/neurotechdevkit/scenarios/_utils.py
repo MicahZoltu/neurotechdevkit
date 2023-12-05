@@ -251,7 +251,12 @@ def swap_coordinates(array):
 # pylint: ignore
 def transpose(arr):
     """Transpose an array."""
-    return arr.T
+    if len(arr.shape) == 2:
+        return arr.T
+    elif len(arr.shape) == 3:
+        return np.transpose(arr, (1, 0, 2))
+    else:
+        raise ValueError("Array must be 2D or 3D")
 
 
 def _create_nd_ellipse_mask(

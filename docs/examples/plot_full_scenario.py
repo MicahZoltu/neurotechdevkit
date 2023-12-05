@@ -18,20 +18,24 @@ from neurotechdevkit.grid import Grid
 from neurotechdevkit.problem import Problem
 from neurotechdevkit.results import SteadyStateResult2D
 from neurotechdevkit.scenarios import Scenario2D, Target
+from neurotechdevkit.scenarios._utils import swap_coordinates, transpose
 
 # %%
 # Creating the scenario
 scenario = Scenario2D()
 scenario.center_frequency = 5e5  # Hz
 scenario.target = Target(
-    target_id="target_1", center=[0.064, 0.0], radius=0.004, description=""
+    target_id="target_1",
+    center=swap_coordinates([0.064, 0.0]),
+    radius=0.004,
+    description="",
 )
 scenario.material_properties = {}
-scenario.origin = [0.0, -0.035]
+scenario.origin = swap_coordinates([0.0, -0.035])
 scenario.sources = [
     sources.FocusedSource2D(
-        position=[0.0, 0.0],
-        direction=[1.0, 0.0],
+        position=swap_coordinates([0.0, 0.0]),
+        direction=swap_coordinates([1.0, 0.0]),
         aperture=0.064,
         focal_length=0.064,
         num_points=1000,
@@ -42,7 +46,7 @@ scenario.material_outline_upsample_factor = 8
 # %%
 # Creating grid
 grid = Grid.make_grid(
-    extent=(0.12, 0.07),  # m
+    extent=swap_coordinates((0.12, 0.07)),  # m
     speed_water=1500,
     center_frequency=scenario.center_frequency,
     ppw=6,
@@ -92,7 +96,7 @@ def create_masks(grid):
             start = interfaces[index - 1] if material != "water" else 0
             end = interfaces[index] if material != "brain" else None
             fill_mask(mask, start=start, end=end, dx=dx)
-        mask_materials[material] = mask
+        mask_materials[material] = transpose(mask)
     return mask_materials
 
 

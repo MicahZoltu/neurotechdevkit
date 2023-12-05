@@ -119,8 +119,8 @@ import neurotechdevkit as ndk
 
 # define the source
 source = ndk.sources.PhasedArraySource2D(
-    position=[0.0, 0.0],
-    direction=[1.0, 0.0],
+    position=ndk.scenarios._utils.swap_coordinates([0.0, 0.0]),
+    direction=ndk.scenarios._utils.swap_coordinates([1.0, 0.0]),
     num_elements=20,
     pitch=1.5e-3,
     element_width=1.2e-3,
@@ -145,8 +145,8 @@ result.render_steady_state_amplitudes()
 scenario = ndk.scenarios.built_in.Scenario1_2D()
 
 phased_array = ndk.sources.PhasedArraySource2D(
-    position=[0.0, 0.0],
-    direction=[1.0, 0.0],
+    position=ndk.scenarios._utils.swap_coordinates([0.0, 0.0]),
+    direction=ndk.scenarios._utils.swap_coordinates([1.0, 0.0]),
     num_elements=20,
     pitch=1.5e-3,
     element_width=1.2e-3,
@@ -179,8 +179,8 @@ result.render_steady_state_amplitudes()
 scenario = ndk.scenarios.built_in.Scenario1_2D()
 
 phased_array = ndk.sources.PhasedArraySource2D(
-    position=[0.0, 0.0],
-    direction=[1.0, 0.0],
+    position=ndk.scenarios._utils.swap_coordinates([0.0, 0.0]),
+    direction=ndk.scenarios._utils.swap_coordinates([1.0, 0.0]),
     num_elements=20,
     pitch=1.5e-3,
     element_width=1.2e-3,
@@ -211,9 +211,9 @@ result.render_steady_state_amplitudes()
 scenario_3d = ndk.scenarios.built_in.Scenario1_3D()
 
 phased_3d = ndk.sources.PhasedArraySource3D(
-    position=[0.0, 0.0, 0.0],
-    direction=[1.0, 0.0, 0.0],
-    center_line=np.array([0.0, 0.0, 1.0]),
+    position=ndk.scenarios._utils.swap_coordinates([0.0, 0.0, 0.0]),
+    direction=ndk.scenarios._utils.swap_coordinates([1.0, 0.0, 0.0]),
+    center_line=ndk.scenarios._utils.swap_coordinates(np.array([0.0, 0.0, 1.0])),
     num_points=20_000,
     num_elements=16,
     pitch=1.5e-3,

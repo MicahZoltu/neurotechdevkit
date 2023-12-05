@@ -91,6 +91,7 @@ result.render_pulsed_simulation_animation()
 # the true array elements. Here, we coarsely approximate these delays by
 # finding the pressure argmax at each element's nearest-neighbor coordinates.
 
+
 # Map array elements onto the nearest pixels in our simulation
 def map_coordinates_to_indices(coordinates, origin, dx):
     indices = np.round((coordinates - origin) / dx).astype(int)
@@ -166,7 +167,9 @@ steady_state_result.render_steady_state_amplitudes()
 # mask out everything else.
 steady_state_pressure = steady_state_result.get_steady_state()
 # Only consider the brain region
-steady_state_pressure[~true_scenario.material_masks["brain"]] = np.nan
+steady_state_pressure[
+    ~ndk.scenarios._utils.transpose(true_scenario.material_masks["brain"])
+] = np.nan
 steady_state_result.steady_state = steady_state_pressure
 
 steady_state_result.render_steady_state_amplitudes()
