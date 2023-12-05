@@ -6,6 +6,7 @@ import numpy as np
 import numpy.typing as npt
 import scipy.ndimage
 
+from ..scenarios._utils import transpose
 from . import _results as results
 
 
@@ -229,8 +230,8 @@ def calculate_focal_gain(result: results.SteadyStateResult) -> float:
     Returns:
         The focal gain (in dB)
     """
-    target_mask = result.scenario.get_target_mask()
-    brain_mask = result.scenario.material_masks["brain"]
+    target_mask = transpose(result.scenario.get_target_mask())
+    brain_mask = transpose(result.scenario.material_masks["brain"])
 
     ss_in_target: npt.NDArray[np.float_] = np.ma.masked_array(
         result.get_steady_state(), mask=~target_mask
@@ -280,7 +281,7 @@ def calculate_i_ta_target(result: results.SteadyStateResult) -> float:
     Returns:
         the time-averaged intensity averaged over the target region (in W/m^2).
     """
-    target_mask = result.scenario.get_target_mask()
+    target_mask = transpose(result.scenario.get_target_mask())
     i_spta = calculate_i_ta(result)
     i_spta_in_target: npt.NDArray[np.float_] = np.ma.masked_array(
         i_spta, mask=~target_mask, dtype=float
@@ -499,5 +500,5 @@ def _get_steady_state_in_layer(
     else:
         return np.ma.masked_array(
             steady_state,
-            mask=~result.scenario.material_masks[layer],
+            mask=~transpose(result.scenario.material_masks[layer]),
         )

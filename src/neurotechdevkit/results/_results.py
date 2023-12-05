@@ -21,7 +21,14 @@ import neurotechdevkit
 
 from .. import rendering, scenarios, sources
 from ..grid import Grid
-from ..scenarios._utils import SliceAxis, Target, drop_element, slice_field
+from ..scenarios._utils import (
+    SliceAxis,
+    Target,
+    drop_element,
+    slice_field,
+    swap_coordinates,
+    transpose,
+)
 from . import _metrics as metrics
 
 DATA_FILENAME = "data.gz"
@@ -503,10 +510,10 @@ class SteadyStateResult3D(SteadyStateResult):
         )
         target.center.pop(slice_axis)
 
-        extent = drop_element(self.scenario.extent, slice_axis)
+        extent = drop_element(swap_coordinates(self.scenario.extent), slice_axis)
         assert len(extent) == 2
         grid = Grid.make_grid(
-            extent=(float(extent[0]), float(extent[1])),
+            extent=swap_coordinates((float(extent[0]), float(extent[1]))),
             speed_water=1500,  # m/s
             ppw=6,  # desired resolution for complexity=fast
             center_frequency=self.scenario.center_frequency,
@@ -518,12 +525,15 @@ class SteadyStateResult3D(SteadyStateResult):
             material_properties=self.scenario.material_properties,
             material_masks={
                 material_id: slice_field(
-                    mask, self.scenario, slice_axis, slice_position
+                    transpose(mask), self.scenario, slice_axis, slice_position
                 )
                 for material_id, mask in self.scenario.material_masks.items()
             },
             origin=list(
-                drop_element(np.array(self.scenario.origin, dtype=float), slice_axis)
+                drop_element(
+                    np.array(self.scenario.origin, dtype=float),
+                    slice_axis,
+                )
             ),
             sources=sources_2d,
             material_outline_upsample_factor=material_outline,

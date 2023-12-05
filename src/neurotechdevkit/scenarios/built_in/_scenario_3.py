@@ -11,7 +11,7 @@ from ...grid import Grid
 from ...materials import Material
 from ...problem import Problem
 from .._base import Scenario2D, Target
-from .._utils import create_grid_circular_mask
+from .._utils import create_grid_circular_mask, swap_coordinates, transpose
 
 
 class Scenario3(Scenario2D):
@@ -36,13 +36,13 @@ class Scenario3(Scenario2D):
     PREDEFINED_TARGET_OPTIONS = {
         "agar-phantom-center": Target(
             target_id="agar-phantom-center",
-            center=[0.06, 0.0],
+            center=swap_coordinates([0.06, 0.0]),
             radius=_PHANTOM_RADIUS,
             description="Center imaging phantom.",
         ),
         "agar-phantom-right": Target(
             target_id="agar-phantom-right",
-            center=[0.07, 0.03],
+            center=swap_coordinates([0.07, 0.03]),
             radius=_PHANTOM_RADIUS,
             description="Right imaging phantom.",
         ),
@@ -50,14 +50,14 @@ class Scenario3(Scenario2D):
     target = PREDEFINED_TARGET_OPTIONS["agar-phantom-center"]
 
     _extent = np.array([0.1, 0.1])  # m
-    origin = [0, -_extent[1] / 2]
+    origin = swap_coordinates([0, -_extent[1] / 2])
 
     material_outline_upsample_factor = 4
 
     def make_grid(self):
         """Make the grid for scenario 2 3D."""
         self.grid = Grid.make_grid(
-            extent=self._extent,
+            extent=swap_coordinates(self._extent),
             speed_water=1500,  # m/s
             ppw=6,  # desired resolution for complexity=fast
             center_frequency=self.center_frequency,
@@ -92,7 +92,9 @@ class Scenario3(Scenario2D):
             "agar_hydrogel",
         ]
         material_masks = {
-            name: self._create_scenario_mask(name, grid=self.grid, origin=self.origin)
+            name: transpose(
+                self._create_scenario_mask(name, grid=self.grid, origin=self.origin)
+            )
             for name in material_layers
         }
         return material_masks

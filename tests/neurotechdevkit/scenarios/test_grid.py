@@ -4,7 +4,7 @@ from neurotechdevkit.grid import Grid
 def test_instantiate_grid():
     """Validates the grid can be instantiated."""
     grid = Grid.make_grid(
-        extent=(0.02, 0.03),  # 20cm x 30cm
+        extent=(0.03, 0.02),  # 30cm x 20cm
         speed_water=1500.0,
         center_frequency=5e5,
         ppw=6,

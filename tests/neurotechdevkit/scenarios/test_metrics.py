@@ -20,8 +20,10 @@ from neurotechdevkit.results._metrics import (
     calculate_mechanical_index,
 )
 from neurotechdevkit.results._results import SteadyStateResult2D
+from neurotechdevkit.scenarios._utils import transpose
 from neurotechdevkit.scenarios.built_in import Scenario1_2D
 
+# GRID_SHAPE = swap_coordinates((21, 31))
 GRID_SHAPE = (21, 31)
 CENTER_FREQUENCY = 1.5e6
 AMBIENT_PRESSURE = 2.5e6
@@ -113,7 +115,7 @@ def fake_layer_masks(layer):
         mask[14:18, 23:27] = True
     else:
         raise ValueError(layer)
-    return mask
+    return transpose(mask)
 
 
 def fake_fields(field):

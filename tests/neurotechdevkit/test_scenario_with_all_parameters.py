@@ -5,6 +5,7 @@ from neurotechdevkit.grid import Grid
 from neurotechdevkit.materials import get_material
 from neurotechdevkit.problem import Problem
 from neurotechdevkit.scenarios import Scenario2D, Target
+from neurotechdevkit.scenarios._utils import swap_coordinates, transpose
 from neurotechdevkit.sources import FocusedSource2D
 
 
@@ -55,7 +56,7 @@ def _create_mask(material, grid):
     else:
         raise ValueError(material)
 
-    return mask
+    return transpose(mask)
 
 
 @pytest.mark.integration
@@ -67,15 +68,15 @@ def test_scenario_with_all_parameters():
     )
     sources = [
         FocusedSource2D(
-            position=[0.0, 0.0],
-            direction=[1.0, 0.0],
+            position=swap_coordinates([0.0, 0.0]),
+            direction=swap_coordinates([1.0, 0.0]),
             aperture=0.064,
             focal_length=0.064,
             num_points=1000,
         )
     ]
     grid = Grid.make_grid(
-        extent=(0.12, 0.07),
+        extent=swap_coordinates((0.12, 0.07)),
         speed_water=1500,
         center_frequency=center_frequency,
         ppw=6,
@@ -103,7 +104,7 @@ def test_scenario_with_all_parameters():
         material_masks=material_masks,
         material_properties={},
         material_outline_upsample_factor=8,
-        origin=[0.0, -0.035],
+        origin=swap_coordinates([0.0, -0.035]),
         problem=problem,
         sources=sources,
         target=target,

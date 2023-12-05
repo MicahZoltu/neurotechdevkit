@@ -13,6 +13,7 @@ from neurotechdevkit.results import (
 )
 from neurotechdevkit.results import _metrics as metrics
 from neurotechdevkit.results import create_pulsed_result, create_steady_state_result
+from neurotechdevkit.scenarios._utils import swap_coordinates
 
 
 @pytest.fixture
@@ -112,8 +113,8 @@ def a_test_scenario_2d():
     original_sources = [source for source in scenario.sources]
     scenario.sources = [
         sources.FocusedSource2D(
-            position=np.array([0.02, 0.02]),
-            direction=np.array([1.0, -1.0]),
+            position=swap_coordinates(np.array([0.02, 0.02])),
+            direction=swap_coordinates(np.array([1.0, -1.0])),
             aperture=0.025,
             focal_length=0.07,
             num_points=100,
@@ -133,8 +134,8 @@ def a_test_scenario_3d():
     original_sources = [source for source in scenario.sources]
     scenario.sources = [
         sources.FocusedSource3D(
-            position=[0.02, 0.02, 0.0],
-            direction=[1.0, -1.0, 0.0],
+            position=swap_coordinates([0.02, 0.02, 0.0]),
+            direction=swap_coordinates([1.0, -1.0, 0.0]),
             aperture=0.025,
             focal_length=0.07,
             num_points=100,

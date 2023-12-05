@@ -9,7 +9,7 @@ from neurotechdevkit.grid import Grid
 from neurotechdevkit.problem import Problem
 from neurotechdevkit.results import PulsedResult, SteadyStateResult
 from neurotechdevkit.scenarios._base import Scenario3D, SliceAxis
-from neurotechdevkit.scenarios._utils import wavelet_helper
+from neurotechdevkit.scenarios._utils import swap_coordinates, wavelet_helper
 from neurotechdevkit.sources import FocusedSource3D, PlanarSource3D, Source
 
 
@@ -26,13 +26,13 @@ class ScenarioBaseTester(Scenario3D):
 
     sources = [
         PlanarSource3D(
-            position=np.array([0.05, 0.1, 0.05]),
-            direction=np.array([0.0, 0.0, 1.0]),
+            position=swap_coordinates(np.array([0.05, 0.1, 0.05])),
+            direction=swap_coordinates(np.array([0.0, 0.0, 1.0])),
             aperture=0.05,
             num_points=123,
         )
     ]
-    origin = np.array([-0.1, -0.1, 0.0])
+    origin = swap_coordinates(np.array([-0.1, -0.1, 0.0]))
 
     def __init__(self):
         self.center_frequency = 5e5
@@ -41,7 +41,7 @@ class ScenarioBaseTester(Scenario3D):
 
     def _make_grid(self):
         grid = Grid.make_grid(
-            extent=(2.0, 3.0, 4.0),
+            extent=swap_coordinates((2.0, 3.0, 4.0)),
             speed_water=100000,
             ppw=2,
             center_frequency=self.center_frequency,

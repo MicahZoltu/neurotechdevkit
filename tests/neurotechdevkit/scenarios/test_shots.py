@@ -13,6 +13,7 @@ from neurotechdevkit.scenarios._shots import (
     _get_wavelets_for_source,
     create_shot,
 )
+from neurotechdevkit.scenarios._utils import swap_coordinates
 
 
 class FakeSource:
@@ -77,7 +78,7 @@ def test_create_shot_adds_to_geometry(a_problem, fake_source_1, fake_source_2):
     """The shot should include source locations which match the problem geometry."""
     sources = [fake_source_1, fake_source_2]
     receiver_coords = [np.zeros(shape=2)]
-    origin = np.array([-0.2, -0.1])
+    origin = swap_coordinates(np.array([-0.2, -0.1]))
     wavelet = np.arange(100)
     shot = create_shot(a_problem, sources, receiver_coords, origin, wavelet, dx=0.1)
     assert len(a_problem.geometry.locations) == (
@@ -131,22 +132,28 @@ def test_add_sources_to_geometry_returns_all_locations(
 
 def test_add_sources_to_geometry_shifts_origin(a_problem, fake_source_1):
     """Verify that locations are added for all sources and returned."""
-    origin = np.array([-0.3, -0.1])
+    origin = swap_coordinates(np.array([-0.3, -0.1]))
     point_transducers = _add_sources_to_geometry(a_problem, [fake_source_1], origin)
     first_coords = point_transducers[0].coordinates
-    expected = fake_source_1.coordinates[0] - origin
+    expected = swap_coordinates(fake_source_1.coordinates[0] - origin)
     np.testing.assert_equal(first_coords, expected)
 
 
 def test_add_point_transducers_to_geometry(a_problem):
     """The point source coords should be added to the problem geometry and returned."""
-    coords = np.array([[0.0, 0.1], [0.5, 0.3], [1.1, 0.2]])
+    coords = np.array(
+        [
+            [0.0, 0.1],
+            [0.5, 0.3],
+            [1.1, 0.2],
+        ]
+    )
     point_transducers = _add_point_transducers_to_geometry(a_problem, coords)
     assert len(point_transducers) == 3
     assert [p.id for p in point_transducers] == [0, 1, 2]
     assert a_problem.geometry.locations == point_transducers
     for n, transducer in enumerate(point_transducers):
-        np.testing.assert_equal(transducer.coordinates, coords[n])
+        np.testing.assert_equal(swap_coordinates(transducer.coordinates), coords[n])
 
 
 def test_add_point_transducers_to_geometry_with_preexisting_locations(a_problem):

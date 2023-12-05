@@ -232,7 +232,9 @@ def create_grid_spherical_mask(
     return _create_nd_ellipse_mask(grid, origin, center, radii)
 
 
+# pylint: ignore
 def swap_coordinates(array):
+    """Swap the first two elements of an array."""
     if isinstance(array, (np.ndarray, list, tuple)):
         if len(array) < 2:
             return array
@@ -246,7 +248,9 @@ def swap_coordinates(array):
     return array
 
 
+# pylint: ignore
 def transpose(arr):
+    """Transpose an array."""
     return arr.T
 
 
